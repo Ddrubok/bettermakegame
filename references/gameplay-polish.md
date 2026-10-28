@@ -2,6 +2,8 @@
 
 Use this reference for comprehensive game presentation audits or important event sequences. For a narrow fix, select relevant checks. Report in the user's language. Review the actual game; examples below are conditional, not requirements to add mechanics.
 
+For UI/HUD layout, affordance, navigation, or identity work, use the relevant dimensions in [ui-hud-design.md](ui-hud-design.md). A narrow UI task does not require a complete event map or every category below. In a combined review, reuse finding IDs and evidence so the same issue is not counted or prescribed twice.
+
 ## Establish the event map
 
 Identify platform, input methods, genre, core loop, intended visual identity, and available runtime evidence. Trace real state transitions and their presentation callers. Inventory the game's important interactions: care/feeding, building, movement, attacks, damage, purchases, pickups, progression, failure, or completion only where they exist.
@@ -29,8 +31,8 @@ For every category below in a full audit, report **implemented / partial / absen
 | Camera | Zoom, kick, movement and tracking; target visibility, orientation, aim stability, motion settings, and restoration after interruption. |
 | Entity lifecycle | Entrance, acquisition, level-up, death, exit; readable state transitions and cleanup. Evaluate bosses only if the game has them. |
 | Screen and outcome sequences | Transitions, results, victory and game over; clear outcome, reward order, next action, replay pacing, and duplicate-input protection. |
-| Controls | Hover where meaningful, press, release, disabled, keyboard/controller focus; mobile touch feedback and cancelled drags/releases. Never add hover dependency to touch. |
-| Information hierarchy | Most actionable information is recognizable; typography, contrast, localization, safe areas, object/UI distinction, and competing emphasis. |
+| Controls | Recognizable affordances and actual hit regions; target size and spacing in context; press, release, disabled, pending and keyboard/controller focus; cancelled drags, predictable back/close, and mobile finger occlusion. Never require hover on touch. |
+| Information hierarchy | Task-relevant placement, grouping, legibility and competing emphasis across scene states; representative backgrounds, localization, safe areas and playfield visibility. Compare style with authored identity. Do not impose center placement, sparse layouts or genre stereotypes. |
 | Entry/exit timing | UI and objects appear when relevant and remain long enough to understand; no overlay hides an unresolved outcome or obsolete cue survives re-entry. |
 | Audio synchronization | Sound follows the meaningful contact/change, respects mix/settings, and is not delayed or duplicated by animation and logic both firing it. |
 | Mobile haptics | Device support, user settings, event importance and repeat frequency; no reliance on haptics alone or demand to add them to every event. |

@@ -1,6 +1,13 @@
 ---
 name: bettermakegame
-description: Improve game UI, interaction feedback, game feel, and event sequences to commercial mobile/PC polish standards. Use for bettermakegame, game completeness reviews, weak hit or reward feedback, button states, animation timing, and designing polished presentation for requested game UI or interactions. Prioritize existing logic whose cause and result are poorly communicated. Does not perform a general AI-slop cleanup, invent new gameplay content, or optimize balance.
+description: >-
+  Improve or create game UI, HUD layouts, control affordances, information
+  hierarchy, visual identity, interaction feedback, game feel, and event
+  sequences. Use for bettermakegame, usability and polish reviews, weak
+  acknowledgement, or requested UI and HUD design. Prioritize clear actions,
+  accurate states, and appropriate expression using existing gameplay.
+  Does not perform an unsolicited project-wide slop audit, invent gameplay
+  content, or optimize balance.
 ---
 
 # Better Make Game
@@ -11,7 +18,15 @@ Make the player's actions, their consequences, and the next available action imm
 
 Use this skill when creating requested game UI or presentation, improving an existing interaction, or reviewing overall polish. An audit produces findings without edits; a build or fix request authorizes the scoped implementation. Prioritize logic that already works but lacks clear expression before proposing new content or mechanics.
 
-`kill-game-slop` separately finds and removes generic, noisy, redundant, or misleading game presentation. `kill-ai-slop` handles general web product styling and copy. These are independent skills, not prerequisite passes. A polish fix may simplify an obstructive cue when needed, but do not expand it into a project-wide deslop audit unless requested.
+`kill-game-slop` focuses on evidence-based diagnosis and scoped repair of distracting, redundant, misleading, or difficult-to-use presentation. Use `bettermakegame` for requested UI/HUD creation, broader layout or identity alternatives, and interaction or sequence improvements. Either skill may add, simplify, move, or remove an element when the task requires it. They are independent; do not require an automatic sequence or expand the authorized scope. `kill-ai-slop` handles general web product styling and copy.
+
+## Design readable and usable UI
+
+For UI/HUD creation or changes to placement, shape, hierarchy, readability, navigation, or thematic fit, read [ui-hud-design.md](references/ui-hud-design.md). Apply only checks relevant to the requested scene and input method; do not turn a button fix into a full-game audit.
+
+Record the player task, intended feeling, important information, authored references, target viewport/input, and what must remain. Attribute documented intent and label inferred intent provisional. For each finding, distinguish a confirmed defect, an unverified usability hypothesis, an optional design proposal, or a justified preservation decision. Priority is separate from judgment.
+
+For requested creation, define requirements and actual states before choosing visual treatment. For redesign, compare the baseline with a small number of bounded alternatives. Describe expected gains, losses, and observable checks; retain an unchanged baseline as a valid outcome. Do not infer player preference from appearance or automated checks.
 
 ## Understand and complete the experience
 
