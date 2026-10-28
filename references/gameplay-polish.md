@@ -51,6 +51,14 @@ Do not prescribe the same shake, particle, sound, or zoom for all three. Prefer 
 
 Review an important sequence on one timeline, recording trigger, cue order, overlap, control availability, interruption/skip behavior, and settled state. For example, an existing boss victory can read as **final impact → recognized boss death → brief aftermath → Victory → reward display**. Exact durations must follow the game, available measurements, and repeat frequency; do not invent measured timing. Distinguish proposed timings from observed ones. A care game's major growth event deserves its own appropriate closure rather than borrowed combat spectacle.
 
+## Choose expression without changing the event
+
+Use the event map to name the message a cue must carry, such as accepted input, an actual impact, a reward or a rule-based failure. Choose an existing visual or audio vocabulary that fits that meaning and the game's tone. Explicitly choose no extra effect when the current cue is sufficient. For example, a timeout should not imply a damaging hit unless that is what the game's rules and presentation actually mean.
+
+Examples are alternatives, not required styles: playful motion may use a readable overshoot; restrained abstract visuals may use a local change in shape or light; a tense scene may use a brief, controlled response. Do not add faces, bounce, shake or sound solely because a genre label suggests them.
+
+When changing visible motion or scale, inspect which transform collision and interaction use. Ensure active hazards and their warnings remain truthful and effects settle after interruption. If an existing deterministic state check is applicable, reuse it to detect unintended rule changes; identical state alone does not establish unchanged perceived difficulty or readability.
+
 ## Additional failure checks
 
 - Rapid repeat input, animation cancellation, pause/resume, scene exit/re-entry, and delayed network confirmation must not duplicate rewards, retain stale cues, or strand controls. Cosmetic acknowledgement must not promise authoritative success.

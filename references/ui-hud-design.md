@@ -21,6 +21,24 @@ Classify findings as confirmed defect, hypothesis to investigate, optional desig
 7. Identity and representation. Compare shape, typography, palette, texture, icon language, motion and tone with the game's declared intent and authored references. Explain specific relationships and tradeoffs. Do not impose neon on science fiction, parchment on fantasy, or one art resolution on all layers. Diegetic, spatial, meta and overlay representations are design options, not quality ranks. Optional identity improvements need no invented usability defect.
 8. Repetition and changing conditions. Inspect relevant state changes, overlapping events, rapid input, long labels, resizing and re-entry. Keep primary play visible and avoid obsolete or duplicate cues. Reuse the event and interruption checks in [gameplay-polish.md](gameplay-polish.md) instead of duplicating a whole audit.
 
+## Make the relevant design decisions explicit
+
+For new UI or a meaningful redesign, connect each important element to a player decision. Record only fields that change the design: purpose; authoritative state and distinct states; when it is needed; display and input bounds; placement rationale; supported input; and an observable acceptance condition. Reuse existing specifications. A local repair needs only the affected element, not a full HUD inventory.
+
+For identity changes, explain how the proposed shape, typography, color role or motion relates to the game's intended feeling and established visual language. Preserve team, status and accessibility meanings. Compare the current version with bounded alternatives. A palette count, familiar silhouette or preferred UI category does not establish quality.
+
+If a control is deliberately unusual, check whether its meaning, state and input remain discoverable under the supported conditions before proposing normalization. Mark interpretation and predicted benefit as hypotheses until supported.
+
+## Check navigation through state changes
+
+For the supported input methods, exercise entry, movement between controls, activation, cancellation and return. After closing a modal, restore focus to its valid invoking control or a documented sensible fallback if that control no longer exists. Recheck after relevant resizing, text expansion and control removal. Decorative overlap is not an input failure; inspect actual routing and hit regions. Do not impose one layout framework or require unsupported input devices.
+
+## Check the moments affected by the design
+
+Choose representative reachable conditions from the changed flow: ordinary use, a relevant crowded state, transient notices, and an overlap of events that can actually coexist. Include the affected display scale and settings. For short-lived information, use playback or timed captures that establish its appearance and disappearance; a still frame cannot establish reading time. A configured duration alone does not establish actual exposure or sufficient reading time under frame delays or interruption.
+
+Record the initial state, trigger, capture method and affected elements. Distinguish normal play, scripted input and injected state. Repeat the same relevant conditions after a change. Check event sequencing with `gameplay-polish.md` only when needed. Do not create a universal capture matrix or require runtime instrumentation for a narrow visual fix. A moment ID, conditions, evidence and result can fit in one or two sentences for a local change.
+
 ## Propose and verify a bounded change
 
 Record the judgment, evidence and provenance, observed conditions, task impact, unknowns, smallest change, expected benefit, tradeoff, preservation condition, success condition, and actual verification status. Scale the record to the task; a narrow fix needs no separate report or mandatory full table. Keep proposed, applied and verified separate.

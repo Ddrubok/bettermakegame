@@ -19,6 +19,8 @@ The goal is a complete, understandable experience that fits the game. It does no
 
 UI/HUD reviews cover placement and shape, information grouping, recognizable controls, operation with the intended input, and fit with the game's visual identity. Findings distinguish defects, hypotheses to check, optional design proposals, and elements to preserve. Design alternatives are compared with the current screen, with expected gains and losses stated explicitly.
 
+For meaningful designs, connect each important element to its purpose, real states, placement, input bounds, and acceptance condition; a local fix only needs the affected element. Checks now cover focus after a modal closes or a control disappears, actual exposure of brief notices, and events that can really coincide. Motion or scale changes also require checking whether display and collision share a transform. Report scripted input and injected states separately from normal play, and repeat the affected conditions after editing.
+
 It preserves the existing gameplay rules, timing, rewards, purchases, and visual identity. It does not invent new gameplay content or rebalance the game as part of a presentation fix.
 
 ## How it works
@@ -99,7 +101,7 @@ A successful build or source review does not prove that an animation feels good.
 
 The skill asks for relevant runtime checks; it does not run a game on its own or guarantee better retention, player preference, or commercial success. Publication checks cover the package structure and documents, not a cross-host gameplay evaluation.
 
-The [UI/HUD regression cases](evals/ui-hud/README.md) separate reviewer inputs from maintainer criteria. Their before/after behavior evaluations are **NOT RUN**. Historical checks and document validation do not demonstrate this patch's effectiveness.
+The [UI/HUD regression cases](evals/ui-hud/README.md) separate reviewer inputs from maintainer criteria. The original U cases are preserved; supplemental V cases cover the new checks. Both sets' before/after behavior evaluations are **NOT RUN**. Historical checks and document validation do not demonstrate either patch's effectiveness.
 
 ## Files
 

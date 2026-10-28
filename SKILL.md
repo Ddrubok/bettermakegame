@@ -51,6 +51,8 @@ Distinguish **routine actions / important actions / climaxes**. Scale emphasis t
 
 Exercise initialization, input, acknowledgement, change, result, recovery, exit, and re-entry in the relevant runtime. Compare the same states before/after where possible, then inspect repetition and the busiest relevant case. Use normal project checks for changed code, and measure performance or timing when making such claims. Source inspection or a successful build alone does not prove visual quality.
 
+For UI/HUD work, select the moments and input transitions affected by the change using `ui-hud-design.md`. Recheck those conditions after editing; record what was observed, what was instrumented, and what remains unverified.
+
 For a broad review, evaluate each requested category for **current implementation / problem / expected benefit / implementation difficulty / priority**, with evidence and explicit unverified or not-applicable entries. Evaluate redundant effects, code, unused features, overlapping UI, and inconsistent styles for **keep / consolidate / remove** where they affect the reviewed experience; verify dynamic/serialized references before calling anything unused.
 
 End proposals in this order:

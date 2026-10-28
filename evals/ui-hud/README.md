@@ -26,3 +26,20 @@ No fresh model comparisons or player trials were run for this patch. The editing
 | Case | Skill commit / snapshot hashes | Host / model / settings | Exact input / starting project | Conditions / tools | Actual behavior | Result | Evidence | Limits / scorer |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Case ID | Before or after version | Unknown fields stay unknown | Prompt and fixture paths | Device, viewport, input, language, access | Observed actions only | NOT RUN / PASS / FAIL / MIXED / BLOCKED | Raw response and trace paths | Untested scope; human or AI |
+
+## Supplemental evaluation v2
+
+The supplemental guide v2.0 adds V01–V04 here; kill-game-slop contains V05–V08. Preserve the U inputs, key, and status above as the first patch's separate record. Guide version 2.0 is not a skill release version.
+
+For this comparison, the **before** commit is `28bdd9916b2542164ca242288f9b33a941609ec4`. Pin the after commit or exact snapshot hashes. Provide [supplemental-cases.md](supplemental-cases.md) and the selected skill runtime files only in fresh independent conversations with the same model, settings, tools, and inputs. Exclude both judge keys, previous responses, and patch explanations. Save raw prompts, responses, tool traces, changes, and captures before using [supplemental-judge-key.md](supplemental-judge-key.md). Reuse the run record above, distinguishing NOT RUN from an attempted check blocked by a documented constraint.
+
+These synthetic inputs test judgment, not the described captures or actual game behavior. V01 needs a modal fixture with controller/keyboard navigation and removal of its opener; V04 needs a fixture with coupled display/collision transforms. Reset starting state between runs. Record device, language, settings, and actual observations. Human checks use concrete tasks, record assistance/errors/time only when observed, and disclose sample limits. These cases informed the patch; they are not unseen tests.
+
+| Case | Before response | After response | Runtime / human checks |
+| --- | --- | --- | --- |
+| V01 | NOT RUN | NOT RUN | NOT RUN |
+| V02 | NOT RUN | NOT RUN | NOT RUN |
+| V03 | NOT RUN | NOT RUN | NOT RUN |
+| V04 | NOT RUN | NOT RUN | NOT RUN |
+
+No independent model comparison, executable fixture run, or human observation was performed for the supplemental patch. This editing session remains solo, and its author has seen the key. Fixtures are not included. Static package checks and maintainer review are separate from these unrun evaluations and cannot establish improved usability or preference.
