@@ -2,110 +2,127 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
-An AI agent skill for creating or improving game UI and HUDs, interaction feedback, and the flow of important events.
+Better Make Game is an instruction skill for agents working on game controls, game feel, UI/HUD, feedback, and event flow. It helps an agent identify why an action feels awkward or its result is unclear, compare suitable changes, implement within the requested scope, and check what actually changed. It works with the game's existing engine and tools; it is not a runtime library or effect package.
 
-Use it when the game works but its actions and results are hard to read: a button responds without acknowledgement, a hit barely registers, or a victory ends without a clear reward and next step. The skill helps the agent inspect those gaps, propose changes, and implement them when requested.
-
-The goal is a complete, understandable experience that fits the game. It does not require more effects or expensive assets.
-
-## What it covers
-
-- Button states, touch feedback, keyboard/controller focus, and readable UI.
-- Hit and damage feedback where the game has combat.
-- Rewards, growth, victory, failure, and transitions between scenes.
-- Animation, camera, sound, and supported mobile haptics working together.
-- Rapid input, interrupted animations, pause/resume, and scene re-entry.
-- Accessibility, including non-color cues, audio controls, and reduced motion.
-
-UI/HUD reviews cover placement and shape, information grouping, recognizable controls, operation with the intended input, and fit with the game's visual identity. Findings distinguish defects, hypotheses to check, optional design proposals, and elements to preserve. Design alternatives are compared with the current screen, with expected gains and losses stated explicitly.
-
-For meaningful designs, connect each important element to its purpose, real states, placement, input bounds, and acceptance condition; a local fix only needs the affected element. Checks now cover focus after a modal closes or a control disappears, actual exposure of brief notices, and events that can really coincide. Motion or scale changes also require checking whether display and collision share a transform. Report scripted input and injected states separately from normal play, and repeat the affected conditions after editing.
-
-It preserves the existing gameplay rules, timing, rewards, purchases, and visual identity. It does not invent new gameplay content or rebalance the game as part of a presentation fix.
+Use it for a specific problem (a missed jump, nervous steering, an unreadable hit, an unclear turn) or a requested scene review. It also covers creating or revising UI/HUD layouts, navigation, and important sequences such as failure, victory, and reward. A narrow request stays narrow.
 
 ## How it works
 
-1. Identify the requested scene, platform, and scope. A review reports findings; a fix request allows changes within that scope.
-2. Read the actual logic and inspect the running scene or available captures. For UI work, identify the player's task, actual states, and what to preserve. For event work, follow input through action, result, and return of control.
-3. Choose the smallest useful change, preferably using the project's existing UI, animation, and audio systems.
-4. Check the result in the relevant runtime, including repetition and interruptions. Report what was observed and what remains unverified.
+1. **Describe the moment.** Identify the player's task, intended feeling, platform and input method, observed symptom, and constraints. Inspect the actual input path, state transitions, and relevant camera, animation, audio, and UI owners. Separate observations from inferred intent.
+2. **Diagnose the cause.** A dropped input event, collision defect, frame stall, narrow action window, unclear cue, and deliberate challenge call for different responses. Repair a defect at its source before masking it with an assist or effect.
+3. **Compare candidates.** Keep current behavior as a baseline. Consider a few mechanisms that fit the evidence, including reducing an excessive cue or leaving good behavior alone. State prerequisites, tradeoffs, affected state, tuning controls, and observable checks.
+4. **Implement within scope.** A recommendation request yields recommendations. A build or fix request permits a focused change using the project's existing systems. Preserve intended challenge, identity, accessibility, and unrelated rules.
+5. **Verify the result.** Reproduce the same moment before and after where possible. Check boundaries, repetition, interruption, and the busiest relevant case. Report runtime observations, automated checks, and remaining device or player-testing limits separately.
 
-A narrow button fix does not require a full-game audit or a separate report. Use [ui-hud-design.md](references/ui-hud-design.md) for layout, navigation, and design alternatives; use [gameplay-polish.md](references/gameplay-polish.md) for event sequences or a broad presentation review. Combined reviews reuse findings and evidence rather than counting the same issue twice.
+The decision workflow is in [game-feel-selection.md](references/game-feel-selection.md). Its technique tables are an **open-ended candidate library**, not 48 plug-and-play scripts, recommended defaults, or a checklist of required effects. An agent can use a mechanism outside the tables when the game warrants it.
 
-## Install
+## Candidate library
 
-Download this repository or clone it into a skill location recognized by your agent. Keep the folder named `bettermakegame` and preserve `references/` and `agents/` alongside `SKILL.md`.
+The two technique references contain 48 situation-led rows:
 
-For an Orca/Codex setup that uses `~/.codex/skills`, as the maintainer's local setup does:
+| Family | Rows | Representative situation and possible candidate |
+| --- | ---: | --- |
+| Input intent and timing | 6 | A jump press just before landing disappears: consider a short, once-consumed input buffer. |
+| Movement and traversal | 9 | Racing steering is nervous at speed: compare speed-sensitive steering with the current controller. |
+| Aiming and manipulation | 7 | A dragged object jumps under the pointer: preserve the grab offset. |
+| Impact and motion | 8 | A confirmed hit is hard to locate: consider a local hit cue, with frequency and accessibility limits. |
+| Camera | 6 | The route ahead is hidden: test directional framing against visibility in both travel directions. |
+| Audio and haptics | 4 | Many contacts muddy the mix: examine voice priority or ducking, then listen to recovery. |
+| Comprehension and flow | 8 | A puzzle move has an unclear consequence: show a truthful preview before commitment. |
 
-```sh
-git clone https://github.com/Ddrubok/bettermakegame.git ~/.codex/skills/bettermakegame
-```
+See [control-techniques.md](references/control-techniques.md) and [feedback-flow-techniques.md](references/feedback-flow-techniques.md) for mechanisms, tuning dimensions, limits, and observable checks. The rows are prompts for investigation. Suitability depends on genre, actual mechanics, devices, performance, and intended difficulty. A cozy interaction may need a clear settling cue; a competitive game may reject hidden target snapping. Suggested parameters are trial values to measure and tune in the project, never universal presets.
 
-If that folder already exists, back up local changes and update the existing copy. Avoid installing a second copy in another discovery location. Start a new session or refresh the host's skill list if needed.
+### Know what the change affects
 
-The instructions are Markdown and do not require an API key, a separate MCP connection, or a bundled runtime. Implementation still requires the agent's normal project, editor, and execution tools. Other agents, including Claude and Gemini, can be given `SKILL.md` and its referenced documents; automatic installation and activation depend on the host. This publication does not certify those integrations.
+| Surface | Examples | What to preserve or check |
+| --- | --- | --- |
+| Presentation | Local sound, visual recoil, camera impulse, result animation | Truthful state, visibility, cleanup, accessibility, and control availability. |
+| Input interpretation | Buffer, grace window, drag threshold, stick curve | Which inputs are accepted, expired, replaced, or consumed; unintended actions. |
+| Controller motion or game rules | Acceleration, jump gravity, knockback, cancel windows | Reach, positioning, action eligibility, intended challenge, and competitive outcomes. |
+| Shared time or authority | Simulation hit stop, time dilation, prediction | Clock ownership, pause and recovery, replay/network agreement, and authoritative results. |
+
+Names alone do not determine safety: camera kick can move an aim ray, and a visual freeze can diverge from a moving collider. The skill asks the agent to trace those effects before implementing. A request to improve movement can authorize bounded controller tuning; a presentation-only request does not authorize rule or time changes.
+
+## UI/HUD and event sequences
+
+The [UI/HUD design guide](references/ui-hud-design.md) covers information hierarchy, placement, shape, focus, touch and controller operation, accessibility, and visual identity. It separates confirmed defects, unverified usability hypotheses, optional proposals, and elements worth preserving. For a redesign, compare the baseline with a small number of alternatives and state their gains, losses, and checks.
+
+The [gameplay polish guide](references/gameplay-polish.md) traces important events from input and anticipation through action, result, and return of control. It covers feedback across UI, motion, camera, sound, and supported haptics, while keeping routine actions quick. Apply only stages relevant to the game; a puzzle need not gain combat effects, and an immediate button should not acquire an artificial wind-up.
 
 ## Use
 
-These invocation examples are for Codex. In another host, use its supported skill activation method or explicitly ask it to read the skill files.
+Give the agent the project and scene, platform and input method, desired outcome, constraints, and whether you want recommendations or implementation. These examples use Codex skill invocation syntax:
 
-Review an existing scene:
-
-```text
-$bettermakegame Review the combat scene's hit feedback and reward sequence.
-Report problems and evidence without editing files.
-```
-
-Improve a specific interaction:
+**Recommendations only**
 
 ```text
-$bettermakegame Improve the shop purchase button's feedback.
-Keep prices, purchase validation, and saved rewards unchanged.
-Check pending, success, failure, and rapid repeated input.
+$bettermakegame Review this platformer's near-landing jump misses.
+Trace input and grounding first. Compare the current behavior with at most
+two suitable changes, including tradeoffs and boundary checks. Do not edit.
+Keep the intended precision challenge and existing accessibility settings.
 ```
 
-Compare HUD design alternatives:
+**Scoped implementation**
 
 ```text
-$bettermakegame Review the information layout and button shapes of this mobile aiming HUD.
-Compare the current screen with two small alternatives, including gains and losses.
-Distinguish defects, hypotheses, optional proposals, and elements to preserve.
-Keep the board, selection cues, and turn rules. Proposals only for now.
+$bettermakegame Improve high-speed steering in this racing scene.
+Inspect the current controller and input devices. Implement the smallest
+useful change, keeping top speed and collision rules unchanged. Check taps,
+held steering, reversals, and the same slalom at several speeds. Report
+parameters changed and any device checks you could not run.
 ```
 
-Provide the project location, target scene, platform/input method, and whether you want a review or implementation. An executable build or video helps assess timing and sound; screenshots alone cannot establish either.
+**UI/HUD review**
 
-## What the report contains
+```text
+$bettermakegame Review this mobile aiming HUD's hierarchy and controls.
+Compare the current layout with two bounded alternatives. Keep the turn
+rules and selection cues. Report findings and checks; proposals only.
+```
 
-For a broad review, findings include the current implementation, problem, evidence, expected benefit, difficulty, priority, and a concrete verification condition. Proposed work is ordered as:
+Screenshots help with layout and state visibility. A playable build or video is needed to assess timing and motion; sound and haptics need suitable playback or devices. Automated tests can establish behavior such as input acceptance, not whether the game feels good to players.
 
-1. High-impact immediate fixes: unclear outcomes, false states, blocked controls, or missing closure.
-2. Low-cost improvements using existing resources.
-3. Later refinements with smaller impact or device-specific requirements.
+## Install
 
-For completed changes, the report identifies the changed behavior, checks actually performed, and remaining limits.
+OpenAI's [Build skills documentation](https://learn.chatgpt.com/docs/build-skills) describes user skills under `~/.agents/skills` and repository skills under `.agents/skills`. Clone this repository as one skill directory, keeping `SKILL.md`, `references/`, and `agents/` together:
+
+```sh
+mkdir -p ~/.agents/skills
+git clone https://github.com/Ddrubok/bettermakegame.git ~/.agents/skills/bettermakegame
+```
+
+Windows PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE/.agents/skills" | Out-Null
+git clone https://github.com/Ddrubok/bettermakegame.git "$env:USERPROFILE\.agents\skills\bettermakegame"
+```
+
+For a project-specific install, clone into that repository's `.agents/skills/bettermakegame` instead. You can also ask `$skill-installer` to install from this public [GitHub repository](https://github.com/Ddrubok/bettermakegame). The maintainer's Orca configuration additionally recognizes `~/.codex/skills`; that is environment-specific. Use one discovery location for a given host to avoid duplicate copies. Refresh the host's skill list or start a new session if needed. Other agent hosts can read the Markdown instructions, but automatic discovery and activation depend on the host and have not been verified across hosts.
+
+The skill needs no bundled runtime or separate API key. Implementing a change still requires access to the actual game project and its normal editor, build, and execution tools.
+
+## Evaluation and limits
+
+On 2026-10-31, an independent evaluation used five synthetic recommendation scenarios and one Node controller fixture. The fixture's four tests passed. See the [game-feel evaluation record](evals/game-feel/README.md) and run its example with `node --test evals/game-feel/racer/controller.test.mjs`. These checks do not form a before/after benchmark or a real-device or human game-feel test. The [UI/HUD U and V cases](evals/ui-hud/README.md) remain **NOT RUN**.
+
+The skill does not play a game by itself, guarantee player preference, or prove retention or commercial results. It directs the agent to report what was observed in the runtime, what was checked in code, and what remains unverified.
 
 ## Related skill
 
-| Skill | Main purpose |
+| Skill | Scope |
 | --- | --- |
-| `bettermakegame` | Create UI/HUDs, compare broader layout or identity alternatives, and improve interactions and event sequences. |
-| [kill-game-slop](https://github.com/Ddrubok/kill-game-slop) | Diagnose and locally repair distracting, redundant, misleading, or difficult-to-use game presentation. |
+| `bettermakegame` | Create or improve UI/HUD, controls, game feel, feedback, and important event flow. |
+| [kill-game-slop](https://github.com/Ddrubok/kill-game-slop) | Diagnose and locally repair distracting, redundant, misleading, or hard-to-use game presentation. |
 
-They are independent. Neither needs to run before the other. Either may add, simplify, move, or remove elements within the requested scope.
-
-## Verification limits
-
-A successful build or source review does not prove that an animation feels good. Screenshots do not verify sound, haptics, latency, or timing. The agent must distinguish runtime observations, source findings, user reports, and inference.
-
-The skill asks for relevant runtime checks; it does not run a game on its own or guarantee better retention, player preference, or commercial success. Publication checks cover the package structure and documents, not a cross-host gameplay evaluation.
-
-The [UI/HUD regression cases](evals/ui-hud/README.md) separate reviewer inputs from maintainer criteria. The original U cases are preserved; supplemental V cases cover the new checks. Both sets' before/after behavior evaluations are **NOT RUN**. Historical checks and document validation do not demonstrate either patch's effectiveness.
+The skills are independent; neither is a prerequisite for the other. Both can add, simplify, move, or remove elements within the requested scope.
 
 ## Files
 
-- [SKILL.md](SKILL.md): core workflow and scope.
-- [references/ui-hud-design.md](references/ui-hud-design.md): placement, controls, navigation, identity, and bounded design comparisons.
-- [references/gameplay-polish.md](references/gameplay-polish.md): detailed review criteria and reporting guidance.
+- [SKILL.md](SKILL.md): scope and main workflow.
+- [references/game-feel-selection.md](references/game-feel-selection.md): situation-led selection, implementation, and verification.
+- [references/control-techniques.md](references/control-techniques.md): input, movement, aiming, and manipulation candidates.
+- [references/feedback-flow-techniques.md](references/feedback-flow-techniques.md): impact, camera, audio/haptics, and comprehension/flow candidates.
+- [references/ui-hud-design.md](references/ui-hud-design.md): UI/HUD analysis and design comparisons.
+- [references/gameplay-polish.md](references/gameplay-polish.md): event sequences and broad presentation review.
 - [agents/openai.yaml](agents/openai.yaml): Codex display metadata.

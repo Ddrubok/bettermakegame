@@ -2,6 +2,8 @@
 
 Use this reference for comprehensive game presentation audits or important event sequences. For a narrow fix, select relevant checks. Report in the user's language. Review the actual game; examples below are conditional, not requirements to add mechanics.
 
+For choosing or implementing control/feedback techniques, use [game-feel-selection.md](game-feel-selection.md) and its relevant technique family. The preservation rules below apply to presentation-only work. Authorized changes to input acceptance, controller motion, or mechanics need an explicit behavior comparison; this review does not forbid those scoped changes or authorize unrelated ones.
+
 For UI/HUD layout, affordance, navigation, or identity work, use the relevant dimensions in [ui-hud-design.md](ui-hud-design.md). A narrow UI task does not require a complete event map or every category below. In a combined review, reuse finding IDs and evidence so the same issue is not counted or prescribed twice.
 
 ## Establish the event map
@@ -24,8 +26,8 @@ For every category below in a full audit, report **implemented / partial / absen
 | --- | --- |
 | Immediate input response | Visual/audio/haptic acknowledgement; distinguish a received input from confirmed success. Check denied, invalid, cooldown, and pending actions as well as success. |
 | Movement and changing values | Tween/Lerp/easing fit, interruptibility, overshoot, and settling; displayed values remain consistent with authoritative state and do not hide actionable thresholds. |
-| Character/object motion | Anticipation, squash and stretch, follow-through, secondary motion where readable and stylistically appropriate; preserve existing action timing. |
-| Combat impact, if present | Hit stop, hit flash, knockback, screen shake; distinguish miss/block/hit where the rules already do. Do not alter simulation pauses, displacement, or combat windows as cosmetic work. |
+| Character/object motion | Anticipation, squash and stretch, follow-through, secondary motion where readable and stylistically appropriate; preserve existing action timing in presentation-only work. |
+| Combat impact, if present | Hit stop, hit flash, knockback, screen shake; distinguish miss/block/hit where the rules already do. Identify whether a candidate changes presentation, simulation pauses, displacement, or combat windows; use the selection workflow for authorized mechanic changes. |
 | Visual effects | Particles, trails, impacts, afterimages; ownership, contact position, legibility of enemies/hazards, density and stacking. |
 | State changes | Damage preview, trailing health, count-up where useful; preserve hidden information, exact receipts, low-health cues, and the final value after skips or interruptions. |
 | Camera | Zoom, kick, movement and tracking; target visibility, orientation, aim stability, motion settings, and restoration after interruption. |

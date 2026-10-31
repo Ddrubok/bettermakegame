@@ -1,0 +1,15 @@
+{
+  "evaluatedOn": "2026-10-31",
+  "techniqueCandidates": 48,
+  "algorithm": "sha256",
+  "normalization": "UTF-8 text with CRLF/CR converted to LF",
+  "runtimeFiles": {
+    "SKILL.md": "02a95d9f8209cdeac0c38e765ef82d0e20415fad73a2b82e87d4de80e94e0a0a",
+    "agents/openai.yaml": "bb57949ab8824a2e08dcb4801095ebdd239f0744d18dcf15a2a8bf909ba1cfb8",
+    "references/control-techniques.md": "b62cc7faa331636058295a23386ffac49aee4af3601f5c5fffef8ce18269fb64",
+    "references/feedback-flow-techniques.md": "8c886bb0cc7511131c346bb3dd56bbf5a96be1486acb58d3f124b57a63f3ef39",
+    "references/game-feel-selection.md": "f0f1bc64fa378392ba4a385e7cfcc0bcef60f9ed14914288b39d11ccd69d5580",
+    "references/gameplay-polish.md": "11438d0b2a195c112234d43d012f4fdbc7cf63d144896eed90b1f7c316b0c069",
+    "references/ui-hud-design.md": "cddcd1ec5060897a09d2ac70a24eb732ffba756d3aaf6fdcae71fae7bd0b0fe4"
+  }
+}

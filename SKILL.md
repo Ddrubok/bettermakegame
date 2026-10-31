@@ -1,24 +1,36 @@
 ---
 name: bettermakegame
 description: >-
-  Improve or create game UI, HUD layouts, control affordances, information
-  hierarchy, visual identity, interaction feedback, game feel, and event
-  sequences. Use for bettermakegame, usability and polish reviews, weak
-  acknowledgement, or requested UI and HUD design. Prioritize clear actions,
-  accurate states, and appropriate expression using existing gameplay.
-  Does not perform an unsolicited project-wide slop audit, invent gameplay
-  content, or optimize balance.
+  Design and improve game UI/HUD, controls, game feel, feedback, and event
+  sequences. Use for bettermakegame, game-feel technique recommendations,
+  awkward movement or aiming, weak impact, unclear outcomes, and requested
+  usability or polish work. Select, implement, and tune techniques for the
+  actual player situation across genres. Does not imply an unsolicited
+  whole-game audit, new gameplay content, or economy/balance overhaul.
 ---
 
 # Better Make Game
 
-Make the player's actions, their consequences, and the next available action immediately understandable. Improve responsiveness, legibility, consistency, and satisfying closure while preserving the game's identity. Commercial quality is a standard for complete experiences, not a demand for AAA asset density or more effects.
+Make the player's intended action respond predictably, its consequences readable, and the next action clear. Improve control, feedback, pacing, and satisfying closure while preserving the game's identity and intended challenge. Commercial quality is a standard for complete experiences, not a demand for AAA asset density or more effects.
 
 ## Choose the requested scope
 
-Use this skill when creating requested game UI or presentation, improving an existing interaction, or reviewing overall polish. An audit produces findings without edits; a build or fix request authorizes the scoped implementation. Prioritize logic that already works but lacks clear expression before proposing new content or mechanics.
+Use this skill when creating requested UI or interactions, improving controls or presentation, recommending techniques, or reviewing overall polish. An audit or recommendation produces findings without edits; a build or fix request authorizes scoped implementation and verification. A broad game-feel request can cover input/controller tuning: make that scope explicit instead of treating every adjustment as cosmetic. Existing authorization is sufficient for ordinary implementation choices. Do not expand a narrow task into new enemies, levels, economy changes, or a whole-game audit.
 
 `kill-game-slop` focuses on evidence-based diagnosis and scoped repair of distracting, redundant, misleading, or difficult-to-use presentation. Use `bettermakegame` for requested UI/HUD creation, broader layout or identity alternatives, and interaction or sequence improvements. Either skill may add, simplify, move, or remove an element when the task requires it. They are independent; do not require an automatic sequence or expand the authorized scope. `kill-ai-slop` handles general web product styling and copy.
+
+## Select techniques for the situation
+
+For control feel, impact, camera, or play-flow work, use [game-feel-selection.md](references/game-feel-selection.md). Start with the player's task, observed friction or desired feeling, and actual implementation. Investigate dropped input, broken event routing, frame stalls, and incorrect state before adding forgiveness, smoothing, or spectacle.
+
+Choose relevant candidates from these references; read only the affected family:
+
+- [control-techniques.md](references/control-techniques.md): input timing and intent, movement/traversal, aiming, dragging, and physical controls.
+- [feedback-flow-techniques.md](references/feedback-flow-techniques.md): impact and animation, camera, audio/haptics, puzzle/strategy clarity, interaction and repeat-play flow.
+
+These are starting points, not an exhaustive menu or a requirement to add effects. Include techniques outside the library when the situation warrants them; use project/engine evidence and primary sources for unfamiliar mechanisms. A technique must have a problem or design goal to serve, suitable prerequisites, known tradeoffs, tunable parameters, and a concrete check. Compare with the unchanged baseline; select a small useful combination rather than applying every plausible technique.
+
+Distinguish presentation changes from input acceptance, controller motion, and authoritative rules. Coyote time can change jump eligibility; hit stop can change simulation time; aim assistance can change competitive outcomes. In presentation-only work, preserve those rules. When the user requests the relevant control/mechanic improvement, implement within that scope and verify the changed behavior explicitly. Clarify only unresolved design decisions with material effects beyond the request; do not require a separate approval for every technique.
 
 ## Design readable and usable UI
 
@@ -41,15 +53,17 @@ Distinguish **routine actions / important actions / climaxes**. Scale emphasis t
 ## Implement the minimum useful polish
 
 - Prefer existing engine layout, input, animation, audio, and accessibility systems and shared resources. Inspect callers before changing shared behavior; avoid adding frameworks or effect systems just for this task.
-- Preserve gameplay rules, combat timing windows, simulation pauses, displacement, hidden information, authoritative validation, ownership, rewards, persistence, and purchases. Presentation must distinguish input acknowledgement from confirmed success.
+- For presentation-only changes, preserve gameplay rules, timing windows, simulation clocks, and displacement. For authorized input/controller/mechanic changes, declare which behavior may change and what must remain, then verify both. Preserve hidden information, authoritative validation, ownership, rewards, persistence, and purchases unless that exact behavior is in scope. Presentation must distinguish input acknowledgement from confirmed success.
 - Keep interpolated values, previews, skipped sequences, and final displays consistent with authoritative state. Check rapid input, cancellation, pause/resume, exit/re-entry, and delayed responses where relevant; obsolete cues must not survive their owner or scene.
 - Preserve readable contrast, non-color signals, supported languages, touch targets, controller/keyboard focus, safe areas, audio controls, and reduced-motion paths. Evaluate hover and haptics only on platforms where they apply.
-- Keep the meaningful action visible and audible during overlapping events. Choose a small set of useful cues, avoid needless waiting, and disclose the reason for rejecting excessive effects.
+- Keep the meaningful action readable through the supported feedback channels during overlapping events. Choose a small set of useful cues, avoid needless waiting, and disclose the reason for rejecting excessive effects. Keep existing tuning controls or introduce only the few parameters the selected intervention actually needs; do not build a general effect framework.
 - Use supported editor/import workflows for serialized or binary resources. If unavailable, give known targets, properties, intended behavior, and verification steps; distinguish unapplied specifications from working changes.
 
 ## Verify and report
 
 Exercise initialization, input, acknowledgement, change, result, recovery, exit, and re-entry in the relevant runtime. Compare the same states before/after where possible, then inspect repetition and the busiest relevant case. Use normal project checks for changed code, and measure performance or timing when making such claims. Source inspection or a successful build alone does not prove visual quality.
+
+For selected techniques, use the observable checks and tuning method in [game-feel-selection.md](references/game-feel-selection.md). Verify affected timing boundaries, ownership/cancellation, frame-rate dependence, and multiplayer behavior where applicable. Separate functional correctness, experienced responsiveness/readability, and player preference; none proves the others. If runtime access is missing, deliver the code or unapplied specification appropriate to the request and name the remaining checks.
 
 For UI/HUD work, select the moments and input transitions affected by the change using `ui-hud-design.md`. Recheck those conditions after editing; record what was observed, what was instrumented, and what remains unverified.
 
