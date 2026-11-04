@@ -49,6 +49,21 @@ UI·HUD는 별도로 위치·모양·정보 구조·입력 영역·포커스·�
 
 표현 변경과 게임 규칙 변경을 구분합니다. 코요테 타임은 점프 가능 조건을, 실제 넉백은 위치를, 물리 히트스톱은 시간 진행을 바꿀 수 있습니다. 조작 개선 요청에 포함된 변경은 그 범위에서 다루고, 표현만 바꾸는 작업에서는 판정·규칙·보상을 보존합니다. 새 콘텐츠나 경제·밸런스 전면 개편을 임의로 추가하지 않습니다.
 
+## 게임풍에 맞는 이펙트 제작
+
+VFX를 제작할 때는 [game-vfx](https://github.com/Ddrubok/game-vfx)와 함께 사용할 수 있습니다. `bettermakegame`이 사건의 의미, 아트 스타일, 유지할 요소를 짧은 제작 기준으로 정리합니다. `game-vfx`는 그 기준으로 효과를 만들고 확인한 뒤, 실제 장면에서 검토할 결과와 근거를 돌려줍니다.
+
+제작 기준에는 필요한 형태·표면·색상의 의미·움직임·강조 정도·카메라 크기를 담습니다. 장르 이름이나 색상 변경만으로 스타일이 맞는다고 판단하지 않습니다. 참고 자료가 없으면 가정임을 밝히며, 효과만 따로 실행한 화면으로 게임 안에서의 조화를 입증하지 않습니다. 자세한 절차는 [vfx-handoff.md](references/vfx-handoff.md)에 있습니다.
+
+```text
+$bettermakegame $game-vfx
+현재 프로젝트의 디자인 자료와 게임 장면을 보고 게임풍에 맞는
+충돌 이펙트를 만들어 주세요. 충돌 판정과 턴 규칙은 유지하고,
+반복 충돌에서도 말과 선택 표시가 보이도록 실제 장면에서 확인해 주세요.
+```
+
+두 스킬은 각각 단독으로 사용할 수 있습니다. 같은 세션에서 지침을 이어 적용하는 방식이며, 별도 작업 에이전트나 연동 서버를 설치하지 않습니다. 이번 연계는 문서·패키지 검사를 마쳤지만 독립된 전체 스타일 제작·검토 평가는 **NOT RUN(미실행)**입니다.
+
 ## 설치
 
 GitHub에서 다운로드한 폴더를 `bettermakegame`이라는 이름으로 에이전트가 인식하는 스킬 경로에 두세요. `SKILL.md`, `references/`, `agents/`를 함께 보관해야 합니다.
@@ -135,6 +150,7 @@ node --test evals/game-feel/racer/controller.test.mjs
 | [feedback-flow-techniques.md](references/feedback-flow-techniques.md) | 타격·카메라·음향·흐름의 26개 후보 |
 | [ui-hud-design.md](references/ui-hud-design.md) | UI/HUD 배치·가독성·탐색·정체성 |
 | [gameplay-polish.md](references/gameplay-polish.md) | 중요한 사건의 흐름과 넓은 표현 검토 |
+| [vfx-handoff.md](references/vfx-handoff.md) | 게임풍 제작 기준과 game-vfx 결과 검토 |
 | [agents/openai.yaml](agents/openai.yaml) | Codex 표시용 정보 |
 
 [kill-game-slop](https://github.com/Ddrubok/kill-game-slop)은 산만함·중복·오해·조작 불편을 근거로 진단하고 국소적으로 고치는 데 집중합니다. `bettermakegame`은 상황에 맞는 기법 선택과 조작·UI·연출 설계까지 다룹니다. 두 스킬은 독립적으로 사용할 수 있으며 정해진 선후 순서는 없습니다.

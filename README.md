@@ -82,6 +82,22 @@ rules and selection cues. Report findings and checks; proposals only.
 
 Screenshots help with layout and state visibility. A playable build or video is needed to assess timing and motion; sound and haptics need suitable playback or devices. Automated tests can establish behavior such as input acceptance, not whether the game feels good to players.
 
+## Make effects that fit the game
+
+For VFX production, use this skill with [game-vfx](https://github.com/Ddrubok/game-vfx). Better Make Game establishes the event's meaning, art direction, and what must stay unchanged. Game VFX uses that short brief to build and inspect the effect, then returns the result for review in the actual scene.
+
+The brief covers relevant shape, surface, color meaning, motion, emphasis, and camera scale. A genre name or a palette swap alone does not establish a style match. Missing references remain a stated assumption; a standalone preview does not prove in-game fit. See [vfx-handoff.md](references/vfx-handoff.md).
+
+```text
+$bettermakegame $game-vfx
+Use this project's design references and game scene to make a matching
+collision effect. Preserve collision and turn rules. Keep the pieces and
+selection cues readable during repeated contacts, then check the result
+in the scene.
+```
+
+Both skills can be used independently. The handoff applies instructions in the same session; it does not launch workers or install an integration service. The new handoff has passed document/package checks, but an independent end-to-end style-matching evaluation is **NOT RUN**.
+
 ## Install
 
 OpenAI's [Build skills documentation](https://learn.chatgpt.com/docs/build-skills) describes user skills under `~/.agents/skills` and repository skills under `.agents/skills`. Clone this repository as one skill directory, keeping `SKILL.md`, `references/`, and `agents/` together:
@@ -113,9 +129,10 @@ The skill does not play a game by itself, guarantee player preference, or prove 
 | Skill | Scope |
 | --- | --- |
 | `bettermakegame` | Create or improve UI/HUD, controls, game feel, feedback, and important event flow. |
+| [game-vfx](https://github.com/Ddrubok/game-vfx) | Build, preview, export, and integrate visual effects using the game's references or a VFX brief. |
 | [kill-game-slop](https://github.com/Ddrubok/kill-game-slop) | Diagnose and locally repair distracting, redundant, misleading, or hard-to-use game presentation. |
 
-The skills are independent; neither is a prerequisite for the other. Both can add, simplify, move, or remove elements within the requested scope.
+The skills are independent; none is a prerequisite for the others. They can add, simplify, move, or remove elements within the requested scope.
 
 ## Files
 
@@ -125,4 +142,5 @@ The skills are independent; neither is a prerequisite for the other. Both can ad
 - [references/feedback-flow-techniques.md](references/feedback-flow-techniques.md): impact, camera, audio/haptics, and comprehension/flow candidates.
 - [references/ui-hud-design.md](references/ui-hud-design.md): UI/HUD analysis and design comparisons.
 - [references/gameplay-polish.md](references/gameplay-polish.md): event sequences and broad presentation review.
+- [references/vfx-handoff.md](references/vfx-handoff.md): game-style briefs and review of effects made with game-vfx.
 - [agents/openai.yaml](agents/openai.yaml): Codex display metadata.

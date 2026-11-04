@@ -19,6 +19,8 @@ Use this skill when creating requested UI or interactions, improving controls or
 
 `kill-game-slop` focuses on evidence-based diagnosis and scoped repair of distracting, redundant, misleading, or difficult-to-use presentation. Use `bettermakegame` for requested UI/HUD creation, broader layout or identity alternatives, and interaction or sequence improvements. Either skill may add, simplify, move, or remove an element when the task requires it. They are independent; do not require an automatic sequence or expand the authorized scope. `kill-ai-slop` handles general web product styling and copy.
 
+For VFX creation that must fit the game's art direction and feedback, read [vfx-handoff.md](references/vfx-handoff.md). Establish a short VFX brief from actual references and event semantics; use an available `game-vfx` skill for scoped effect production and review its returned evidence in the game context. Apply both sets of instructions in the same session without launching agents or repeatedly routing between skills. Each skill remains usable alone; an ordinary interaction fix does not require a VFX handoff or a whole-game audit.
+
 ## Select techniques for the situation
 
 For control feel, impact, camera, or play-flow work, use [game-feel-selection.md](references/game-feel-selection.md). Start with the player's task, observed friction or desired feeling, and actual implementation. Investigate dropped input, broken event routing, frame stalls, and incorrect state before adding forgiveness, smoothing, or spectacle.
