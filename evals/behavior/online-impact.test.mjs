@@ -38,6 +38,32 @@ test('ending a visual instance retains duplicate protection', () => {
   assert.equal(view.active.size, 0);
   assert.equal(view.bursts, 1);
 });
+test('finished confirmed effects stay finished after a newer correction', () => {
+  const view = new ImpactPresentation();
+  view.receive(event('confirmed'));
+  view.finish('hit');
+  assert.equal(view.receive(event('confirmed', 2, { point: { x: 9, y: 0 } })), false);
+  assert.equal(view.active.size, 0);
+  assert.equal(view.bursts, 1);
+});
+test('finished provisional effects cannot be promoted by a late confirmation', () => {
+  const view = new ImpactPresentation();
+  view.receive(event('pending'));
+  view.finish('hit');
+  view.receive(event('confirmed', 2));
+  assert.equal(view.active.size, 0);
+  assert.equal(view.bursts, 0);
+});
+test('finished history is per event and expires at the next round', () => {
+  const view = new ImpactPresentation();
+  view.receive(event('confirmed'));
+  view.finish('hit');
+  view.receive(event('confirmed', 1, { id: 'other' }));
+  assert.equal(view.active.has('other'), true);
+  view.nextRound('round-2');
+  view.receive(event('confirmed', 1, { round: 'round-2' }));
+  assert.equal(view.active.has('hit'), true);
+});
 test('a completed or rejected event cannot regress to a pending cue', () => {
   for (const state of ['confirmed', 'rejected']) {
     const view = new ImpactPresentation();
@@ -76,9 +102,20 @@ test('independent events and callers cannot overwrite one another', () => {
 test('effects disabled, single and duplicate delivery preserve the simulated world', () => {
   const baseline = simulate();
   const one = new ImpactPresentation(), duplicate = new ImpactPresentation();
-  assert.deepEqual(simulate(e => one.receive(e)), baseline);
-  assert.deepEqual(simulate(e => { duplicate.receive(e); duplicate.receive(e); }), baseline);
+  assert.deepEqual(simulate(one), baseline);
+  const repeated = { receive(e, world) { duplicate.receive(e, world); duplicate.receive(e, world); } };
+  assert.deepEqual(simulate(repeated), baseline);
   assert.equal(baseline.collisions, 1);
   assert.equal(duplicate.bursts, 1);
   assert.equal(baseline.tick, 60);
+});
+
+test('world-preservation assertion detects a presentation-side velocity write', () => {
+  const faulty = new ImpactPresentation();
+  const receive = faulty.receive.bind(faulty);
+  faulty.receive = (e, world) => { const result = receive(e); world.velocity = 7; return result; };
+  const baseline = simulate();
+  const corrupted = simulate(faulty);
+  assert.notDeepEqual(corrupted, baseline);
+  assert.throws(() => assert.deepEqual(corrupted, baseline), { code: 'ERR_ASSERTION' });
 });

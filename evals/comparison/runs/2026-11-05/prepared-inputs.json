@@ -1,0 +1,79 @@
+{
+  "status": "PREPARED; model evaluation NOT RUN",
+  "base_commit": "1ad3281d55ec5702325b57faf4a41cef2101382e",
+  "conditions": [
+    "short",
+    "skill"
+  ],
+  "input_hashes": {
+    "R01": {
+      "source": "2342acd83c65975d86832d6acf3d4d1c3f2304cce5a813b481ff4c197ba092f8",
+      "task": "d1f022a7fc45ae9a85aec72605c9dabd0db6dc5743283574ef221b989fc98b3e"
+    },
+    "E01": {
+      "source": "06f09ed21922f4b05514ebb80909f87a2e6d4f3d2e1fb27efaf5da63181bc368",
+      "task": "0db011a9e0d85e1579df509e1c80df52f68edb5fa48dac31dd285f69ddc449dc"
+    },
+    "J01": {
+      "source": "4f2744a1cb8dc4070826e73b7ca595dffe631dc16638ccf7161fd65964e0618f",
+      "task": "9217c0862c6016e6ccec2ae7bb0efc1824800ea5263c4b8cfafdac051a85c7a0"
+    }
+  },
+  "runtime_hashes": {
+    "agents/openai.yaml": "bb57949ab8824a2e08dcb4801095ebdd239f0744d18dcf15a2a8bf909ba1cfb8",
+    "LICENSE": "371b25f44c1f66b39cf7fdfeca50c7a5dfe92ccfa24f72b9eb5ee634064e86f1",
+    "references/audio-haptics.md": "924940b168a3d8af95a7406bc5df8001a2ba82c04a04ba8534091cb3f1a4da77",
+    "references/control-techniques.md": "b62cc7faa331636058295a23386ffac49aee4af3601f5c5fffef8ce18269fb64",
+    "references/engine-notes.md": "724474bfc29d5b8b95c7732f5dd83fd9f1981c84962504e99491482a0024c7a0",
+    "references/feedback-flow-techniques.md": "3ffcf0dd0387c5acb04dab81c36edf463338678ed54b63e25976a806a48f4d81",
+    "references/game-feel-selection.md": "1b05fe44d54d6d5fa252716e703eaf94f8cd331a2ba7cea1f663473952d1c13d",
+    "references/gameplay-polish.md": "11438d0b2a195c112234d43d012f4fdbc7cf63d144896eed90b1f7c316b0c069",
+    "references/tuning-evidence.md": "0c50fa83e49d214e37d2a4b89b583f7b5b7e9b0eb9ccdeaae08f8d2d3b870362",
+    "references/ui-hud-design.md": "cddcd1ec5060897a09d2ac70a24eb732ffba756d3aaf6fdcae71fae7bd0b0fe4",
+    "references/vfx-handoff.md": "1418950548d58d3af8a3371b8534329580262b4f545aece623fb7c1b0cb8db55",
+    "SKILL.md": "3f8fd2d738927073e9ecda42438ae5d6e5c7bd2f6bd03fca857375bb1f5ea903"
+  },
+  "limitations": [
+    "Fresh conversations required; file separation is not an OS sandbox",
+    "Judge files are intentionally withheld, but public fixtures and familiar cases prevent a claim of novel/blind research",
+    "One run per condition/case; no general improvement-rate estimate"
+  ],
+  "sessions": [
+    {
+      "id": "R01",
+      "condition": "short",
+      "folder": "R01-short",
+      "filename": "controller.mjs"
+    },
+    {
+      "id": "R01",
+      "condition": "skill",
+      "folder": "R01-skill",
+      "filename": "controller.mjs"
+    },
+    {
+      "id": "E01",
+      "condition": "short",
+      "folder": "E01-short",
+      "filename": "impact.mjs"
+    },
+    {
+      "id": "E01",
+      "condition": "skill",
+      "folder": "E01-skill",
+      "filename": "impact.mjs"
+    },
+    {
+      "id": "J01",
+      "condition": "short",
+      "folder": "J01-short",
+      "filename": "jump.mjs"
+    },
+    {
+      "id": "J01",
+      "condition": "skill",
+      "folder": "J01-skill",
+      "filename": "jump.mjs"
+    }
+  ]
+}

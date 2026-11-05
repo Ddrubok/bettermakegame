@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-05",
+  "base_commit": "1ad3281d55ec5702325b57faf4a41cef2101382e",
+  "before_observations": {
+    "revision": "1ad3281d55ec5702325b57faf4a41cef2101382e",
+    "kind": "synthetic model reproduction, not device timing",
+    "speed_at_0_4_seconds_throttle_0_005": 8.8,
+    "speed_at_1_5_seconds_throttle_0_005": 0.06,
+    "active_after_finish": 0,
+    "active_after_newer_revision": 1,
+    "callback_return_is_ignored": true
+  },
+  "node_regressions": {
+    "command": "node --test evals/behavior/jump.test.mjs evals/behavior/racer.test.mjs evals/behavior/online-impact.test.mjs evals/game-feel/racer/controller.test.mjs",
+    "node": "v22.18.0",
+    "passed": 38,
+    "failed": 0,
+    "cases": [
+      "grace: input at 99ms after leaving yields 1 jumps",
+      "grace: input at 100ms after leaving yields 1 jumps",
+      "grace: input at 101ms after leaving yields 0 jumps",
+      "buffer: landing 79ms after press yields 1 jumps",
+      "buffer: landing 80ms after press yields 1 jumps",
+      "buffer: landing 81ms after press yields 0 jumps",
+      "a held key and repeated press cannot spend one intent twice",
+      "modal transition clears buffered intent and grace",
+      "alive transition clears buffered intent and grace",
+      "press under a modal requires release and a new press after closing",
+      "the same timestamped inputs survive sparse and dense polling",
+      "clock reversal and invalid windows are rejected",
+      "pending is a preview; confirmation creates only one success burst",
+      "rejection cancels provisional effects; older confirmation cannot revive them",
+      "newer authoritative correction moves the cue without another burst",
+      "ending a visual instance retains duplicate protection",
+      "finished confirmed effects stay finished after a newer correction",
+      "finished provisional effects cannot be promoted by a late confirmation",
+      "finished history is per event and expires at the next round",
+      "a completed or rejected event cannot regress to a pending cue",
+      "round change drops old callbacks and permits a round-scoped reused ID",
+      "disposal clears instances and prevents late confirmation",
+      "independent events and callers cannot overwrite one another",
+      "effects disabled, single and duplicate delivery preserve the simulated world",
+      "world-preservation assertion detects a presentation-side velocity write",
+      "characterize historical 12→6 reduction at 1/6 second",
+      "local alternative keeps partial reduction gradual and settles at 0.75s",
+      "full release still stops within 0.4s, including after partial throttle",
+      "different step schedules give the same partial-throttle endpoint",
+      "maximum speed, full-release and steering behavior remain historical",
+      "release noise up to the configured deadzone reaches zero within 0.4s",
+      "intent just above the deadzone remains an active analog input",
+      "a calibrated release deadzone is configurable without changing half throttle",
+      "release noise during repeated samples cannot reaccelerate a stopped car",
+      "acceleration is gradual, frame-rate independent, and capped at 12 m/s",
+      "release stops from maximum speed within 0.4 seconds",
+      "small stick noise is ignored; larger steering changes are rate limited",
+      "keyboard -1/0/1 steering remains reachable and recenters"
+    ]
+  },
+  "world_write_mutation": {
+    "mutation": "Presentation receive() changes shared-world velocity to 7",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "detected_by": [
+      "effects disabled, single and duplicate delivery preserve the simulated world"
+    ],
+    "scope": "synthetic integration only"
+  },
+  "judge_self_check": [
+    {
+      "case": "R01",
+      "version": "defective",
+      "exit": 1,
+      "passed": 3,
+      "failed": 2
+    },
+    {
+      "case": "R01",
+      "version": "corrected",
+      "exit": 0,
+      "passed": 5,
+      "failed": 0
+    },
+    {
+      "case": "E01",
+      "version": "defective",
+      "exit": 1,
+      "passed": 3,
+      "failed": 1
+    },
+    {
+      "case": "E01",
+      "version": "corrected",
+      "exit": 0,
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "case": "J01",
+      "version": "defective",
+      "exit": 1,
+      "passed": 3,
+      "failed": 2
+    },
+    {
+      "case": "J01",
+      "version": "corrected",
+      "exit": 0,
+      "passed": 5,
+      "failed": 0
+    }
+  ],
+  "model_comparison": {
+    "sessions": 6,
+    "short_passed": 14,
+    "skill_passed": 14,
+    "added_correctness_benefit_observed": false,
+    "record": "../comparison/runs/2026-11-05/report.md"
+  },
+  "browser": "Earlier 9-check modal result retained; source unchanged and not rerun in this follow-up",
+  "not_run": [
+    "Historical U/V comparisons",
+    "Human preference/playtests",
+    "Korean automatic activation rate",
+    "Physical controllers/audio/haptics",
+    "Real networking",
+    "Unity/Godot/Unreal runtime"
+  ],
+  "external_sources": "Celeste Player, Unity InputSettings 1.13.1 and Unreal Quartz text inspected; see README source table"
+}

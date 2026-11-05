@@ -3,7 +3,8 @@ name: bettermakegame
 description: >-
   Design and improve game UI/HUD, controls, game feel, feedback, and event
   sequences. Use for bettermakegame, game-feel technique recommendations,
-  awkward movement or aiming, weak impact, unclear outcomes, and requested
+  awkward movement or aiming, weak impact, unclear outcomes, 게임 조작감 개선,
+  타격감·피드백 개선, 게임 UI/HUD 설계·개선, 게임 연출 다듬기, and requested
   usability or polish work. Select, implement, and tune techniques for the
   actual player situation across genres. Does not imply an unsolicited
   whole-game audit, new gameplay content, or economy/balance overhaul.

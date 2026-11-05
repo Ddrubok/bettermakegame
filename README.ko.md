@@ -53,7 +53,7 @@ UI·HUD는 별도로 위치·모양·정보 구조·입력 영역·포커스·�
 
 VFX를 제작할 때는 [game-vfx](https://github.com/Ddrubok/game-vfx)와 함께 사용할 수 있습니다. `bettermakegame`이 사건의 의미, 아트 스타일, 유지할 요소를 짧은 제작 기준으로 정리합니다. `game-vfx`는 그 기준으로 효과를 만들고 확인한 뒤, 실제 장면에서 검토할 결과와 근거를 돌려줍니다.
 
-제작 기준에는 필요한 형태·표면·색상의 의미·움직임·강조 정도·카메라 크기를 담습니다. 장르 이름이나 색상 변경만으로 스타일이 맞는다고 판단하지 않습니다. 참고 자료가 없으면 가정임을 밝히며, 효과만 따로 실행한 화면으로 게임 안에서의 조화를 입증하지 않습니다. 자세한 절차는 [vfx-handoff.md](references/vfx-handoff.md)에 있습니다.
+제작 기준에는 필요한 형태·표면·색상의 의미·움직임·강조 정도·카메라 크기를 담습니다. 장르 이름이나 색상 변경만으로 스타일이 맞는다고 판단하지 않습니다. 참고 자료가 없으면 가정임을 밝히며, 효과만 따로 실행한 화면으로 게임 안에서의 조화를 입증하지 않습니다. 자세한 절차는 [vfx-handoff.md](skills/bettermakegame/references/vfx-handoff.md)에 있습니다.
 
 ```text
 $bettermakegame $game-vfx
@@ -66,27 +66,31 @@ $bettermakegame $game-vfx
 
 ## 설치
 
-GitHub에서 다운로드한 폴더를 `bettermakegame`이라는 이름으로 에이전트가 인식하는 스킬 경로에 두세요. `SKILL.md`, `references/`, `agents/`를 함께 보관해야 합니다.
+호스트가 스킬을 검색하는 경로에는 [`skills/bettermakegame`](skills/bettermakegame/SKILL.md) 폴더만 넣으세요. `SKILL.md`, `references/`, `agents/`, `LICENSE`가 들어 있습니다. 저장소 루트는 개발용이며, 완성 예제와 판정 기준이 있는 `evals/`는 일반 스킬 설치 경로 밖에 둡니다.
 
-현재 Codex 공식 문서는 사용자 스킬 경로로 `~/.agents/skills`, 프로젝트별 경로로 `.agents/skills`를 안내합니다. 다음은 사용자 경로에 설치하는 예시입니다. [공식 설치·검색 경로 안내](https://learn.chatgpt.com/docs/build-skills)
+먼저 소스 저장소를 스킬 경로 밖에 복제한 뒤 실행 패키지만 복사합니다. 아래 예시는 `~/.agents/skills`를 사용하며, 실제 호스트 설정에 맞는 경로로 바꿀 수 있습니다.
 
 macOS / Linux:
 
 ```sh
-mkdir -p ~/.agents/skills
-git clone https://github.com/Ddrubok/bettermakegame.git ~/.agents/skills/bettermakegame
+git clone https://github.com/Ddrubok/bettermakegame.git bettermakegame-source
+mkdir -p ~/.agents/skills/bettermakegame
+cp -R bettermakegame-source/skills/bettermakegame/. ~/.agents/skills/bettermakegame/
 ```
 
 Windows PowerShell:
 
 ```powershell
-New-Item -ItemType Directory -Force "$env:USERPROFILE/.agents/skills" | Out-Null
-git clone https://github.com/Ddrubok/bettermakegame.git "$env:USERPROFILE/.agents/skills/bettermakegame"
+git clone https://github.com/Ddrubok/bettermakegame.git bettermakegame-source
+New-Item -ItemType Directory -Force "$env:USERPROFILE/.agents/skills/bettermakegame" | Out-Null
+Copy-Item -Path ".\bettermakegame-source\skills\bettermakegame\*" -Destination "$env:USERPROFILE/.agents/skills/bettermakegame" -Recurse -Force
 ```
 
-이미 설치되어 있다면 로컬 변경을 보존하면서 기존 사본을 갱신하세요. 관리자의 Orca 환경처럼 `~/.codex/skills`를 사용하는 설정도 있으므로, 인식되는 경로를 확인하고 같은 이름의 사본을 여러 경로에 중복 설치하지 않는 편이 좋습니다. 변경이 보이지 않으면 Codex를 다시 시작하세요.
+프로젝트 전용 설치는 해당 프로젝트의 스킬 검색 경로를 사용합니다. `$skill-installer`에는 저장소 `Ddrubok/bettermakegame`과 경로 `skills/bettermakegame`을 지정하세요. 다른 호스트도 Markdown을 읽을 수 있으나 자동 검색·활성화를 인증한 것은 아닙니다. 관리자의 Orca 설정은 `~/.codex/skills`를 사용합니다. 여러 검색 경로에 중복 설치하지 마세요.
 
-스킬 자체에는 별도 API 키·MCP 서버·런타임 설치가 필요하지 않습니다. 다른 에이전트에도 지침을 제공할 수 있지만 자동 검색·호출과 실제 게임 편집 도구 지원은 호스트별로 확인해야 합니다.
+예전에 저장소 전체를 스킬 폴더에 복제했다면 로컬 변경을 보존하고 개발용 사본을 스킬 검색 경로 밖으로 옮긴 뒤 실행 폴더만 설치하세요. 이전 작업이나 평가 이력을 삭제할 필요는 없습니다. 필요한 경우 스킬 목록을 새로 고치거나 새 세션을 시작하세요. 판정 파일을 분리하면 우발적인 노출을 줄일 수 있지만, 파일 접근 권한이 있는 에이전트를 차단하는 보안 격리는 아닙니다.
+
+스킬 자체에는 별도 API 키·MCP 서버·런타임 설치가 필요하지 않습니다. 실제 게임 작업에는 프로젝트와 에디터·빌드·기기 도구가 필요합니다.
 
 ## 사용 예시
 
@@ -144,17 +148,17 @@ node --test evals/game-feel/racer/controller.test.mjs
 
 | 파일 | 역할 |
 | --- | --- |
-| [SKILL.md](SKILL.md) | 에이전트가 읽는 핵심 절차와 범위 |
-| [game-feel-selection.md](references/game-feel-selection.md) | 상황 진단, 기법 선택, 적용·조절·검증 |
-| [control-techniques.md](references/control-techniques.md) | 입력·이동·조준·조작의 22개 후보 |
-| [feedback-flow-techniques.md](references/feedback-flow-techniques.md) | 타격·카메라·흐름의 22개 후보 |
-| [audio-haptics.md](references/audio-haptics.md) | 음향·진동의 8개 후보와 청취·실기기 검증 구분 |
-| [engine-notes.md](references/engine-notes.md) | 필요한 엔진만 읽는 Unity·Godot·Unreal·Web 구현 안내 |
-| [tuning-evidence.md](references/tuning-evidence.md) | 출처가 있는 참고 수치, 실험값과 한계 |
-| [ui-hud-design.md](references/ui-hud-design.md) | UI/HUD 배치·가독성·탐색·정체성 |
-| [gameplay-polish.md](references/gameplay-polish.md) | 중요한 사건의 흐름과 넓은 표현 검토 |
-| [vfx-handoff.md](references/vfx-handoff.md) | 게임풍 제작 기준과 game-vfx 결과 검토 |
-| [agents/openai.yaml](agents/openai.yaml) | Codex 표시용 정보 |
+| [SKILL.md](skills/bettermakegame/SKILL.md) | 에이전트가 읽는 핵심 절차와 범위 |
+| [game-feel-selection.md](skills/bettermakegame/references/game-feel-selection.md) | 상황 진단, 기법 선택, 적용·조절·검증 |
+| [control-techniques.md](skills/bettermakegame/references/control-techniques.md) | 입력·이동·조준·조작의 22개 후보 |
+| [feedback-flow-techniques.md](skills/bettermakegame/references/feedback-flow-techniques.md) | 타격·카메라·흐름의 22개 후보 |
+| [audio-haptics.md](skills/bettermakegame/references/audio-haptics.md) | 음향·진동의 8개 후보와 청취·실기기 검증 구분 |
+| [engine-notes.md](skills/bettermakegame/references/engine-notes.md) | 필요한 엔진만 읽는 Unity·Godot·Unreal·Web 구현 안내 |
+| [tuning-evidence.md](skills/bettermakegame/references/tuning-evidence.md) | 출처가 있는 참고 수치, 실험값과 한계 |
+| [ui-hud-design.md](skills/bettermakegame/references/ui-hud-design.md) | UI/HUD 배치·가독성·탐색·정체성 |
+| [gameplay-polish.md](skills/bettermakegame/references/gameplay-polish.md) | 중요한 사건의 흐름과 넓은 표현 검토 |
+| [vfx-handoff.md](skills/bettermakegame/references/vfx-handoff.md) | 게임풍 제작 기준과 game-vfx 결과 검토 |
+| [agents/openai.yaml](skills/bettermakegame/agents/openai.yaml) | Codex 표시용 정보 |
 
 [kill-game-slop](https://github.com/Ddrubok/kill-game-slop)은 산만함·중복·오해·조작 불편을 근거로 진단하고 국소적으로 고치는 데 집중합니다. `bettermakegame`은 상황에 맞는 기법 선택과 조작·UI·연출 설계까지 다룹니다. 두 스킬은 독립적으로 사용할 수 있으며 정해진 선후 순서는 없습니다.
 
@@ -162,4 +166,10 @@ node --test evals/game-feel/racer/controller.test.mjs
 
 핵심 지침에서 필요한 주제만 골라 읽도록 정리하고, 음향·진동을 별도 문서로 나눴습니다. 오디오 후보 4개를 추가해 전체는 52개입니다. 엔진별 안내는 입력 소유권, 모달 포커스, 시간 기준, 오디오 예약을 다룹니다. 출처가 있는 수치는 참고 사례이며 공통 권장값이 아닙니다. 패키지에는 [MIT 라이선스](LICENSE)를 추가했습니다. 연결된 외부 자료에는 해당 자료의 이용 조건이 적용됩니다.
 
-[새 회귀 검증 예제](evals/behavior/README.md)는 점프 시간 경계, 모달 포커스, 온라인 이벤트 소유권, 명시적으로 정한 반스로틀 감속 대안을 다룹니다. 결과와 현재 실행 지침의 파일 해시는 2026-10-31 기록과 분리했습니다. 당시 스냅샷은 이후 VFX 연계나 현재 지침을 평가한 기록이 아닙니다. 코드 검사는 모델의 판단이나 게임 체감 향상을 입증하지 않습니다. 기존 U/V 행동 비교와 사람·실기기 평가는 계속 NOT RUN(미실행)입니다.
+[회귀 검증 예제](evals/behavior/README.md)는 점프 시간 경계, 모달 포커스, 온라인 이벤트 소유권, 명시적으로 정한 반스로틀 감속 대안을 다룹니다. `1ad3281`에 게시한 첫 결과와 스냅샷은 2026-10-31 기록과 함께 과거 근거로 보존했습니다. 두 과거 스냅샷 모두 현재 후보를 설명하지 않으며, 현재 검증은 아래 후속 기록을 사용합니다. 코드 검사는 모델의 판단이나 게임 체감 향상을 입증하지 않습니다. 기존 U/V 행동 비교와 사람·실기기 평가는 계속 NOT RUN(미실행)입니다.
+
+## 피드백 후속 수정
+
+현재 후보의 검증은 처음 예제 스냅샷 이후의 [수정 기록](evals/review-fixes-2026-11-05/README.md)에 있습니다. 아날로그 해제 잔류 입력, 높은 revision으로 종료 효과가 되살아나는 문제를 수정하고, 월드 변경 결함을 잡아내는 대조 검사와 오디오 직접 연결을 추가했습니다. Node 회귀 검사 38개가 통과했습니다. 실행 파일은 `skills/bettermakegame`, 완성 예제와 판정 기준은 `evals/`로 분리했습니다. description에 한국어 작업 문구를 넣었지만 한국어 자동 호출률은 측정하지 않았습니다.
+
+[새 Astra 비교](evals/comparison/runs/2026-11-05/report.md)에서는 결함 시작본 3개를 짧은 프롬프트와 전체 스킬 조건으로 각각 실행했습니다. 사례·조건당 1회씩 총 6세션이며, 양쪽 모두 사전에 정한 14개 검사를 통과했습니다. 이번처럼 요구사항이 분명한 작은 수정에서는 전체 스킬의 추가 정확도 이점이 확인되지 않았습니다. 전체 스킬 결과물 하나에서 사후 발견한 정리 경로 문제도 별도로 기록했습니다. 익숙한 소수 사례의 결과이며, 일반적인 정확도·속도 향상으로 해석하지 않습니다.

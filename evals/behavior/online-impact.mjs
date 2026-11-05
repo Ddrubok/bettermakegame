@@ -13,6 +13,8 @@ export class ImpactPresentation {
     if (!event.id || !Number.isSafeInteger(event.revision) || event.revision < 1 ||
         !['pending', 'confirmed', 'rejected'].includes(event.state)) throw new TypeError('bad event');
     const previous = this.events.get(event.id);
+    // Completion closes this event's presentation lifetime, not only a revision.
+    if (previous?.finished) return false;
     if (previous && event.revision <= previous.revision) return false;
     if (previous && previous.state !== 'pending' && event.state === 'pending') return false;
     const confirmedBefore = previous?.confirmedBefore || false;
@@ -26,7 +28,11 @@ export class ImpactPresentation {
     }
     return true;
   }
-  finish(id) { this.active.delete(id); } // Keep deduplication history for this round.
+  finish(id) {
+    this.active.delete(id);
+    const history = this.events.get(id);
+    if (history) history.finished = true; // Keep the tombstone until the next round.
+  }
   nextRound(round) {
     if (this.closed) throw new Error('disposed owner');
     this.round = round;
@@ -37,8 +43,9 @@ export class ImpactPresentation {
 }
 
 export function simulate(presentation, ticks = 60) {
-  // Synthetic fixed-step wall collision; the presentation callback receives no
-  // mutable world reference. This is not a real multiplayer/physics integration.
+  // Synthetic integration boundary: deliberately expose shared world state to
+  // the adapter so an illegal presentation write is observable by the tests.
+  // This is a regression harness, not a recommended production authority API.
   const world = { tick: 0, x: 0, velocity: 1, collisions: 0 };
   for (let i = 0; i < ticks; i++) {
     world.tick++;
@@ -46,8 +53,8 @@ export function simulate(presentation, ticks = 60) {
     if (world.x >= .25 && world.velocity > 0) {
       world.velocity = -world.velocity;
       world.collisions++;
-      presentation?.(Object.freeze({ id: 'wall-1', round: 'round-1', revision: 1,
-        state: 'confirmed', point: Object.freeze({ x: world.x, y: 0 }) }));
+      presentation?.receive(Object.freeze({ id: 'wall-1', round: 'round-1', revision: 1,
+        state: 'confirmed', point: Object.freeze({ x: world.x, y: 0 }) }), world);
     }
   }
   return world;

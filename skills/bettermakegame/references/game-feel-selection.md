@@ -17,7 +17,7 @@ For a broad recommendation, explore the relevant families; for a narrow task, st
 | Picking, aiming, dragging, charging, touch obstruction | [Control: aiming and manipulation](control-techniques.md) |
 | Contact, weight, anticipation, readable attack/reaction | [Feedback: impact and motion](feedback-flow-techniques.md#impact-and-motion) |
 | Tracking, spatial orientation, camera obstruction | [Feedback: camera](feedback-flow-techniques.md#camera) |
-| Mix, contact synchronization, repetition, physical acknowledgement | [Feedback: audio and haptics](feedback-flow-techniques.md#audio-and-haptics) |
+| Mix, contact synchronization, repetition, physical acknowledgement | [Audio and haptics](audio-haptics.md) |
 | Puzzles, planning, causality, failure/retry, repeated interactions | [Feedback: comprehension and flow](feedback-flow-techniques.md#comprehension-and-flow) |
 | Hierarchy, layout, focus, localization, identity | [UI/HUD design](ui-hud-design.md) |
 | A whole important sequence or presentation review | [Gameplay polish](gameplay-polish.md) |

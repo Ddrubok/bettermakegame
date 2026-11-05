@@ -34,3 +34,27 @@ test('maximum speed, full-release and steering behavior remain historical', () =
     assert.ok(candidate.speed >= 0 && candidate.speed <= 12);
   }
 });
+
+test('release noise up to the configured deadzone reaches zero within 0.4s', () => {
+  for (const throttle of [0, .005, .009999, .01]) {
+    let state = initial;
+    for (let i = 0; i < 40; i++) state = step(state, { throttle, steer: 0 }, .01);
+    close(state.speed, 0);
+  }
+});
+test('intent just above the deadzone remains an active analog input', () => {
+  const state = step({ speed: 0, steering: 0 }, { throttle: .010001, steer: 0 }, .4);
+  assert.ok(state.speed > 0);
+  close(state.speed, .010001 * 12);
+});
+test('a calibrated release deadzone is configurable without changing half throttle', () => {
+  close(step(initial, { throttle: .015, steer: 0 }, .4, { releaseDeadzone: .02 }).speed, 0);
+  close(step(initial, { throttle: .5, steer: 0 }, .5, { releaseDeadzone: .02 }).speed, 8);
+});
+test('release noise during repeated samples cannot reaccelerate a stopped car', () => {
+  let state = initial;
+  for (let i = 0; i < 80; i++) {
+    state = step(state, { throttle: [0, .005, .009, 0][i % 4], steer: 0 }, .01);
+    if (i >= 39) close(state.speed, 0);
+  }
+});

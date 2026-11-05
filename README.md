@@ -14,7 +14,7 @@ Use it for a specific problem (a missed jump, nervous steering, an unreadable hi
 4. **Implement within scope.** A recommendation request yields recommendations. A build or fix request permits a focused change using the project's existing systems. Preserve intended challenge, identity, accessibility, and unrelated rules.
 5. **Verify the result.** Reproduce the same moment before and after where possible. Check boundaries, repetition, interruption, and the busiest relevant case. Report runtime observations, automated checks, and remaining device or player-testing limits separately.
 
-The decision workflow is in [game-feel-selection.md](references/game-feel-selection.md). Its technique tables are an **open-ended candidate library**, not 52 plug-and-play scripts, recommended defaults, or a checklist of required effects. An agent can use a mechanism outside the tables when the game warrants it.
+The decision workflow is in [game-feel-selection.md](skills/bettermakegame/references/game-feel-selection.md). Its technique tables are an **open-ended candidate library**, not 52 plug-and-play scripts, recommended defaults, or a checklist of required effects. An agent can use a mechanism outside the tables when the game warrants it.
 
 ## Candidate library
 
@@ -30,7 +30,7 @@ The three technique references contain 52 situation-led rows:
 | Audio and haptics | 8 | Many contacts muddy the mix: examine voice priority or ducking, then listen to recovery. |
 | Comprehension and flow | 8 | A puzzle move has an unclear consequence: show a truthful preview before commitment. |
 
-See [control-techniques.md](references/control-techniques.md) and [feedback-flow-techniques.md](references/feedback-flow-techniques.md) for mechanisms, tuning dimensions, limits, and observable checks. The rows are prompts for investigation. Suitability depends on genre, actual mechanics, devices, performance, and intended difficulty. A cozy interaction may need a clear settling cue; a competitive game may reject hidden target snapping. Suggested parameters are trial values to measure and tune in the project, never universal presets.
+See [control-techniques.md](skills/bettermakegame/references/control-techniques.md) and [feedback-flow-techniques.md](skills/bettermakegame/references/feedback-flow-techniques.md) for mechanisms, tuning dimensions, limits, and observable checks. The rows are prompts for investigation. Suitability depends on genre, actual mechanics, devices, performance, and intended difficulty. A cozy interaction may need a clear settling cue; a competitive game may reject hidden target snapping. Suggested parameters are trial values to measure and tune in the project, never universal presets.
 
 ### Know what the change affects
 
@@ -45,9 +45,9 @@ Names alone do not determine safety: camera kick can move an aim ray, and a visu
 
 ## UI/HUD and event sequences
 
-The [UI/HUD design guide](references/ui-hud-design.md) covers information hierarchy, placement, shape, focus, touch and controller operation, accessibility, and visual identity. It separates confirmed defects, unverified usability hypotheses, optional proposals, and elements worth preserving. For a redesign, compare the baseline with a small number of alternatives and state their gains, losses, and checks.
+The [UI/HUD design guide](skills/bettermakegame/references/ui-hud-design.md) covers information hierarchy, placement, shape, focus, touch and controller operation, accessibility, and visual identity. It separates confirmed defects, unverified usability hypotheses, optional proposals, and elements worth preserving. For a redesign, compare the baseline with a small number of alternatives and state their gains, losses, and checks.
 
-The [gameplay polish guide](references/gameplay-polish.md) traces important events from input and anticipation through action, result, and return of control. It covers feedback across UI, motion, camera, sound, and supported haptics, while keeping routine actions quick. Apply only stages relevant to the game; a puzzle need not gain combat effects, and an immediate button should not acquire an artificial wind-up.
+The [gameplay polish guide](skills/bettermakegame/references/gameplay-polish.md) traces important events from input and anticipation through action, result, and return of control. It covers feedback across UI, motion, camera, sound, and supported haptics, while keeping routine actions quick. Apply only stages relevant to the game; a puzzle need not gain combat effects, and an immediate button should not acquire an artificial wind-up.
 
 ## Use
 
@@ -86,7 +86,7 @@ Screenshots help with layout and state visibility. A playable build or video is 
 
 For VFX production, use this skill with [game-vfx](https://github.com/Ddrubok/game-vfx). Better Make Game establishes the event's meaning, art direction, and what must stay unchanged. Game VFX uses that short brief to build and inspect the effect, then returns the result for review in the actual scene.
 
-The brief covers relevant shape, surface, color meaning, motion, emphasis, and camera scale. A genre name or a palette swap alone does not establish a style match. Missing references remain a stated assumption; a standalone preview does not prove in-game fit. See [vfx-handoff.md](references/vfx-handoff.md).
+The brief covers relevant shape, surface, color meaning, motion, emphasis, and camera scale. A genre name or a palette swap alone does not establish a style match. Missing references remain a stated assumption; a standalone preview does not prove in-game fit. See [vfx-handoff.md](skills/bettermakegame/references/vfx-handoff.md).
 
 ```text
 $bettermakegame $game-vfx
@@ -100,23 +100,29 @@ Both skills can be used independently. The handoff applies instructions in the s
 
 ## Install
 
-OpenAI's [Build skills documentation](https://learn.chatgpt.com/docs/build-skills) describes user skills under `~/.agents/skills` and repository skills under `.agents/skills`. Clone this repository as one skill directory, keeping `SKILL.md`, `references/`, and `agents/` together:
+Install only [`skills/bettermakegame`](skills/bettermakegame/SKILL.md) into the directory your host discovers as skills. It contains `SKILL.md`, `references/`, `agents/` and `LICENSE`. The repository root is for development; `evals/` contains completed examples and judge criteria and must stay outside normal skill installation.
+
+Clone the source outside your host's skill directory, then copy the runtime package. These examples use `~/.agents/skills`; use the equivalent path for your actual host/configuration.
 
 ```sh
-mkdir -p ~/.agents/skills
-git clone https://github.com/Ddrubok/bettermakegame.git ~/.agents/skills/bettermakegame
+git clone https://github.com/Ddrubok/bettermakegame.git bettermakegame-source
+mkdir -p ~/.agents/skills/bettermakegame
+cp -R bettermakegame-source/skills/bettermakegame/. ~/.agents/skills/bettermakegame/
 ```
 
 Windows PowerShell:
 
 ```powershell
-New-Item -ItemType Directory -Force "$env:USERPROFILE/.agents/skills" | Out-Null
-git clone https://github.com/Ddrubok/bettermakegame.git "$env:USERPROFILE\.agents\skills\bettermakegame"
+git clone https://github.com/Ddrubok/bettermakegame.git bettermakegame-source
+New-Item -ItemType Directory -Force "$env:USERPROFILE/.agents/skills/bettermakegame" | Out-Null
+Copy-Item -Path ".\bettermakegame-source\skills\bettermakegame\*" -Destination "$env:USERPROFILE/.agents/skills/bettermakegame" -Recurse -Force
 ```
 
-For a project-specific install, clone into that repository's `.agents/skills/bettermakegame` instead. You can also ask `$skill-installer` to install from this public [GitHub repository](https://github.com/Ddrubok/bettermakegame). The maintainer's Orca configuration additionally recognizes `~/.codex/skills`; that is environment-specific. Use one discovery location for a given host to avoid duplicate copies. Refresh the host's skill list or start a new session if needed. Other agent hosts can read the Markdown instructions, but automatic discovery and activation depend on the host and have not been verified across hosts.
+For a project install, use the project's skill-discovery directory. With `$skill-installer`, specify repository `Ddrubok/bettermakegame` and path `skills/bettermakegame`. Other hosts may read the Markdown, but their automatic discovery/activation has not been certified. The maintainer's Orca configuration uses `~/.codex/skills`; avoid duplicate installs in several discovery roots.
 
-The skill needs no bundled runtime or separate API key. Implementing a change still requires access to the actual game project and its normal editor, build, and execution tools.
+If you previously cloned the whole repository into a skill directory, preserve local changes and move that development clone outside skill-discovery roots before installing the runtime folder. Do not delete your checkout or its evaluation history to migrate. Refresh the skill list or start a new session when needed. Keeping judge files outside the runtime reduces accidental exposure; it is not an access-control sandbox for an agent with filesystem access.
+
+The skill needs no separate API key, MCP server or runtime installation. Actual game work still requires its project and normal editor/build/device tools.
 
 ## Evaluation and limits
 
@@ -136,20 +142,26 @@ The skills are independent; none is a prerequisite for the others. They can add,
 
 ## Files
 
-- [SKILL.md](SKILL.md): scope and main workflow.
-- [references/game-feel-selection.md](references/game-feel-selection.md): situation-led selection, implementation, and verification.
-- [references/control-techniques.md](references/control-techniques.md): input, movement, aiming, and manipulation candidates.
-- [references/feedback-flow-techniques.md](references/feedback-flow-techniques.md): 22 impact, camera, and comprehension/flow candidates.
-- [references/audio-haptics.md](references/audio-haptics.md): eight audio/haptic candidates and what requires listening or a physical device.
-- [references/engine-notes.md](references/engine-notes.md): conditional Unity, Godot, Unreal and Web integration notes.
-- [references/tuning-evidence.md](references/tuning-evidence.md): sourced reference values, local trials and their limits.
-- [references/ui-hud-design.md](references/ui-hud-design.md): UI/HUD analysis and design comparisons.
-- [references/gameplay-polish.md](references/gameplay-polish.md): event sequences and broad presentation review.
-- [references/vfx-handoff.md](references/vfx-handoff.md): game-style briefs and review of effects made with game-vfx.
-- [agents/openai.yaml](agents/openai.yaml): Codex display metadata.
+- [SKILL.md](skills/bettermakegame/SKILL.md): scope and main workflow.
+- [references/game-feel-selection.md](skills/bettermakegame/references/game-feel-selection.md): situation-led selection, implementation, and verification.
+- [references/control-techniques.md](skills/bettermakegame/references/control-techniques.md): input, movement, aiming, and manipulation candidates.
+- [references/feedback-flow-techniques.md](skills/bettermakegame/references/feedback-flow-techniques.md): 22 impact, camera, and comprehension/flow candidates.
+- [references/audio-haptics.md](skills/bettermakegame/references/audio-haptics.md): eight audio/haptic candidates and what requires listening or a physical device.
+- [references/engine-notes.md](skills/bettermakegame/references/engine-notes.md): conditional Unity, Godot, Unreal and Web integration notes.
+- [references/tuning-evidence.md](skills/bettermakegame/references/tuning-evidence.md): sourced reference values, local trials and their limits.
+- [references/ui-hud-design.md](skills/bettermakegame/references/ui-hud-design.md): UI/HUD analysis and design comparisons.
+- [references/gameplay-polish.md](skills/bettermakegame/references/gameplay-polish.md): event sequences and broad presentation review.
+- [references/vfx-handoff.md](skills/bettermakegame/references/vfx-handoff.md): game-style briefs and review of effects made with game-vfx.
+- [agents/openai.yaml](skills/bettermakegame/agents/openai.yaml): Codex display metadata.
 
 ## This update
 
 The entrypoint now routes to only the affected topic; audio/haptics has its own reference. Four new audio candidates bring the library to 52. Engine notes cover input ownership, modal focus, clocks and audio scheduling. Sourced values are examples, not presets. The package is under the [MIT license](LICENSE); linked third-party material retains its own terms.
 
-The [new regression fixtures](evals/behavior/README.md) cover jump-window boundaries, modal focus, online event ownership and an explicit partial-throttle alternative. Their results and current runtime-file hashes are separate from the unchanged 2026-10-31 snapshot. That historical snapshot does not cover later VFX handoff edits or the current skill. Code checks do not establish better model judgment or game feel; the historical U/V behavior comparisons and human/device evaluations remain NOT RUN.
+The [regression fixtures](evals/behavior/README.md) cover jump-window boundaries, modal focus, online event ownership and an explicit partial-throttle alternative. Their first result and snapshot, published in `1ad3281`, are retained as historical evidence alongside the unchanged 2026-10-31 record. Neither historical snapshot describes the current candidate; use the follow-up record below. Code checks do not establish better model judgment or game feel; the historical U/V behavior comparisons and human/device evaluations remain NOT RUN.
+
+## Feedback follow-up
+
+The [repair record](evals/review-fixes-2026-11-05/README.md) supersedes the first fixture snapshot for the current candidate. It fixes residual analog release input, prevents finished effects returning on newer revisions, adds a world-write negative control, and routes audio work directly. Thirty-eight Node regression tests passed. Runtime files are now under `skills/bettermakegame`; completed examples and judge criteria stay in `evals/`. The description includes Korean task phrases, but Korean automatic activation has not been measured.
+
+A [fresh Astra comparison](evals/comparison/runs/2026-11-05/report.md) ran three defective starts with a short prompt and the full skill: six sessions, one per case/condition. Both conditions passed all 14 predefined checks. This did not demonstrate an added correctness benefit from the full skill for these explicit small repairs. The report preserves a separate post-hoc cleanup concern in one full-skill output and the limits of this small, familiar case set; no general accuracy or speed improvement is claimed.

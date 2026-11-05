@@ -9,7 +9,7 @@ These are maintainer regression fixtures added on 2026-11-05. They test bounded 
 | `online-impact.mjs` | Pending versus confirmed cues, duplicate/reordered trusted events, corrections, round ownership and disposal; unchanged toy simulation | Real transport, server authentication, packet loss, prediction physics, VFX rendering or online stability |
 | `racer.mjs` | Historical half-throttle characterization and an explicit separate partial-deceleration alternative; full-release requirement preserved | Which transition a player prefers; a defect in an unspecified original requirement |
 
-The jump fixture uses inclusive integer-millisecond boundaries and configured 100 ms grace / 80 ms buffer. Those are local fixture conditions, not recommended presets. The racing alternative is explained in [tuning-evidence.md](../../references/tuning-evidence.md). The online fixture is a round-bounded toy: a production adapter needs its protocol's authenticated events, bounded history and real lifecycle.
+The jump fixture uses inclusive integer-millisecond boundaries and configured 100 ms grace / 80 ms buffer. Those are local fixture conditions, not recommended presets. The racing alternative is explained in [tuning-evidence.md](../../skills/bettermakegame/references/tuning-evidence.md). The online fixture is a round-bounded toy: a production adapter needs its protocol's authenticated events, bounded history and real lifecycle. The integration harness deliberately passes shared world state to the adapter so an illegal write is observable; a negative control confirms that the same preservation assertion fails when presentation changes velocity. This test-only exposure is not a recommended production authority API.
 
 ## Run
 
@@ -29,7 +29,7 @@ Generated browser artifacts go to the selected folder (default `browser-output` 
 
 ## Evidence and versioning
 
-See [results.json](results.json) for the actual run and [skill-snapshot.json](skill-snapshot.json) for the current runtime files and fixture hashes. The previous [2026-10-31 snapshot](../game-feel/skill-snapshot.json), worker implementation and four tests are preserved. Its missing later VFX handoff file is a limit of that historical evaluation, not a reason to overwrite the snapshot.
+The [results.json](results.json) and [skill-snapshot.json](skill-snapshot.json) preserve the historical run published in `1ad3281`; their paths/hashes describe the old root-level runtime layout. They are not the current-candidate result. See the [feedback repair record](../review-fixes-2026-11-05/README.md) for the newer checks and relocated runtime. The previous [2026-10-31 snapshot](../game-feel/skill-snapshot.json), worker implementation and four tests are preserved. Its missing later VFX handoff file is a limit of that historical evaluation, not a reason to overwrite the snapshot.
 
 Record the base commit, uncommitted candidate hashes, model/host role, commands, runtime versions, actual result and limits. A snapshot binds files to an artifact check; it does not mean the current instructions underwent a fresh behavioral evaluation. This work uses one maintaining agent, not an independent or blinded evaluator.
 
