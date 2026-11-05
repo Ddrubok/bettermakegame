@@ -34,3 +34,7 @@ The [results.json](results.json) and [skill-snapshot.json](skill-snapshot.json) 
 Record the base commit, uncommitted candidate hashes, model/host role, commands, runtime versions, actual result and limits. A snapshot binds files to an artifact check; it does not mean the current instructions underwent a fresh behavioral evaluation. This work uses one maintaining agent, not an independent or blinded evaluator.
 
 Existing UI/HUD U/V before/after model comparisons remain **NOT RUN**. The modal covers part of V01's mechanism but not its full agent behavior or controller conditions; the online toy does not execute V04's visual/collision coupling case. Human playtests, real network/device tests and Unity/Godot/Unreal runs remain **NOT RUN**.
+
+## Later completion-callback repair
+
+The current online fixture takes `finish(completionToken(id))`, with the token captured when scheduling completion. Owner identity and generation prevent a previous round's delayed callback from ending a reused ID, including repeated round labels. Bare IDs are rejected. This is local lifetime tracking, not authentication. The frozen E01 benchmark and older outputs retain their historical `finish(id)` API; do not rewrite prior evidence to pretend it tested this boundary. See the [new record](../practical-validation-2026-11-05.md).

@@ -1,0 +1,98 @@
+[
+  {
+    "width": 360,
+    "reducedMotion": "no-preference",
+    "title": "Stage complete",
+    "reward": "You earned 120 stars.",
+    "button": "Next stage",
+    "buttonBox": {
+      "x": 20,
+      "y": 461.21875,
+      "width": 145.375,
+      "height": 59
+    },
+    "font": "18px",
+    "foreground": "rgb(32, 23, 44)",
+    "background": "rgb(255, 226, 137)",
+    "scrollWidth": 360,
+    "viewport": 360,
+    "animation": "pulse",
+    "animationDuration": "1.5s",
+    "bodyText": "Milestone celebration · no sound in this prototype\n\n✦\nStage complete\n\nYou earned 120 stars.\n\nNext stage\nDesign intent",
+    "firstTabFocus": "next",
+    "activationResult": "Next stage requested",
+    "errors": []
+  },
+  {
+    "width": 360,
+    "reducedMotion": "reduce",
+    "title": "Stage complete",
+    "reward": "You earned 120 stars.",
+    "button": "Next stage",
+    "buttonBox": {
+      "x": 20,
+      "y": 461.21875,
+      "width": 145.375,
+      "height": 59
+    },
+    "font": "18px",
+    "foreground": "rgb(32, 23, 44)",
+    "background": "rgb(255, 226, 137)",
+    "scrollWidth": 360,
+    "viewport": 360,
+    "animation": "none",
+    "animationDuration": "0s",
+    "bodyText": "Milestone celebration · no sound in this prototype\n\n✦\nStage complete\n\nYou earned 120 stars.\n\nNext stage\nDesign intent",
+    "firstTabFocus": "next",
+    "activationResult": "Next stage requested",
+    "errors": []
+  },
+  {
+    "width": 960,
+    "reducedMotion": "no-preference",
+    "title": "Stage complete",
+    "reward": "You earned 120 stars.",
+    "button": "Next stage",
+    "buttonBox": {
+      "x": 160,
+      "y": 434.21875,
+      "width": 145.375,
+      "height": 59
+    },
+    "font": "18px",
+    "foreground": "rgb(32, 23, 44)",
+    "background": "rgb(255, 226, 137)",
+    "scrollWidth": 960,
+    "viewport": 960,
+    "animation": "pulse",
+    "animationDuration": "1.5s",
+    "bodyText": "Milestone celebration · no sound in this prototype\n\n✦\nStage complete\n\nYou earned 120 stars.\n\nNext stage\nDesign intent",
+    "firstTabFocus": "next",
+    "activationResult": "Next stage requested",
+    "errors": []
+  },
+  {
+    "width": 960,
+    "reducedMotion": "reduce",
+    "title": "Stage complete",
+    "reward": "You earned 120 stars.",
+    "button": "Next stage",
+    "buttonBox": {
+      "x": 160,
+      "y": 434.21875,
+      "width": 145.375,
+      "height": 59
+    },
+    "font": "18px",
+    "foreground": "rgb(32, 23, 44)",
+    "background": "rgb(255, 226, 137)",
+    "scrollWidth": 960,
+    "viewport": 960,
+    "animation": "none",
+    "animationDuration": "0s",
+    "bodyText": "Milestone celebration · no sound in this prototype\n\n✦\nStage complete\n\nYou earned 120 stars.\n\nNext stage\nDesign intent",
+    "firstTabFocus": "next",
+    "activationResult": "Next stage requested",
+    "errors": []
+  }
+]

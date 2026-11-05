@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "Coordinating Astra; author-aware, provisional qualitative judgment",
+  "N01-short": {
+    "unchanged_html": true,
+    "confirmed_false_defects": 0,
+    "unnecessary_app_edits": 0,
+    "bounded_optional_alternatives": 3,
+    "result": "preserve with optional alternatives"
+  },
+  "N01-skill": {
+    "unchanged_html": true,
+    "confirmed_false_defects": 0,
+    "unnecessary_app_edits": 0,
+    "bounded_optional_alternatives": 2,
+    "result": "preserve with optional alternatives"
+  },
+  "limits": "Report/evidence review, not independent human judgment, general preference score or a timing/token study."
+}

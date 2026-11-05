@@ -1,0 +1,59 @@
+{
+  "mode": "after",
+  "environment": "Headless installed Chrome, 960x720, file URL",
+  "cases": [
+    {
+      "name": "real pointer double-click",
+      "actual": [
+        "Queen"
+      ],
+      "expected": [
+        "Queen"
+      ]
+    },
+    {
+      "name": "scripted different choices in same opening",
+      "actual": [
+        "Queen"
+      ],
+      "expected": [
+        "Queen"
+      ]
+    },
+    {
+      "name": "scripted new owner during old close",
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "new owner remains selectable",
+      "actual": [
+        "Knight"
+      ],
+      "expected": [
+        "Knight"
+      ]
+    },
+    {
+      "name": "keyboard selection of all four on separate openings",
+      "actual": [
+        "Queen",
+        "Rook",
+        "Bishop",
+        "Knight"
+      ],
+      "expected": [
+        "Queen",
+        "Rook",
+        "Bishop",
+        "Knight"
+      ]
+    },
+    {
+      "name": "detached old control activation",
+      "actual": [],
+      "expected": []
+    }
+  ],
+  "errors": []
+}

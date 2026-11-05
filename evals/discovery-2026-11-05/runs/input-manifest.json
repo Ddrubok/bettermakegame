@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-05T06:26:47.447Z",
+  "sessions": {
+    "P01-short": {
+      "files": {
+        "CONDITION.md": "a0ba701ccf8fb95ad8829d2334960dab181ee19d0dc2aae55b0da813eb8ebd45",
+        "index.html": "9bcf042cb00ded857aa6a5a4bcd4acb0070ecb085d09f3e780e01c703f5b03ab",
+        "task.md": "f2f6322b2449d3b96c9662294185257f4446574e9091c499bb9ee96a4d6ecac9"
+      }
+    },
+    "P01-skill": {
+      "files": {
+        "CONDITION.md": "8225619b0179e2d22e40260bec5c60d2a068928fd05c10d4f3d5285c300bfcfb",
+        "index.html": "9bcf042cb00ded857aa6a5a4bcd4acb0070ecb085d09f3e780e01c703f5b03ab",
+        "skills/bettermakegame/agents/openai.yaml": "bb57949ab8824a2e08dcb4801095ebdd239f0744d18dcf15a2a8bf909ba1cfb8",
+        "skills/bettermakegame/LICENSE": "371b25f44c1f66b39cf7fdfeca50c7a5dfe92ccfa24f72b9eb5ee634064e86f1",
+        "skills/bettermakegame/references/audio-haptics.md": "924940b168a3d8af95a7406bc5df8001a2ba82c04a04ba8534091cb3f1a4da77",
+        "skills/bettermakegame/references/control-techniques.md": "b62cc7faa331636058295a23386ffac49aee4af3601f5c5fffef8ce18269fb64",
+        "skills/bettermakegame/references/engine-notes.md": "724474bfc29d5b8b95c7732f5dd83fd9f1981c84962504e99491482a0024c7a0",
+        "skills/bettermakegame/references/feedback-flow-techniques.md": "3ffcf0dd0387c5acb04dab81c36edf463338678ed54b63e25976a806a48f4d81",
+        "skills/bettermakegame/references/finding-handoff.md": "7a3f1bc645d0aa620d48ac4aef3f1ee1934208e6a42ef4e8567b62545f181568",
+        "skills/bettermakegame/references/game-feel-selection.md": "1b05fe44d54d6d5fa252716e703eaf94f8cd331a2ba7cea1f663473952d1c13d",
+        "skills/bettermakegame/references/gameplay-polish.md": "11438d0b2a195c112234d43d012f4fdbc7cf63d144896eed90b1f7c316b0c069",
+        "skills/bettermakegame/references/tuning-evidence.md": "0c50fa83e49d214e37d2a4b89b583f7b5b7e9b0eb9ccdeaae08f8d2d3b870362",
+        "skills/bettermakegame/references/ui-hud-design.md": "cddcd1ec5060897a09d2ac70a24eb732ffba756d3aaf6fdcae71fae7bd0b0fe4",
+        "skills/bettermakegame/references/vfx-handoff.md": "1418950548d58d3af8a3371b8534329580262b4f545aece623fb7c1b0cb8db55",
+        "skills/bettermakegame/SKILL.md": "915e880cf45eb53b9150f9b4b8e84b7e13e03ad22f808da5b1071150dc64aa70",
+        "skills/game-vfx/agents/openai.yaml": "8aa5b6795174a7abde67470a57723bedad89d98adce8922d04c11c0ee9e48b71",
+        "skills/game-vfx/assets/canvas-impact.html": "041c900aeb6d427ebded94e0963d54eafea5343d55c4b22c84e080f24d75e42a",
+        "skills/game-vfx/assets/event-impact.mjs": "64dc8a4fe9c572480ca60dbc36b4f61159ab3ec22d36230ae5999c807787b2ba",
+        "skills/game-vfx/LICENSE": "371b25f44c1f66b39cf7fdfeca50c7a5dfe92ccfa24f72b9eb5ee634064e86f1",
+        "skills/game-vfx/references/engine-adapters.md": "6fe512e7c4942c66ad88165588356310f411a42f1937aa9afb09dd93c3acaa87",
+        "skills/game-vfx/references/event-integration.md": "9fde2534dedeb964e9ea4764e3bb6fb8c47f7c969e055b2565293346ed763472",
+        "skills/game-vfx/references/implementation-and-export.md": "bbb430c2597bb778f064bf29e63ab4c4977d4fc1019fd33c1a0cf07aecf69c76",
+        "skills/game-vfx/references/style-and-handoff.md": "90f955b32150c0996e8e207a3a789544351401d5b2d019b1414dc366f1592ab8",
+        "skills/game-vfx/references/visual-validation.md": "71cd5fe29355dbee45a1b080392e09ff6698b399bfaa4ffec283c1ff2e905f3e",
+        "skills/game-vfx/SKILL.md": "bbc22ceb087f78cf7976fa70bc9c6755930cc315c4ef5c0056a58db412456491",
+        "skills/kill-game-slop/agents/openai.yaml": "efeb64f7820b909c98dd95edc6cc83028874e500c3046a634d52adb55e98f372",
+        "skills/kill-game-slop/LICENSE": "886b58ffefbe10accb31eed8b494969cb5ac89fd983d634ecba542b69f018396",
+        "skills/kill-game-slop/references/editor-specs.md": "e25df1b17c4693f1f2d3aa940e4395dc33d4cc8f9e7229d14fd67e30743a94ba",
+        "skills/kill-game-slop/references/examples.md": "8c205f2c68e010dcd7fd4bd1d5de893b09e7b47cbf2b11eaf7fc90fd78f889d9",
+        "skills/kill-game-slop/references/presentation-checks.md": "4109bed500fd70dcbb830d02856d3ae77a70889f6a2f88597c5206cb8bb6d067",
+        "skills/kill-game-slop/references/runtime-checks.md": "7d341f82d93b599d3db1ca14b499a092203b8e918a3954067f5c23510581785c",
+        "skills/kill-game-slop/references/skill-handoff.md": "6389d3995bb767f065d9a12d557cdf5e119b82c0fbd78e8877ba6ce4a1d7e928",
+        "skills/kill-game-slop/SKILL.md": "88237217b4c0532f274de61e1c9a9ddc208c44bc1f8bb1621fabc1eb8450e999",
+        "task.md": "f2f6322b2449d3b96c9662294185257f4446574e9091c499bb9ee96a4d6ecac9"
+      }
+    },
+    "N01-short": {
+      "files": {
+        "CONDITION.md": "a0ba701ccf8fb95ad8829d2334960dab181ee19d0dc2aae55b0da813eb8ebd45",
+        "index.html": "32003e5ffd2c5da32cb830000b128581fde8fa5f6545eb2d4f9c9164dbd211cb",
+        "task.md": "f1bf851a7c219bcab061cace2cc1523ed1184f6e87d9b94f579b152342a63f56"
+      }
+    },
+    "N01-skill": {
+      "files": {
+        "CONDITION.md": "8225619b0179e2d22e40260bec5c60d2a068928fd05c10d4f3d5285c300bfcfb",
+        "index.html": "32003e5ffd2c5da32cb830000b128581fde8fa5f6545eb2d4f9c9164dbd211cb",
+        "skills/bettermakegame/agents/openai.yaml": "bb57949ab8824a2e08dcb4801095ebdd239f0744d18dcf15a2a8bf909ba1cfb8",
+        "skills/bettermakegame/LICENSE": "371b25f44c1f66b39cf7fdfeca50c7a5dfe92ccfa24f72b9eb5ee634064e86f1",
+        "skills/bettermakegame/references/audio-haptics.md": "924940b168a3d8af95a7406bc5df8001a2ba82c04a04ba8534091cb3f1a4da77",
+        "skills/bettermakegame/references/control-techniques.md": "b62cc7faa331636058295a23386ffac49aee4af3601f5c5fffef8ce18269fb64",
+        "skills/bettermakegame/references/engine-notes.md": "724474bfc29d5b8b95c7732f5dd83fd9f1981c84962504e99491482a0024c7a0",
+        "skills/bettermakegame/references/feedback-flow-techniques.md": "3ffcf0dd0387c5acb04dab81c36edf463338678ed54b63e25976a806a48f4d81",
+        "skills/bettermakegame/references/finding-handoff.md": "7a3f1bc645d0aa620d48ac4aef3f1ee1934208e6a42ef4e8567b62545f181568",
+        "skills/bettermakegame/references/game-feel-selection.md": "1b05fe44d54d6d5fa252716e703eaf94f8cd331a2ba7cea1f663473952d1c13d",
+        "skills/bettermakegame/references/gameplay-polish.md": "11438d0b2a195c112234d43d012f4fdbc7cf63d144896eed90b1f7c316b0c069",
+        "skills/bettermakegame/references/tuning-evidence.md": "0c50fa83e49d214e37d2a4b89b583f7b5b7e9b0eb9ccdeaae08f8d2d3b870362",
+        "skills/bettermakegame/references/ui-hud-design.md": "cddcd1ec5060897a09d2ac70a24eb732ffba756d3aaf6fdcae71fae7bd0b0fe4",
+        "skills/bettermakegame/references/vfx-handoff.md": "1418950548d58d3af8a3371b8534329580262b4f545aece623fb7c1b0cb8db55",
+        "skills/bettermakegame/SKILL.md": "915e880cf45eb53b9150f9b4b8e84b7e13e03ad22f808da5b1071150dc64aa70",
+        "skills/game-vfx/agents/openai.yaml": "8aa5b6795174a7abde67470a57723bedad89d98adce8922d04c11c0ee9e48b71",
+        "skills/game-vfx/assets/canvas-impact.html": "041c900aeb6d427ebded94e0963d54eafea5343d55c4b22c84e080f24d75e42a",
+        "skills/game-vfx/assets/event-impact.mjs": "64dc8a4fe9c572480ca60dbc36b4f61159ab3ec22d36230ae5999c807787b2ba",
+        "skills/game-vfx/LICENSE": "371b25f44c1f66b39cf7fdfeca50c7a5dfe92ccfa24f72b9eb5ee634064e86f1",
+        "skills/game-vfx/references/engine-adapters.md": "6fe512e7c4942c66ad88165588356310f411a42f1937aa9afb09dd93c3acaa87",
+        "skills/game-vfx/references/event-integration.md": "9fde2534dedeb964e9ea4764e3bb6fb8c47f7c969e055b2565293346ed763472",
+        "skills/game-vfx/references/implementation-and-export.md": "bbb430c2597bb778f064bf29e63ab4c4977d4fc1019fd33c1a0cf07aecf69c76",
+        "skills/game-vfx/references/style-and-handoff.md": "90f955b32150c0996e8e207a3a789544351401d5b2d019b1414dc366f1592ab8",
+        "skills/game-vfx/references/visual-validation.md": "71cd5fe29355dbee45a1b080392e09ff6698b399bfaa4ffec283c1ff2e905f3e",
+        "skills/game-vfx/SKILL.md": "bbc22ceb087f78cf7976fa70bc9c6755930cc315c4ef5c0056a58db412456491",
+        "skills/kill-game-slop/agents/openai.yaml": "efeb64f7820b909c98dd95edc6cc83028874e500c3046a634d52adb55e98f372",
+        "skills/kill-game-slop/LICENSE": "886b58ffefbe10accb31eed8b494969cb5ac89fd983d634ecba542b69f018396",
+        "skills/kill-game-slop/references/editor-specs.md": "e25df1b17c4693f1f2d3aa940e4395dc33d4cc8f9e7229d14fd67e30743a94ba",
+        "skills/kill-game-slop/references/examples.md": "8c205f2c68e010dcd7fd4bd1d5de893b09e7b47cbf2b11eaf7fc90fd78f889d9",
+        "skills/kill-game-slop/references/presentation-checks.md": "4109bed500fd70dcbb830d02856d3ae77a70889f6a2f88597c5206cb8bb6d067",
+        "skills/kill-game-slop/references/runtime-checks.md": "7d341f82d93b599d3db1ca14b499a092203b8e918a3954067f5c23510581785c",
+        "skills/kill-game-slop/references/skill-handoff.md": "6389d3995bb767f065d9a12d557cdf5e119b82c0fbd78e8877ba6ce4a1d7e928",
+        "skills/kill-game-slop/SKILL.md": "88237217b4c0532f274de61e1c9a9ddc208c44bc1f8bb1621fabc1eb8450e999",
+        "task.md": "f1bf851a7c219bcab061cace2cc1523ed1184f6e87d9b94f579b152342a63f56"
+      }
+    }
+  },
+  "limits": "Instruction-separated directories, not an OS read sandbox. Same supplied HTML/task; no judge or previous output copied."
+}

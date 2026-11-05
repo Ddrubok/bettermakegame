@@ -167,3 +167,7 @@ The [repair record](evals/review-fixes-2026-11-05/README.md) supersedes the firs
 A [fresh Astra comparison](evals/comparison/runs/2026-11-05/report.md) ran three defective starts with a short prompt and the full skill: six sessions, one per case/condition. Both conditions passed all 14 predefined checks. This did not demonstrate an added correctness benefit from the full skill for these explicit small repairs. The report preserves a separate post-hoc cleanup concern in one full-skill output and the limits of this small, familiar case set; no general accuracy or speed improvement is claimed.
 
 The later [finding receiver](skills/bettermakegame/references/finding-handoff.md) now covers non-VFX UI/control work too. This instruction addition is **not** part of the six-session comparison at `fd3c15d`; its behavioral evaluation remains NOT RUN. See the [follow-up record](evals/handoff-followup-2026-11-05.md).
+
+## Practical follow-up — 2026-11-05
+
+See the [current repair and evidence record](evals/practical-validation-2026-11-05.md). This pass fixes the shared fixture's stale completion callback, preserves historical results, and publishes a real game-component repair plus a fresh four-session comparison. Both short and full-skill conditions repaired the selection task and preserved the normal celebration; no added accuracy advantage was demonstrated. The original game project was not edited. Human/device/network tests and the dedicated U/V/handoff sets remain unrun.

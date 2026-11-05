@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-05",
+  "scope": "Current local source; see companion snapshot for identity. No publish or final commit is claimed.",
+  "executed": {
+    "node": {
+      "passed": 42,
+      "failed": 0,
+      "command": "node --test evals/behavior/jump.test.mjs evals/behavior/racer.test.mjs evals/behavior/online-impact.test.mjs evals/game-feel/racer/controller.test.mjs"
+    },
+    "online_subset": 17,
+    "fresh_comparison": {
+      "sessions": 4,
+      "P01_short": 4,
+      "P01_full": 4,
+      "N01_app_changes": 0,
+      "additional_accuracy_advantage": "not demonstrated"
+    }
+  },
+  "static": {
+    "runtime_files": 13,
+    "evaluated_runtime_matches": true,
+    "markdown_file_targets": 176,
+    "git_diff_check_exit": 0,
+    "new_text_whitespace_errors": 0
+  },
+  "yaml_quick_validate": "PASS",
+  "runtime_package_file_links": "PASS",
+  "not_run": [
+    "Human playtest/preference",
+    "Physical mobile/gamepad tests",
+    "Production network",
+    "Dedicated U/V and handoff case sets"
+  ],
+  "limits": "Automated artifact checks and four author-aware Astra sessions are separate; no general accuracy, speed or quality improvement percentage."
+}

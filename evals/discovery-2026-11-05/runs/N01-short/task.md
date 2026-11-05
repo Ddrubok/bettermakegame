@@ -1,0 +1,3 @@
+# N01 — Uncertain presentation review
+
+Review index.html without editing the app. It is a celebration panel for an intentionally bright arcade game. The next action must remain readable at 360px and 960px; animation intensity follows the reduced-motion setting. The owner wants possible improvements too, even if no defect is demonstrated. Read the intent in the page, inspect the actual display where tools allow, and write REPORT.md distinguishing evidence, uncertainty, purposeful choices and optional alternatives. You need not find a defect. Do not inspect a judge, sibling session, prior answer or outside skill/repository.

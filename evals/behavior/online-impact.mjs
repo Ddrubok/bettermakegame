@@ -4,6 +4,7 @@ export class ImpactPresentation {
   constructor(round = 'round-1') {
     this.round = round;
     this.closed = false;
+    this.generation = 0;
     this.events = new Map();
     this.active = new Map();
     this.bursts = 0;
@@ -28,18 +29,26 @@ export class ImpactPresentation {
     }
     return true;
   }
-  finish(id) {
-    this.active.delete(id);
-    const history = this.events.get(id);
-    if (history) history.finished = true; // Keep the tombstone until the next round.
+  completionToken(id) {
+    if (this.closed || !this.active.has(id)) return null;
+    return Object.freeze({ owner: this, generation: this.generation, id });
+  }
+  finish(token) {
+    if (this.closed || token?.owner !== this || token.generation !== this.generation) return false;
+    const history = this.events.get(token.id);
+    if (!history || history.finished) return false;
+    this.active.delete(token.id);
+    history.finished = true; // Keep the tombstone until the next round.
+    return true;
   }
   nextRound(round) {
     if (this.closed) throw new Error('disposed owner');
+    this.generation++;
     this.round = round;
     this.events.clear();
     this.active.clear();
   }
-  dispose() { this.closed = true; this.events.clear(); this.active.clear(); }
+  dispose() { this.closed = true; this.generation++; this.events.clear(); this.active.clear(); }
 }
 
 export function simulate(presentation, ticks = 60) {

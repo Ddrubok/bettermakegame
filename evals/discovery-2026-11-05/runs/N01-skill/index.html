@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Arcade milestone</title>
+<style>
+body{background:#101026;color:#f6f3ff;font:18px/1.5 system-ui;margin:0}main{max-width:640px;margin:auto;padding:20px}
+.art{position:relative;isolation:isolate;min-height:200px;display:grid;place-items:center;overflow:hidden;border:2px solid #b597ff;border-radius:20px;background:#281944}
+.art:before{content:'';position:absolute;inset:20px;border:7px double #efb4ff;transform:rotate(12deg);z-index:-1;animation:pulse 1.5s ease-in-out infinite alternate}
+.star{font-size:70px;color:#ffdf83;text-shadow:0 0 20px #f9f}button{display:block;padding:14px 24px;margin:18px 0;font:inherit;font-weight:bold;background:#ffe289;color:#20172c;border:2px solid #fff4d0;border-radius:10px}
+@keyframes pulse{to{transform:rotate(-12deg) scale(.94);opacity:.65}}@media(prefers-reduced-motion:reduce){.art:before{animation:none}}
+</style>
+<main><p>Milestone celebration · no sound in this prototype</p><div class="art" aria-hidden="true"><span class="star">✦</span></div><h1>Stage complete</h1><p>You earned 120 stars.</p><button id="next">Next stage</button><output id="state" aria-live="polite"></output><details><summary>Design intent</summary>Celebration is intentionally bright. The decorative panel is separate from the reward text and action. Keep the reward quantity and next action. A static reduced-motion presentation is valid.</details></main>
+<script>document.querySelector('#next').onclick=()=>document.querySelector('#state').textContent='Next stage requested';</script>

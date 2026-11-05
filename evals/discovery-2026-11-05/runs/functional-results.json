@@ -1,0 +1,27 @@
+{
+  "baseline": {
+    "status": "FAIL",
+    "failure": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'Queen',\n+   'Queen'\n  ]\n",
+    "sha256": "9bcf042cb00ded857aa6a5a4bcd4acb0070ecb085d09f3e780e01c703f5b03ab"
+  },
+  "P01-short": {
+    "status": "PASS",
+    "checks": [
+      "four choices preserved",
+      "double input commits once",
+      "replaced owner cannot commit later",
+      "current choice commits"
+    ],
+    "sha256": "97f7244f7d87df96f4aac5b93bfac807e74f3114957072e878e993822d6a72c4"
+  },
+  "P01-skill": {
+    "status": "PASS",
+    "checks": [
+      "four choices preserved",
+      "double input commits once",
+      "replaced owner cannot commit later",
+      "current choice commits"
+    ],
+    "sha256": "6af697ddbd917ae85f1bc46f02525e0a127fc187a623f4c49cafd3baaaa738e2"
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>Promotion selection</title>
+<style>
+body{font:16px system-ui;background:#0b0f19;color:#f8fafc;margin:24px}button{font:inherit;cursor:pointer}
+.overlay{position:fixed;inset:0;background:#0b0f19ed;display:grid;place-items:center}
+.card{background:#1e293b;padding:24px;border:1px solid #334155;border-radius:12px;width:min(85vw,380px)}
+.choice{display:block;width:100%;padding:14px;margin:8px 0;text-align:left;color:#f8fafc;background:#0f172a;border:1px solid #334155;border-radius:10px}
+.choice:hover{border-color:#38bdf8}.closing{animation:out .12s ease-in forwards}@keyframes out{to{opacity:0;transform:scale(.98)}}
+</style>
+<button id="open">Open choice</button><button id="replace">New owner / open again</button><p>Choices recorded: <output id="result">none</output></p>
+<script>
+window.calls=[];
+let activeOverlay=null;
+window.openChoice=function(){
+  activeOverlay?.remove();
+  const overlay=document.createElement('div'); overlay.className='overlay';
+  activeOverlay=overlay;
+  let selected=false;
+  overlay.innerHTML='<section class="card"><h1>Choose promotion</h1><p>White · Choose one piece.</p>'+['Queen','Rook','Bishop','Knight'].map(name=>`<button class="choice" data-choice="${name}">${name}</button>`).join('')+'</section>';
+  document.body.append(overlay);
+  for(const button of overlay.querySelectorAll('.choice'))button.addEventListener('click',()=>{
+    if(selected || activeOverlay!==overlay)return;
+    selected=true;
+    for(const choice of overlay.querySelectorAll('.choice'))choice.disabled=true;
+    const value=button.dataset.choice; overlay.classList.add('closing');
+    setTimeout(()=>{
+      if(activeOverlay!==overlay)return;
+      activeOverlay=null;
+      overlay.remove();calls.push(value);document.querySelector('#result').textContent=calls.join(', ');
+    },120);
+  });
+};
+document.querySelector('#open').onclick=openChoice;document.querySelector('#replace').onclick=openChoice;
+</script>

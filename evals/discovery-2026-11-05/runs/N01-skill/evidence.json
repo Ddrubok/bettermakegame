@@ -1,0 +1,173 @@
+{
+  "browser": "156.0.8078.80",
+  "cases": [
+    {
+      "width": 360,
+      "reducedMotion": "no-preference",
+      "first": {
+        "button": {
+          "x": 20,
+          "y": 461.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 360,
+        "innerWidth": 360,
+        "animation": "pulse",
+        "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)",
+        "opacity": "1",
+        "reward": "You earned 120 stars."
+      },
+      "second": {
+        "button": {
+          "x": 20,
+          "y": 461.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 360,
+        "innerWidth": 360,
+        "animation": "pulse",
+        "transform": "matrix(0.976342, 0.0531263, -0.0531263, 0.976342, 0, 0)",
+        "opacity": "0.870421",
+        "reward": "You earned 120 stars."
+      },
+      "focus": "next",
+      "keyboard": "Next stage requested",
+      "pointer": "Next stage requested",
+      "errors": []
+    },
+    {
+      "width": 360,
+      "reducedMotion": "reduce",
+      "first": {
+        "button": {
+          "x": 20,
+          "y": 461.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 360,
+        "innerWidth": 360,
+        "animation": "none",
+        "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)",
+        "opacity": "1",
+        "reward": "You earned 120 stars."
+      },
+      "second": {
+        "button": {
+          "x": 20,
+          "y": 461.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 360,
+        "innerWidth": 360,
+        "animation": "none",
+        "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)",
+        "opacity": "1",
+        "reward": "You earned 120 stars."
+      },
+      "focus": "next",
+      "keyboard": "Next stage requested",
+      "pointer": "Next stage requested",
+      "errors": []
+    },
+    {
+      "width": 960,
+      "reducedMotion": "no-preference",
+      "first": {
+        "button": {
+          "x": 160,
+          "y": 434.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 960,
+        "innerWidth": 960,
+        "animation": "pulse",
+        "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)",
+        "opacity": "1",
+        "reward": "You earned 120 stars."
+      },
+      "second": {
+        "button": {
+          "x": 160,
+          "y": 434.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 960,
+        "innerWidth": 960,
+        "animation": "pulse",
+        "transform": "matrix(0.975526, 0.0446102, -0.0446102, 0.975526, 0, 0)",
+        "opacity": "0.863183",
+        "reward": "You earned 120 stars."
+      },
+      "focus": "next",
+      "keyboard": "Next stage requested",
+      "pointer": "Next stage requested",
+      "errors": []
+    },
+    {
+      "width": 960,
+      "reducedMotion": "reduce",
+      "first": {
+        "button": {
+          "x": 160,
+          "y": 434.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 960,
+        "innerWidth": 960,
+        "animation": "none",
+        "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)",
+        "opacity": "1",
+        "reward": "You earned 120 stars."
+      },
+      "second": {
+        "button": {
+          "x": 160,
+          "y": 434.21875,
+          "width": 145.375,
+          "height": 59,
+          "text": "Next stage",
+          "font": "700 18px / 27px system-ui"
+        },
+        "hit": "next",
+        "scrollWidth": 960,
+        "innerWidth": 960,
+        "animation": "none",
+        "transform": "matrix(0.978148, 0.207912, -0.207912, 0.978148, 0, 0)",
+        "opacity": "1",
+        "reward": "You earned 120 stars."
+      },
+      "focus": "next",
+      "keyboard": "Next stage requested",
+      "pointer": "Next stage requested",
+      "errors": []
+    }
+  ]
+}

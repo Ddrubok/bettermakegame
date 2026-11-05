@@ -33,7 +33,7 @@ test('newer authoritative correction moves the cue without another burst', () =>
 test('ending a visual instance retains duplicate protection', () => {
   const view = new ImpactPresentation();
   view.receive(event('confirmed'));
-  view.finish('hit');
+  view.finish(view.completionToken('hit'));
   view.receive(event('confirmed'));
   assert.equal(view.active.size, 0);
   assert.equal(view.bursts, 1);
@@ -41,7 +41,7 @@ test('ending a visual instance retains duplicate protection', () => {
 test('finished confirmed effects stay finished after a newer correction', () => {
   const view = new ImpactPresentation();
   view.receive(event('confirmed'));
-  view.finish('hit');
+  view.finish(view.completionToken('hit'));
   assert.equal(view.receive(event('confirmed', 2, { point: { x: 9, y: 0 } })), false);
   assert.equal(view.active.size, 0);
   assert.equal(view.bursts, 1);
@@ -49,7 +49,7 @@ test('finished confirmed effects stay finished after a newer correction', () => 
 test('finished provisional effects cannot be promoted by a late confirmation', () => {
   const view = new ImpactPresentation();
   view.receive(event('pending'));
-  view.finish('hit');
+  view.finish(view.completionToken('hit'));
   view.receive(event('confirmed', 2));
   assert.equal(view.active.size, 0);
   assert.equal(view.bursts, 0);
@@ -57,7 +57,7 @@ test('finished provisional effects cannot be promoted by a late confirmation', (
 test('finished history is per event and expires at the next round', () => {
   const view = new ImpactPresentation();
   view.receive(event('confirmed'));
-  view.finish('hit');
+  view.finish(view.completionToken('hit'));
   view.receive(event('confirmed', 1, { id: 'other' }));
   assert.equal(view.active.has('other'), true);
   view.nextRound('round-2');
@@ -72,7 +72,7 @@ test('a completed or rejected event cannot regress to a pending cue', () => {
     assert.equal(view.active.get('hit')?.kind, state === 'confirmed' ? 'impact' : undefined);
   }
 });
-test('round change drops old callbacks and permits a round-scoped reused ID', () => {
+test('round change drops old incoming events and permits a round-scoped reused ID', () => {
   const view = new ImpactPresentation();
   view.receive(event('pending'));
   view.nextRound('round-2');
@@ -89,6 +89,43 @@ test('disposal clears instances and prevents late confirmation', () => {
   assert.equal(view.active.size, 0);
   assert.equal(view.events.size, 0);
 });
+
+test('late completion captured in the prior round cannot end a reused ID', () => {
+  const view = new ImpactPresentation(); view.receive(event('confirmed'));
+  const old = view.completionToken('hit');
+  const late = () => view.finish(old);
+  view.nextRound('round-2');
+  view.receive(event('confirmed', 1, { round: 'round-2' }));
+  assert.equal(view.active.size, 1);
+  assert.equal(late(), false);
+  assert.equal(view.active.size, 1);
+  assert.equal(view.finish(view.completionToken('hit')), true);
+  assert.equal(view.active.size, 0);
+});
+
+test('same-named round reuse still retires the previous generation', () => {
+  const view = new ImpactPresentation(); view.receive(event('confirmed'));
+  const old = view.completionToken('hit'); view.nextRound('round-1');
+  view.receive(event('confirmed'));
+  assert.equal(view.finish(old), false); assert.equal(view.active.size, 1);
+});
+
+test('completion cannot cross owners, accept a bare ID or create unknown history', () => {
+  const a = new ImpactPresentation(), b = new ImpactPresentation();
+  a.receive(event('confirmed')); b.receive(event('confirmed'));
+  assert.equal(a.finish(b.completionToken('hit')), false);
+  assert.equal(a.finish('hit'), false);
+  assert.equal(a.completionToken('unknown'), null);
+  assert.equal(a.finish(null), false);
+  assert.equal(a.events.size, 1); assert.equal(a.active.size, 1);
+});
+
+test('late and repeated completion after disposal is harmless', () => {
+  const view = new ImpactPresentation(); view.receive(event('confirmed'));
+  const token = view.completionToken('hit'); view.dispose();
+  assert.equal(view.finish(token), false); assert.equal(view.finish(token), false);
+  assert.equal(view.events.size, 0); assert.equal(view.active.size, 0);
+});
 test('independent events and callers cannot overwrite one another', () => {
   const view = new ImpactPresentation();
   const a = event('confirmed');
@@ -96,7 +133,7 @@ test('independent events and callers cannot overwrite one another', () => {
   view.receive(event('confirmed', 1, { id: 'other' }));
   a.point.x = 999;
   assert.equal(view.active.get('hit').point.x, 2);
-  view.finish('hit');
+  view.finish(view.completionToken('hit'));
   assert.equal(view.active.has('other'), true);
 });
 test('effects disabled, single and duplicate delivery preserve the simulated world', () => {

@@ -1,3 +1,5 @@
 * text=auto
 *.md text eol=lf
 *.yaml text eol=lf
+# Keep the recorded comparison packet byte-exact, including manifests and outputs.
+evals/discovery-2026-11-05/runs/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
