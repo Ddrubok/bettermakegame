@@ -1,4 +1,4 @@
-# Feedback, camera, audio, and play-flow techniques
+# Feedback, camera, and play-flow techniques
 
 Use the affected sections with [game-feel-selection.md](game-feel-selection.md). Entries are candidate mechanisms, not mandatory features or universal prescriptions. They apply only to actual or requested mechanics. Tune existing systems first; distinguish cosmetic expression from changes to rules and control. Timing values need project measurements and trials, not a fixed cross-genre recipe.
 
@@ -32,12 +32,7 @@ For an engine with a suitable existing camera module, prefer its event-based imp
 
 ## Audio and haptics
 
-| Situation / candidate | Mechanism and useful tuning | Limits and observable check |
-| --- | --- | --- |
-| Contact is muddy or weightless — **transient/body/tail layering** | Assign a clear onset, a supporting body and an appropriate friction/decay tail using available sounds. Tune relative gain, duration and event alignment. | Layering is optional; one good sound may suffice. Audition at comparable loudness on target speakers, check clipping, and distinguish first contact from sustained sliding. |
-| Music or many sounds hide the action — **ducking / voice priority** | Briefly reduce competing channels or limit low-priority voices. Tune depth, attack/release, voice count and event priority. | Frequent events must not permanently silence music or essential warnings. Listen to a crowded sequence and recovery, not just an isolated sample. |
-| Repeated actions sound mechanical — **bounded variation / material mapping** | Select among appropriate samples or modest pitch/gain variations; map confirmed surface/action states when available. | Preserve recognizable gameplay meanings and avoid random variation that communicates nonexistent outcomes. Use cosmetic randomness; listen to repetitions and quiet settings. |
-| Important touch/controller events lack tactile acknowledgement — **event-shaped haptics** | Use supported motors/patterns with distinct importance and duration; respect settings and per-device support. | Never make haptics the only signal. Repeated impulses need a cap; verify on the physical device and report simulation-only checks honestly. |
+For sound or tactile work, read the eight candidates and evidence checks in [audio-haptics.md](audio-haptics.md). Otherwise skip that family.
 
 Camera bob, shake, blur, automatic FOV changes and moving UI can affect comfort and reading. Preserve appropriate alternatives and settings; consult [Xbox Accessibility Guideline 117](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/117) for applicable motion guidance. This does not prescribe a visual style or claim that every motion effect is harmful.
 

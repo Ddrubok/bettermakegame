@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-05",
+  "kind": "maintainer-authored fixture regression",
+  "agent": "Single Orca/Codex maintaining session; project requests Astra-only; serving model revision not independently queried",
+  "os": "Windows",
+  "node": "v22.18.0",
+  "model_checks": {
+    "command": "node --test evals/behavior/jump.test.mjs evals/behavior/racer.test.mjs evals/behavior/online-impact.test.mjs evals/game-feel/racer/controller.test.mjs",
+    "passed": 30,
+    "failed": 0,
+    "cases": [
+      "grace: input at 99ms after leaving yields 1 jumps",
+      "grace: input at 100ms after leaving yields 1 jumps",
+      "grace: input at 101ms after leaving yields 0 jumps",
+      "buffer: landing 79ms after press yields 1 jumps",
+      "buffer: landing 80ms after press yields 1 jumps",
+      "buffer: landing 81ms after press yields 0 jumps",
+      "a held key and repeated press cannot spend one intent twice",
+      "modal transition clears buffered intent and grace",
+      "alive transition clears buffered intent and grace",
+      "press under a modal requires release and a new press after closing",
+      "the same timestamped inputs survive sparse and dense polling",
+      "clock reversal and invalid windows are rejected",
+      "pending is a preview; confirmation creates only one success burst",
+      "rejection cancels provisional effects; older confirmation cannot revive them",
+      "newer authoritative correction moves the cue without another burst",
+      "ending a visual instance retains duplicate protection",
+      "a completed or rejected event cannot regress to a pending cue",
+      "round change drops old callbacks and permits a round-scoped reused ID",
+      "disposal clears instances and prevents late confirmation",
+      "independent events and callers cannot overwrite one another",
+      "effects disabled, single and duplicate delivery preserve the simulated world",
+      "characterize historical 12→6 reduction at 1/6 second",
+      "local alternative keeps partial reduction gradual and settles at 0.75s",
+      "full release still stops within 0.4s, including after partial throttle",
+      "different step schedules give the same partial-throttle endpoint",
+      "maximum speed, full-release and steering behavior remain historical",
+      "acceleration is gradual, frame-rate independent, and capped at 12 m/s",
+      "release stops from maximum speed within 0.4 seconds",
+      "small stick noise is ignored; larger steering changes are rate limited",
+      "keyboard -1/0/1 steering remains reachable and recenters"
+    ]
+  },
+  "browser_checks": {
+    "command": "node evals/behavior/browser-check.cjs <output-folder>",
+    "playwright": "1.62.1",
+    "browser": "156.0.8078.80",
+    "checks": [
+      {
+        "name": "background action works before modal",
+        "status": "PASS"
+      },
+      {
+        "name": "opening places focus inside modal",
+        "status": "PASS"
+      },
+      {
+        "name": "Tab wraps forward within modal",
+        "status": "PASS"
+      },
+      {
+        "name": "Shift+Tab wraps backward within modal",
+        "status": "PASS"
+      },
+      {
+        "name": "modal blocks gameplay key",
+        "status": "PASS"
+      },
+      {
+        "name": "Escape closes and restores opener focus",
+        "status": "PASS"
+      },
+      {
+        "name": "gameplay resumes after closing",
+        "status": "PASS"
+      },
+      {
+        "name": "removed opener returns focus to fallback",
+        "status": "PASS"
+      },
+      {
+        "name": "no page errors",
+        "status": "PASS"
+      }
+    ],
+    "evidence": [
+      "evidence/modal-open.png",
+      "evidence/modal-opener-removed.png"
+    ],
+    "limits": [
+      "Synthetic DOM fixture; not a game build",
+      "No controller, touch, screen reader or human usability test",
+      "Screenshots require a separate visual inspection",
+      "Not a model-use or skill-effectiveness evaluation"
+    ],
+    "visual_inspection": {
+      "status": "DONE",
+      "method": "Agent opened both final PNGs with image-viewing tool",
+      "observation": "Modal text and both controls visible; background dimmed; opener absent in second capture.",
+      "limit": "Static layout inspection only; not human usability or screen reader verification."
+    }
+  },
+  "limits": [
+    "Not a fresh or blinded model-use evaluation; no before/after skill-effectiveness claim",
+    "UI/HUD U/V model comparisons remain NOT RUN",
+    "No human playtest, audio audition or haptic device test",
+    "No Unity/Godot/Unreal run, real network or phone test",
+    "Online fixture uses synthetic trusted messages and toy physics without rendered effects"
+  ]
+}

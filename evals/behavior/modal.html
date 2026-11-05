@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modal input ownership fixture</title>
+<style>
+  body { font: 18px system-ui; max-width: 44rem; margin: 3rem auto; padding: 1rem; }
+  button { font: inherit; padding: .7rem 1rem; margin: .4rem; }
+  :focus-visible { outline: 3px solid #006ec7; outline-offset: 3px; }
+  dialog { max-width: 30rem; padding: 1.5rem; border: 2px solid #384854; }
+  dialog::backdrop { background: rgb(20 35 48 / 55%); }
+</style>
+<h1>Modal input ownership</h1>
+<p>Synthetic fixture. Press G to count a gameplay action. A modal owns input until closed.</p>
+<button id="open">Open settings</button>
+<button id="fallback">Back to game</button>
+<p id="game-status" role="status">Gameplay actions: 0</p>
+<dialog id="settings" aria-labelledby="dialog-title">
+  <h2 id="dialog-title">Settings fixture</h2>
+  <p>Tab stays here. Escape closes. Removing the opener tests the fallback.</p>
+  <button id="close" autofocus>Close</button>
+  <button id="remove">Remove opener</button>
+</dialog>
+<script>
+  const dialog = document.querySelector('#settings');
+  const fallback = document.querySelector('#fallback');
+  const closeButton = document.querySelector('#close');
+  const removeButton = document.querySelector('#remove');
+  let opener;
+  let gameActions = 0;
+  document.querySelector('#open').addEventListener('click', event => {
+    opener = event.currentTarget;
+    dialog.showModal();
+    closeButton.focus();
+  });
+  closeButton.addEventListener('click', () => dialog.close());
+  removeButton.addEventListener('click', () => opener?.remove());
+  dialog.addEventListener('close', () => {
+    const target = opener?.isConnected && !opener.disabled ? opener : fallback;
+    target.focus();
+  });
+  dialog.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+      const controls = [closeButton, removeButton];
+      const i = controls.indexOf(document.activeElement);
+      controls[(i + (event.shiftKey ? -1 : 1) + controls.length) % controls.length].focus();
+      event.preventDefault();
+    }
+  });
+  // Native dialog inertness does not replace the game's own input gate.
+  document.addEventListener('keydown', event => {
+    if (event.key.toLowerCase() === 'g' && !event.repeat && !dialog.open) {
+      gameActions++;
+      document.querySelector('#game-status').textContent = `Gameplay actions: ${gameActions}`;
+    }
+  });
+</script>
+</html>

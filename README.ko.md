@@ -21,7 +21,7 @@
 
 기법을 고르기 전에 원인을 확인합니다. 놓친 입력 이벤트는 입력 경로에서 고치고, 프레임 끊김은 성능 문제로 확인합니다. 보정이나 화면 효과로 결함을 가리는 방향을 피합니다.
 
-## 48개 기법 후보와 열린 확장 범위
+## 52개 기법 후보와 열린 확장 범위
 
 각 항목에는 **사용할 상황, 작동 방식, 조절할 값, 피해야 할 조건, 관찰할 검증 결과**가 들어 있습니다.
 
@@ -32,7 +32,7 @@
 | 조준·드래그·물리 조작 | 7 | 데드존, 조준 마찰, 방향 스냅, 잡은 위치 유지, 충전 곡선 |
 | 타격과 움직임 | 8 | 히트스톱, 피격 표시, 예고 동작, 후속 움직임, 방향 반응, 잔상 |
 | 카메라 | 6 | 추적 영역, 앞쪽 보기, 대상 묶음 구도, 반동, 시야각 조절, 가림 처리 |
-| 음향과 진동 | 4 | 접촉음 구성, 소리 우선순위, 반복음 변주, 사건별 진동 |
+| 음향과 진동 | 8 | 접촉음·믹스·변주·진동, 시간 정렬, 지속음 관리, 공간음, 시청각 정보 연결 |
 | 이해와 플레이 흐름 | 8 | 결과 미리보기, 연쇄 과정 강조, 상황별 안내, 빠른 재시도, 알림 통합 |
 
 후보 수는 참고 문서의 항목 수입니다. 모두 적용해야 하는 체크리스트가 아니며, 모든 기법의 체감 효과를 검증했다는 뜻도 아닙니다. 목록 밖의 상황은 프로젝트 구현과 필요한 공식 자료를 확인해 다른 기법을 제안할 수 있습니다.
@@ -126,7 +126,7 @@ $bettermakegame 모바일 조준 HUD의 배치와 입력 영역을 검토해 주
 
 ## 실제로 검증한 범위
 
-2026-10-31 확장 작업에서 독립 에이전트에 새 지침과 사례를 제공해 다음을 확인했습니다.
+2026-10-31 확장 작업에서 관리자가 별도 작업 에이전트에 새 지침과 사례를 제공해 다음을 확인했습니다. 완전히 격리되거나 블라인드된 연구는 아닙니다.
 
 - 온라인 대전, 퍼즐, 정원 돌보기, 작은 버튼, 리듬 게임의 **5가지 추천 응답**을 검토했습니다.
 - 별도 레이싱 컨트롤러 예제에 가속·감속·입력 처리를 실제로 적용하고 **Node 테스트 4개**를 실행했습니다.
@@ -147,10 +147,19 @@ node --test evals/game-feel/racer/controller.test.mjs
 | [SKILL.md](SKILL.md) | 에이전트가 읽는 핵심 절차와 범위 |
 | [game-feel-selection.md](references/game-feel-selection.md) | 상황 진단, 기법 선택, 적용·조절·검증 |
 | [control-techniques.md](references/control-techniques.md) | 입력·이동·조준·조작의 22개 후보 |
-| [feedback-flow-techniques.md](references/feedback-flow-techniques.md) | 타격·카메라·음향·흐름의 26개 후보 |
+| [feedback-flow-techniques.md](references/feedback-flow-techniques.md) | 타격·카메라·흐름의 22개 후보 |
+| [audio-haptics.md](references/audio-haptics.md) | 음향·진동의 8개 후보와 청취·실기기 검증 구분 |
+| [engine-notes.md](references/engine-notes.md) | 필요한 엔진만 읽는 Unity·Godot·Unreal·Web 구현 안내 |
+| [tuning-evidence.md](references/tuning-evidence.md) | 출처가 있는 참고 수치, 실험값과 한계 |
 | [ui-hud-design.md](references/ui-hud-design.md) | UI/HUD 배치·가독성·탐색·정체성 |
 | [gameplay-polish.md](references/gameplay-polish.md) | 중요한 사건의 흐름과 넓은 표현 검토 |
 | [vfx-handoff.md](references/vfx-handoff.md) | 게임풍 제작 기준과 game-vfx 결과 검토 |
 | [agents/openai.yaml](agents/openai.yaml) | Codex 표시용 정보 |
 
 [kill-game-slop](https://github.com/Ddrubok/kill-game-slop)은 산만함·중복·오해·조작 불편을 근거로 진단하고 국소적으로 고치는 데 집중합니다. `bettermakegame`은 상황에 맞는 기법 선택과 조작·UI·연출 설계까지 다룹니다. 두 스킬은 독립적으로 사용할 수 있으며 정해진 선후 순서는 없습니다.
+
+## 이번 변경
+
+핵심 지침에서 필요한 주제만 골라 읽도록 정리하고, 음향·진동을 별도 문서로 나눴습니다. 오디오 후보 4개를 추가해 전체는 52개입니다. 엔진별 안내는 입력 소유권, 모달 포커스, 시간 기준, 오디오 예약을 다룹니다. 출처가 있는 수치는 참고 사례이며 공통 권장값이 아닙니다. 패키지에는 [MIT 라이선스](LICENSE)를 추가했습니다. 연결된 외부 자료에는 해당 자료의 이용 조건이 적용됩니다.
+
+[새 회귀 검증 예제](evals/behavior/README.md)는 점프 시간 경계, 모달 포커스, 온라인 이벤트 소유권, 명시적으로 정한 반스로틀 감속 대안을 다룹니다. 결과와 현재 실행 지침의 파일 해시는 2026-10-31 기록과 분리했습니다. 당시 스냅샷은 이후 VFX 연계나 현재 지침을 평가한 기록이 아닙니다. 코드 검사는 모델의 판단이나 게임 체감 향상을 입증하지 않습니다. 기존 U/V 행동 비교와 사람·실기기 평가는 계속 NOT RUN(미실행)입니다.

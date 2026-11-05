@@ -14,6 +14,8 @@ Use the current user direction and designated reference, then the project's rele
 
 Reuse already-recorded intent and parameters. Include only the information that changes production: **event and scope; references and their status; style decisions; preservation conditions; runtime/output; observable checks**. One paragraph is sufficient for a local effect. Do not require a new file, full design contract or repeated user confirmation.
 
+If this starts from a `kill-game-slop` finding, retain its ID, judgment, provenance and unknowns. A hypothesis or optional proposal does not become a confirmed defect in the handoff. For an event-bound effect, add only relevant owner/round identity, pending/confirmed meaning, ordering, clock and cancellation details from the existing implementation. If sound is in scope, read [audio-haptics.md](audio-haptics.md) and coordinate channels from the same event; do not add sound merely because VFX is requested.
+
 For example, given actual references establishing the direction:
 
 > Confirm a committed placement, using the supplied matte rounded-piece scene. Keep the piece outline and legal-move markers visible. Use a short local settling arc with soft edges and the scene's confirmation accent; avoid a damage-like burst. Timing is provisional until viewed in motion. Produce an effect in the existing renderer, preserve commitment logic, and check repeated placements plus reduced motion at the gameplay camera distance.

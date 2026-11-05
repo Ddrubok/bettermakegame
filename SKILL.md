@@ -7,74 +7,58 @@ description: >-
   usability or polish work. Select, implement, and tune techniques for the
   actual player situation across genres. Does not imply an unsolicited
   whole-game audit, new gameplay content, or economy/balance overhaul.
+license: MIT
 ---
 
 # Better Make Game
 
-Make the player's intended action respond predictably, its consequences readable, and the next action clear. Improve control, feedback, pacing, and satisfying closure while preserving the game's identity and intended challenge. Commercial quality is a standard for complete experiences, not a demand for AAA asset density or more effects.
+Make intended actions respond predictably, consequences readable, and the next action clear while preserving the game's identity and challenge. More effects or AAA asset density are not the goal.
 
-## Choose the requested scope
+## Scope and evidence
 
-Use this skill when creating requested UI or interactions, improving controls or presentation, recommending techniques, or reviewing overall polish. An audit or recommendation produces findings without edits; a build or fix request authorizes scoped implementation and verification. A broad game-feel request can cover input/controller tuning: make that scope explicit instead of treating every adjustment as cosmetic. Existing authorization is sufficient for ordinary implementation choices. Do not expand a narrow task into new enemies, levels, economy changes, or a whole-game audit.
+For a review or recommendation, report without edits. For requested creation or fixes, implement and verify within scope. A broad control-feel request can authorize controller tuning; distinguish it from presentation-only work. Use existing authorization, and ask only about unresolved choices with material effects beyond it. Do not expand a local task into new gameplay, economy changes or a whole-game audit.
 
-`kill-game-slop` focuses on evidence-based diagnosis and scoped repair of distracting, redundant, misleading, or difficult-to-use presentation. Use `bettermakegame` for requested UI/HUD creation, broader layout or identity alternatives, and interaction or sequence improvements. Either skill may add, simplify, move, or remove an element when the task requires it. They are independent; do not require an automatic sequence or expand the authorized scope. `kill-ai-slop` handles general web product styling and copy.
+Read the affected state transitions and existing input, UI, art, animation and audio systems. Record the player action, intended feeling, references, target input/viewport and what must remain. Attribute documented intent; label inferred intent provisional. Inspect a running scene or supplied captures where available, keeping source facts, runtime observations, user reports and inference distinct. Still images do not establish timing, sound, latency or haptics.
 
-For VFX creation that must fit the game's art direction and feedback, read [vfx-handoff.md](references/vfx-handoff.md). Establish a short VFX brief from actual references and event semantics; use an available `game-vfx` skill for scoped effect production and review its returned evidence in the game context. Apply both sets of instructions in the same session without launching agents or repeatedly routing between skills. Each skill remains usable alone; an ordinary interaction fix does not require a VFX handoff or a whole-game audit.
+Fix dropped input, wrong state, broken routing and frame stalls before adding forgiveness or spectacle. Classify findings as confirmed defects, hypotheses, optional design proposals or preservation decisions; priority is a separate question. No confirmed defect and an unchanged baseline are valid outcomes.
 
-## Select techniques for the situation
+## Read only the relevant route
 
-For control feel, impact, camera, or play-flow work, use [game-feel-selection.md](references/game-feel-selection.md). Start with the player's task, observed friction or desired feeling, and actual implementation. Investigate dropped input, broken event routing, frame stalls, and incorrect state before adding forgiveness, smoothing, or spectacle.
+Do not preload the library or evaluation records. A small task needs only its affected route and checks, not a separate contract or full review.
 
-Choose relevant candidates from these references; read only the affected family:
+| Work | Read when needed |
+| --- | --- |
+| Select/tune control feel, impact or flow | [game-feel-selection.md](references/game-feel-selection.md), then only the affected technique family |
+| Input, movement, aiming or dragging | [control-techniques.md](references/control-techniques.md) |
+| Impact, camera or play flow | [feedback-flow-techniques.md](references/feedback-flow-techniques.md) |
+| Sound, mix, audio timing or haptics | [audio-haptics.md](references/audio-haptics.md) |
+| UI/HUD layout, focus, readability or identity | [ui-hud-design.md](references/ui-hud-design.md) |
+| Broad polish or an important event sequence | Relevant sections of [gameplay-polish.md](references/gameplay-polish.md) |
+| Engine integration or numerical tuning | The selected engine in [engine-notes.md](references/engine-notes.md); [tuning-evidence.md](references/tuning-evidence.md) only when reference values help |
+| Art-directed VFX production | [vfx-handoff.md](references/vfx-handoff.md) |
 
-- [control-techniques.md](references/control-techniques.md): input timing and intent, movement/traversal, aiming, dragging, and physical controls.
-- [feedback-flow-techniques.md](references/feedback-flow-techniques.md): impact and animation, camera, audio/haptics, puzzle/strategy clarity, interaction and repeat-play flow.
+The technique library is a set of candidates, not mandatory features or a closed menu. Select a small combination based on symptom, mechanism, prerequisites, tradeoffs and an observable check. Compare the current version with bounded alternatives; use project evidence and primary sources for unfamiliar mechanisms. Read actual assets and behavior rather than guessing style from a genre name. Preserve deliberate extravagance and meaningful team/state cues.
 
-These are starting points, not an exhaustive menu or a requirement to add effects. Include techniques outside the library when the situation warrants them; use project/engine evidence and primary sources for unfamiliar mechanisms. A technique must have a problem or design goal to serve, suitable prerequisites, known tradeoffs, tunable parameters, and a concrete check. Compare with the unchanged baseline; select a small useful combination rather than applying every plausible technique.
+## Declare what may change
 
-Distinguish presentation changes from input acceptance, controller motion, and authoritative rules. Coyote time can change jump eligibility; hit stop can change simulation time; aim assistance can change competitive outcomes. In presentation-only work, preserve those rules. When the user requests the relevant control/mechanic improvement, implement within that scope and verify the changed behavior explicitly. Clarify only unresolved design decisions with material effects beyond the request; do not require a separate approval for every technique.
+Distinguish **presentation**, **input interpretation**, **controller/rules**, and **shared time/authority**. Coyote time changes jump eligibility; physical knockback changes position; hit stop may change simulation clocks; aim assistance may affect competition. Verify those changes explicitly when authorized. Presentation-only work preserves control availability and rules; even camera kick can alter aiming if it changes the aim ray.
 
-## Design readable and usable UI
+Trace the relevant event through input/trigger, anticipation, action, impact/change, result and recovery. Skip inapplicable stages and avoid adding a wind-up to immediate UI input. Define real pending, success, failure, cancellation and exit states before their effects. Scale emphasis to routine actions, important actions and climaxes; preserve concise repeat-play paths.
 
-For UI/HUD creation or changes to placement, shape, hierarchy, readability, navigation, or thematic fit, read [ui-hud-design.md](references/ui-hud-design.md). Apply only checks relevant to the requested scene and input method; do not turn a button fix into a full-game audit.
+Use the existing engine, layout, input, audio and accessibility systems. Inspect callers before changing shared resources. For serialized/binary assets use supported editor/import workflows; without them, identify the actual target and unapplied specification rather than claiming an edit succeeded.
 
-Record the player task, intended feeling, important information, authored references, target viewport/input, and what must remain. Attribute documented intent and label inferred intent provisional. For each finding, distinguish a confirmed defect, an unverified usability hypothesis, an optional design proposal, or a justified preservation decision. Priority is separate from judgment.
+Preserve hidden information, server validation, ownership, persistence, rewards and purchases unless that exact behavior is in scope. Acknowledgement is not confirmed success. Keep previews and final displays consistent with authoritative state; cosmetic randomness must not perturb simulation randomness. Identify effect owner, clock, duplicate policy and cancellation/cleanup so obsolete cues cannot survive their scene or round.
 
-For requested creation, define requirements and actual states before choosing visual treatment. For redesign, compare the baseline with a small number of bounded alternatives. Describe expected gains, losses, and observable checks; retain an unchanged baseline as a valid outcome. Do not infer player preference from appearance or automated checks.
-
-## Understand and complete the experience
-
-Read the relevant real state transitions and shared UI, animation, art, and audio resources. Establish genre, audience, platform/input methods, core loop, and visual identity. Preserve deliberate extravagance and established player/team cues. Inspect a running scene or available capture; separate source-confirmed facts, runtime observations, user reports, and inference. A screenshot cannot establish timing, sound, latency, or haptics.
-
-Trace important events through **input/trigger → anticipation → action → impact/change → result → recovery/settling**. Mark inapplicable stages. Do not force a wind-up onto immediate UI input or introduce combat into a game that lacks it. Identify where the player's understanding breaks, particularly when an action succeeds but has weak acknowledgement, a reward is only a number, or a completed challenge lacks closure.
-
-For a broad review or important sequence, read [gameplay-polish.md](references/gameplay-polish.md). It contains the event map, full feedback/UI/camera/audio coverage, evaluation criteria, and reporting format. For a narrow creation or fix task, use its relevant checks without imposing a full-project audit. When creating requested UI, define its actual input, pending, success, failure, cancellation, and exit states before choosing effects; do not invent success behavior unsupported by the logic.
-
-Distinguish **routine actions / important actions / climaxes**. Scale emphasis to importance and frequency. Coordinate important sequences as continuous experiences rather than isolated effects; preserve concise repeat-play paths. A boss finale, where present, may progress through final impact, recognized death, brief aftermath, victory, and reward. Use the game's own genre and pacing for other milestones.
-
-## Implement the minimum useful polish
-
-- Prefer existing engine layout, input, animation, audio, and accessibility systems and shared resources. Inspect callers before changing shared behavior; avoid adding frameworks or effect systems just for this task.
-- For presentation-only changes, preserve gameplay rules, timing windows, simulation clocks, and displacement. For authorized input/controller/mechanic changes, declare which behavior may change and what must remain, then verify both. Preserve hidden information, authoritative validation, ownership, rewards, persistence, and purchases unless that exact behavior is in scope. Presentation must distinguish input acknowledgement from confirmed success.
-- Keep interpolated values, previews, skipped sequences, and final displays consistent with authoritative state. Check rapid input, cancellation, pause/resume, exit/re-entry, and delayed responses where relevant; obsolete cues must not survive their owner or scene.
-- Preserve readable contrast, non-color signals, supported languages, touch targets, controller/keyboard focus, safe areas, audio controls, and reduced-motion paths. Evaluate hover and haptics only on platforms where they apply.
-- Keep the meaningful action readable through the supported feedback channels during overlapping events. Choose a small set of useful cues, avoid needless waiting, and disclose the reason for rejecting excessive effects. Keep existing tuning controls or introduce only the few parameters the selected intervention actually needs; do not build a general effect framework.
-- Use supported editor/import workflows for serialized or binary resources. If unavailable, give known targets, properties, intended behavior, and verification steps; distinguish unapplied specifications from working changes.
+Preserve supported languages, readable contrast, non-color cues, touch targets, keyboard/controller focus, safe areas, audio settings and reduced-motion information. Tune only parameters needed by the selected intervention. Source reference values, project defaults and synthetic trial values are distinct; never call a trial a universal preset.
 
 ## Verify and report
 
-Exercise initialization, input, acknowledgement, change, result, recovery, exit, and re-entry in the relevant runtime. Compare the same states before/after where possible, then inspect repetition and the busiest relevant case. Use normal project checks for changed code, and measure performance or timing when making such claims. Source inspection or a successful build alone does not prove visual quality.
+Define success and preservation conditions before editing. Exercise the affected flow from input to recovery and re-entry; compare the same starting state before/after. Check boundary inputs, one-time consumption, repeated actions, cancellation, pause, frame-rate dependence and delayed/duplicate/denied responses where relevant. Recheck directly affected shared-resource users. Local mocked networking is not real multi-device verification.
 
-For selected techniques, use the observable checks and tuning method in [game-feel-selection.md](references/game-feel-selection.md). Verify affected timing boundaries, ownership/cancellation, frame-rate dependence, and multiplayer behavior where applicable. Separate functional correctness, experienced responsiveness/readability, and player preference; none proves the others. If runtime access is missing, deliver the code or unapplied specification appropriate to the request and name the remaining checks.
+Use normal project checks for code, rendering/playback for presentation, listening for sound and physical devices for haptics. Compilation or screenshots alone cannot prove motion quality. Record proposed, applied and verified separately. Keep functional correctness, perceived responsiveness/readability, runtime cost and player preference separate; measure before claiming improvement. If the trial is unconvincing, adjust it or retain the baseline.
 
-For UI/HUD work, select the moments and input transitions affected by the change using `ui-hud-design.md`. Recheck those conditions after editing; record what was observed, what was instrumented, and what remains unverified.
+For broad reviews, cover only requested categories with current behavior, evidence, expected benefit, difficulty and priority; mark unknowns and non-applicable areas. Assess keep/consolidate/remove only where elements affect the experience, checking dynamic/serialized references before calling code or assets unused. End with high-impact fixes, low-cost improvements and later refinements as applicable. A local fix needs a short result, actual checks and remaining limits, not a full report.
 
-For a broad review, evaluate each requested category for **current implementation / problem / expected benefit / implementation difficulty / priority**, with evidence and explicit unverified or not-applicable entries. Evaluate redundant effects, code, unused features, overlapping UI, and inconsistent styles for **keep / consolidate / remove** where they affect the reviewed experience; verify dynamic/serialized references before calling anything unused.
+`kill-game-slop` diagnoses demonstrated presentation costs; this skill leads requested UI/HUD creation, alternatives and interaction design. `game-vfx` can produce scoped effects from the brief. Each works alone; when combined, reuse evidence in the same session, retain review-only scope and do not launch agents or bounce between skills. `kill-ai-slop` covers general web product styling/copy. No skill handoff proves enjoyment, preference or retention.
 
-End proposals in this order:
-
-1. **High-impact immediate fixes** — core cause/result clarity, false states, blocked control, and missing closure.
-2. **Low-cost improvements** — targeted gains using existing resources and systems.
-3. **Later refinements** — lower-impact or device-dependent details.
-
-For each proposed change, identify the smallest intervention and a concrete verification condition. For implemented work, state what changed, what was checked, and unresolved runtime/editor/device limits. Do not claim improved retention or player preference without evidence.
+Maintainers only: repository `evals/` separates historical model-use records from executable fixture regressions and current file snapshots. Do not load evaluation answers for ordinary game work or treat fixture tests as proof of skill effectiveness.

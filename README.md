@@ -14,11 +14,11 @@ Use it for a specific problem (a missed jump, nervous steering, an unreadable hi
 4. **Implement within scope.** A recommendation request yields recommendations. A build or fix request permits a focused change using the project's existing systems. Preserve intended challenge, identity, accessibility, and unrelated rules.
 5. **Verify the result.** Reproduce the same moment before and after where possible. Check boundaries, repetition, interruption, and the busiest relevant case. Report runtime observations, automated checks, and remaining device or player-testing limits separately.
 
-The decision workflow is in [game-feel-selection.md](references/game-feel-selection.md). Its technique tables are an **open-ended candidate library**, not 48 plug-and-play scripts, recommended defaults, or a checklist of required effects. An agent can use a mechanism outside the tables when the game warrants it.
+The decision workflow is in [game-feel-selection.md](references/game-feel-selection.md). Its technique tables are an **open-ended candidate library**, not 52 plug-and-play scripts, recommended defaults, or a checklist of required effects. An agent can use a mechanism outside the tables when the game warrants it.
 
 ## Candidate library
 
-The two technique references contain 48 situation-led rows:
+The three technique references contain 52 situation-led rows:
 
 | Family | Rows | Representative situation and possible candidate |
 | --- | ---: | --- |
@@ -27,7 +27,7 @@ The two technique references contain 48 situation-led rows:
 | Aiming and manipulation | 7 | A dragged object jumps under the pointer: preserve the grab offset. |
 | Impact and motion | 8 | A confirmed hit is hard to locate: consider a local hit cue, with frequency and accessibility limits. |
 | Camera | 6 | The route ahead is hidden: test directional framing against visibility in both travel directions. |
-| Audio and haptics | 4 | Many contacts muddy the mix: examine voice priority or ducking, then listen to recovery. |
+| Audio and haptics | 8 | Many contacts muddy the mix: examine voice priority or ducking, then listen to recovery. |
 | Comprehension and flow | 8 | A puzzle move has an unclear consequence: show a truthful preview before commitment. |
 
 See [control-techniques.md](references/control-techniques.md) and [feedback-flow-techniques.md](references/feedback-flow-techniques.md) for mechanisms, tuning dimensions, limits, and observable checks. The rows are prompts for investigation. Suitability depends on genre, actual mechanics, devices, performance, and intended difficulty. A cozy interaction may need a clear settling cue; a competitive game may reject hidden target snapping. Suggested parameters are trial values to measure and tune in the project, never universal presets.
@@ -120,7 +120,7 @@ The skill needs no bundled runtime or separate API key. Implementing a change st
 
 ## Evaluation and limits
 
-On 2026-10-31, an independent evaluation used five synthetic recommendation scenarios and one Node controller fixture. The fixture's four tests passed. See the [game-feel evaluation record](evals/game-feel/README.md) and run its example with `node --test evals/game-feel/racer/controller.test.mjs`. These checks do not form a before/after benchmark or a real-device or human game-feel test. The [UI/HUD U and V cases](evals/ui-hud/README.md) remain **NOT RUN**.
+On 2026-10-31, a bounded maintainer-run check used separate workers for five synthetic recommendation scenarios and one Node controller fixture. It was not a fully isolated or blinded study. The fixture's four tests passed. See the [game-feel evaluation record](evals/game-feel/README.md) and run its example with `node --test evals/game-feel/racer/controller.test.mjs`. These checks do not form a before/after benchmark or a real-device or human game-feel test. The [UI/HUD U and V cases](evals/ui-hud/README.md) remain **NOT RUN**.
 
 The skill does not play a game by itself, guarantee player preference, or prove retention or commercial results. It directs the agent to report what was observed in the runtime, what was checked in code, and what remains unverified.
 
@@ -139,8 +139,17 @@ The skills are independent; none is a prerequisite for the others. They can add,
 - [SKILL.md](SKILL.md): scope and main workflow.
 - [references/game-feel-selection.md](references/game-feel-selection.md): situation-led selection, implementation, and verification.
 - [references/control-techniques.md](references/control-techniques.md): input, movement, aiming, and manipulation candidates.
-- [references/feedback-flow-techniques.md](references/feedback-flow-techniques.md): impact, camera, audio/haptics, and comprehension/flow candidates.
+- [references/feedback-flow-techniques.md](references/feedback-flow-techniques.md): 22 impact, camera, and comprehension/flow candidates.
+- [references/audio-haptics.md](references/audio-haptics.md): eight audio/haptic candidates and what requires listening or a physical device.
+- [references/engine-notes.md](references/engine-notes.md): conditional Unity, Godot, Unreal and Web integration notes.
+- [references/tuning-evidence.md](references/tuning-evidence.md): sourced reference values, local trials and their limits.
 - [references/ui-hud-design.md](references/ui-hud-design.md): UI/HUD analysis and design comparisons.
 - [references/gameplay-polish.md](references/gameplay-polish.md): event sequences and broad presentation review.
 - [references/vfx-handoff.md](references/vfx-handoff.md): game-style briefs and review of effects made with game-vfx.
 - [agents/openai.yaml](agents/openai.yaml): Codex display metadata.
+
+## This update
+
+The entrypoint now routes to only the affected topic; audio/haptics has its own reference. Four new audio candidates bring the library to 52. Engine notes cover input ownership, modal focus, clocks and audio scheduling. Sourced values are examples, not presets. The package is under the [MIT license](LICENSE); linked third-party material retains its own terms.
+
+The [new regression fixtures](evals/behavior/README.md) cover jump-window boundaries, modal focus, online event ownership and an explicit partial-throttle alternative. Their results and current runtime-file hashes are separate from the unchanged 2026-10-31 snapshot. That historical snapshot does not cover later VFX handoff edits or the current skill. Code checks do not establish better model judgment or game feel; the historical U/V behavior comparisons and human/device evaluations remain NOT RUN.
