@@ -36,6 +36,7 @@ Do not preload the library or evaluation records. A small task needs only its af
 | UI/HUD layout, focus, readability or identity | [ui-hud-design.md](references/ui-hud-design.md) |
 | Broad polish or an important event sequence | Relevant sections of [gameplay-polish.md](references/gameplay-polish.md) |
 | Engine integration or numerical tuning | The selected engine in [engine-notes.md](references/engine-notes.md); [tuning-evidence.md](references/tuning-evidence.md) only when reference values help |
+| A finding received from another review, including UI/controls | [finding-handoff.md](references/finding-handoff.md) |
 | Art-directed VFX production | [vfx-handoff.md](references/vfx-handoff.md) |
 
 The technique library is a set of candidates, not mandatory features or a closed menu. Select a small combination based on symptom, mechanism, prerequisites, tradeoffs and an observable check. Compare the current version with bounded alternatives; use project evidence and primary sources for unfamiliar mechanisms. Read actual assets and behavior rather than guessing style from a genre name. Preserve deliberate extravagance and meaningful team/state cues.

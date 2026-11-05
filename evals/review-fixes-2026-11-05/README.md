@@ -1,5 +1,7 @@
 # Feedback repairs — 2026-11-05
 
+Historical record published in `fd3c15d`. The later [general finding receiver](../handoff-followup-2026-11-05.md) is outside this frozen runtime and its six-session comparison. / `fd3c15d`에 게시한 과거 기록이며 후속 공통 수신 지침은 이 고정 입력과 6회 비교에 포함되지 않습니다.
+
 This follows published base commit `1ad3281d55ec5702325b57faf4a41cef2101382e`. The first update's results and snapshots remain historical. Current runtime instructions now live under `skills/bettermakegame/`; recorded root-level paths in old snapshots refer to their original revisions.
 
 ## Repairs

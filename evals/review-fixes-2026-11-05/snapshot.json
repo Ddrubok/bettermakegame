@@ -1,6 +1,6 @@
 {
   "base_commit": "1ad3281d55ec5702325b57faf4a41cef2101382e",
-  "revision": "uncommitted feedback-repair candidate",
+  "revision": "Historical pre-publication snapshot; published in fd3c15df5cbbd9226003233e573af67cf8da0c85",
   "runtime_root": "skills/bettermakegame",
   "normalization": "UTF-8 text with CRLF/CR normalized to LF; SHA-256",
   "runtime_files": {
@@ -61,5 +61,6 @@
     "evals/comparison/runs/2026-11-05/report.md": "26eec03d53dc1c878d079b1645672e5a0b9fc88dfbe075db8e14447fbe92bdfe",
     "evals/comparison/score.mjs": "cf90ec0e58522fd8a9cb6e14272c4e06e3b8a25976eab327f955d283f5820916"
   },
-  "meaning": "Current package and bounded fixture/model comparison; no general skill superiority claim"
+  "meaning": "Current package and bounded fixture/model comparison; no general skill superiority claim",
+  "published_commit": "fd3c15df5cbbd9226003233e573af67cf8da0c85"
 }
