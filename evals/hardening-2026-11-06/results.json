@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-06",
+  "kind": "maintainer hardening and fixture verification, not model effectiveness evaluation",
+  "base_commit": "c4b128bf2842b4a5fa057070f494f5520680282c",
+  "host_node": "v22.18.0",
+  "wsl_node": "v22.22.0",
+  "container_node": "v22.22.0",
+  "container_image": "node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94",
+  "checks": [
+    {
+      "command": "node --test --test-reporter=spec evals/behavior/jump.test.mjs evals/behavior/racer.test.mjs evals/behavior/online-impact.test.mjs evals/game-feel/racer/controller.test.mjs evals/comparison/scorer.test.mjs",
+      "host": "Windows",
+      "tests": 70,
+      "passed": 69,
+      "failed": 0,
+      "skipped": 1,
+      "original_regressions_passed": 42,
+      "scorer_passed": 27,
+      "skip_reason": "Docker-only probe; covered by separate Docker run"
+    },
+    {
+      "command": "BMG_DOCKER_TEST=1 node --test --test-reporter=spec evals/comparison/scorer.test.mjs",
+      "host": "WSL, existing Docker daemon",
+      "tests": 28,
+      "passed": 28,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "uv run --no-project --with pyyaml --python Python312/python.exe python -X utf8 quick_validate.py skills/bettermakegame",
+      "result": "Skill is valid!"
+    },
+    {
+      "command": "evals/check-packages.py check(repo, runtime), check(repo, installed)",
+      "links_per_package": 28,
+      "errors": []
+    },
+    {
+      "command": "docker ps -a --filter name=bmg-score- --format '{{.Names}}'",
+      "remaining_containers": 0
+    }
+  ],
+  "archived_outputs": {
+    "candidates": 6,
+    "passed": 6,
+    "named_checks_passed": 28
+  },
+  "defective_inputs": {
+    "candidates": 3,
+    "rejected": 3
+  },
+  "runtime": {
+    "files": 13,
+    "scripts": 0,
+    "entrypoint_words_before": 1008,
+    "entrypoint_words_after": 792,
+    "word_count_method": "Unicode whitespace split, including frontmatter",
+    "installed_matches_source": true
+  },
+  "new_model_comparison": "NOT RUN",
+  "actual_model_tokens": null,
+  "model_completion_time": null,
+  "prompt_injection_behavioral_eval": "NOT RUN",
+  "limits": [
+    "Controlled probes, not kernel/container exploit validation",
+    "Trusted-local mode is not a hostile-code sandbox and permits networking",
+    "Separate browser scorer and arbitrary agent tools are outside this hardening",
+    "No general skill effectiveness, speed, cost or game-feel benefit established",
+    "Single maintainer, no independent reviewer or new agents",
+    "Historical results and outputs preserved"
+  ]
+}

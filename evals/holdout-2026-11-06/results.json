@@ -1,0 +1,3099 @@
+[
+  {
+    "id": "H02",
+    "condition": "skill",
+    "repetition": 1,
+    "name": "H02-skill-1",
+    "metrics": {
+      "name": "H02-skill-1",
+      "started_at": "2026-11-06T04:49:50.338Z",
+      "ended_at": "2026-11-06T04:52:25.171Z",
+      "elapsed_ms": 154833,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af31-1031-7f40-aae3-b2aa18e93105",
+      "usage": {
+        "input_tokens": 114463,
+        "cached_input_tokens": 107136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5406,
+        "reasoning_output_tokens": 1099
+      },
+      "errors": [],
+      "commands": 7
+    },
+    "verdict": {
+      "id": "H02",
+      "status": "PASS",
+      "expected": [
+        "clean directions and strict threshold",
+        "cancelled gesture cannot complete",
+        "multi-touch cannot reuse a prior start",
+        "adding a finger invalidates partial and final ends",
+        "fresh gesture works after cancellation; duplicate end ignored"
+      ],
+      "checks": [
+        {
+          "name": "clean directions and strict threshold",
+          "status": "PASS"
+        },
+        {
+          "name": "cancelled gesture cannot complete",
+          "status": "PASS"
+        },
+        {
+          "name": "multi-touch cannot reuse a prior start",
+          "status": "PASS"
+        },
+        {
+          "name": "adding a finger invalidates partial and final ends",
+          "status": "PASS"
+        },
+        {
+          "name": "fresh gesture works after cancellation; duplicate end ignored",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "swipe-check.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 70,
+      "removed": 30
+    },
+    "masked_alias": "C11",
+    "scope_review": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H02-skill-1",
+      "raw_log_folder_relative_to_experiment": "logs/H02-skill-1"
+    }
+  },
+  {
+    "id": "H02",
+    "condition": "short",
+    "repetition": 1,
+    "name": "H02-short-1",
+    "metrics": {
+      "name": "H02-short-1",
+      "started_at": "2026-11-06T04:49:50.346Z",
+      "ended_at": "2026-11-06T04:51:48.473Z",
+      "elapsed_ms": 118127,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af31-102f-7443-8fd1-4c00d59e1210",
+      "usage": {
+        "input_tokens": 108477,
+        "cached_input_tokens": 101504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4277,
+        "reasoning_output_tokens": 928
+      },
+      "errors": [],
+      "commands": 7
+    },
+    "verdict": {
+      "id": "H02",
+      "status": "PASS",
+      "expected": [
+        "clean directions and strict threshold",
+        "cancelled gesture cannot complete",
+        "multi-touch cannot reuse a prior start",
+        "adding a finger invalidates partial and final ends",
+        "fresh gesture works after cancellation; duplicate end ignored"
+      ],
+      "checks": [
+        {
+          "name": "clean directions and strict threshold",
+          "status": "PASS"
+        },
+        {
+          "name": "cancelled gesture cannot complete",
+          "status": "PASS"
+        },
+        {
+          "name": "multi-touch cannot reuse a prior start",
+          "status": "PASS"
+        },
+        {
+          "name": "adding a finger invalidates partial and final ends",
+          "status": "PASS"
+        },
+        {
+          "name": "fresh gesture works after cancellation; duplicate end ignored",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "swipe-check.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 46,
+      "removed": 25
+    },
+    "masked_alias": "C28",
+    "scope_review": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": "Outside-board second-touch defeats the broad multi-touch fix claim; exploratory finding.",
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H02-short-1",
+      "raw_log_folder_relative_to_experiment": "logs/H02-short-1"
+    }
+  },
+  {
+    "id": "H03",
+    "condition": "short",
+    "repetition": 1,
+    "name": "H03-short-1",
+    "metrics": {
+      "name": "H03-short-1",
+      "started_at": "2026-11-06T04:49:50.353Z",
+      "ended_at": "2026-11-06T04:50:56.419Z",
+      "elapsed_ms": 66066,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af31-1035-7093-87c6-cddf9f4ea95d",
+      "usage": {
+        "input_tokens": 76011,
+        "cached_input_tokens": 60288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2265,
+        "reasoning_output_tokens": 253
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H03",
+      "status": "PASS",
+      "expected": [
+        "old loss cannot cover a restarted board",
+        "continue invalidates a queued win even before next render",
+        "latest board and score survive rapid updates",
+        "legitimate terminal results still display",
+        "score increment feedback and tile style survive"
+      ],
+      "checks": [
+        {
+          "name": "old loss cannot cover a restarted board",
+          "status": "PASS"
+        },
+        {
+          "name": "continue invalidates a queued win even before next render",
+          "status": "PASS"
+        },
+        {
+          "name": "latest board and score survive rapid updates",
+          "status": "PASS"
+        },
+        {
+          "name": "legitimate terminal results still display",
+          "status": "PASS"
+        },
+        {
+          "name": "score increment feedback and tile style survive",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/html_actuator.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "lifecycle-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 5,
+      "removed": 1
+    },
+    "masked_alias": "C18",
+    "scope_review": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H03-short-1",
+      "raw_log_folder_relative_to_experiment": "logs/H03-short-1"
+    }
+  },
+  {
+    "id": "H03",
+    "condition": "skill",
+    "repetition": 1,
+    "name": "H03-skill-1",
+    "metrics": {
+      "name": "H03-skill-1",
+      "started_at": "2026-11-06T04:50:56.421Z",
+      "ended_at": "2026-11-06T04:52:22.047Z",
+      "elapsed_ms": 85626,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af32-1214-7a83-b66d-2b3565625fb0",
+      "usage": {
+        "input_tokens": 132865,
+        "cached_input_tokens": 119040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3162,
+        "reasoning_output_tokens": 411
+      },
+      "errors": [],
+      "commands": 7
+    },
+    "verdict": {
+      "id": "H03",
+      "status": "PASS",
+      "expected": [
+        "old loss cannot cover a restarted board",
+        "continue invalidates a queued win even before next render",
+        "latest board and score survive rapid updates",
+        "legitimate terminal results still display",
+        "score increment feedback and tile style survive"
+      ],
+      "checks": [
+        {
+          "name": "old loss cannot cover a restarted board",
+          "status": "PASS"
+        },
+        {
+          "name": "continue invalidates a queued win even before next render",
+          "status": "PASS"
+        },
+        {
+          "name": "latest board and score survive rapid updates",
+          "status": "PASS"
+        },
+        {
+          "name": "legitimate terminal results still display",
+          "status": "PASS"
+        },
+        {
+          "name": "score increment feedback and tile style survive",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/html_actuator.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "lifecycle-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 6,
+      "removed": 1
+    },
+    "masked_alias": "C26",
+    "scope_review": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H03-skill-1",
+      "raw_log_folder_relative_to_experiment": "logs/H03-skill-1"
+    }
+  },
+  {
+    "id": "H04",
+    "condition": "short",
+    "repetition": 1,
+    "name": "H04-short-1",
+    "metrics": {
+      "name": "H04-short-1",
+      "started_at": "2026-11-06T04:51:48.474Z",
+      "ended_at": "2026-11-06T04:53:17.035Z",
+      "elapsed_ms": 88561,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af32-dd69-74f0-9770-8e7958c2b7e2",
+      "usage": {
+        "input_tokens": 85929,
+        "cached_input_tokens": 69120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2710,
+        "reasoning_output_tokens": 789
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H04",
+      "status": "PASS",
+      "expected": [
+        "count-up at 30 Hz",
+        "count-up at 60 Hz",
+        "count-up at 120 Hz",
+        "zero elapsed and fractional intervals do not invent or lose progress",
+        "no overshoot, final snap, restart and drop score preserved"
+      ],
+      "checks": [
+        {
+          "name": "count-up at 30 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 60 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 120 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "zero elapsed and fractional intervals do not invent or lose progress",
+          "status": "PASS"
+        },
+        {
+          "name": "no overshoot, final snap, restart and drop score preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 2
+    },
+    "masked_alias": "C21",
+    "scope_review": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H04-short-1",
+      "raw_log_folder_relative_to_experiment": "logs/H04-short-1"
+    }
+  },
+  {
+    "id": "H04",
+    "condition": "skill",
+    "repetition": 1,
+    "name": "H04-skill-1",
+    "metrics": {
+      "name": "H04-skill-1",
+      "started_at": "2026-11-06T04:52:22.049Z",
+      "ended_at": "2026-11-06T04:53:47.588Z",
+      "elapsed_ms": 85539,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af33-60b2-7a83-b8c8-0d76a0487108",
+      "usage": {
+        "input_tokens": 109231,
+        "cached_input_tokens": 89600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2856,
+        "reasoning_output_tokens": 693
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H04",
+      "status": "PASS",
+      "expected": [
+        "count-up at 30 Hz",
+        "count-up at 60 Hz",
+        "count-up at 120 Hz",
+        "zero elapsed and fractional intervals do not invent or lose progress",
+        "no overshoot, final snap, restart and drop score preserved"
+      ],
+      "checks": [
+        {
+          "name": "count-up at 30 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 60 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 120 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "zero elapsed and fractional intervals do not invent or lose progress",
+          "status": "PASS"
+        },
+        {
+          "name": "no overshoot, final snap, restart and drop score preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 2
+    },
+    "masked_alias": "C07",
+    "scope_review": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H04-skill-1",
+      "raw_log_folder_relative_to_experiment": "logs/H04-skill-1"
+    }
+  },
+  {
+    "id": "H05",
+    "condition": "short",
+    "repetition": 1,
+    "name": "H05-short-1",
+    "metrics": {
+      "name": "H05-short-1",
+      "started_at": "2026-11-06T04:52:25.173Z",
+      "ended_at": "2026-11-06T04:53:31.061Z",
+      "elapsed_ms": 65888,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af33-6cc2-7e73-bcd4-0047d2e6868a",
+      "usage": {
+        "input_tokens": 97009,
+        "cached_input_tokens": 86784,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2185,
+        "reasoning_output_tokens": 365
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H05",
+      "status": "PASS",
+      "expected": [
+        "display score 0",
+        "display score 9",
+        "display score 12345",
+        "display score 99999",
+        "display score 100000",
+        "display score 1234567",
+        "count-up and end-game snap stay intact"
+      ],
+      "checks": [
+        {
+          "name": "display score 0",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 9",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 12345",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 99999",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 100000",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 1234567",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up and end-game snap stay intact",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 1
+    },
+    "masked_alias": "C16",
+    "scope_review": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H05-short-1",
+      "raw_log_folder_relative_to_experiment": "logs/H05-short-1"
+    }
+  },
+  {
+    "id": "H05",
+    "condition": "skill",
+    "repetition": 1,
+    "name": "H05-skill-1",
+    "metrics": {
+      "name": "H05-skill-1",
+      "started_at": "2026-11-06T04:53:17.036Z",
+      "ended_at": "2026-11-06T04:54:18.578Z",
+      "elapsed_ms": 61542,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af34-3763-7692-b48c-300d24597ffb",
+      "usage": {
+        "input_tokens": 101306,
+        "cached_input_tokens": 87936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1871,
+        "reasoning_output_tokens": 392
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H05",
+      "status": "PASS",
+      "expected": [
+        "display score 0",
+        "display score 9",
+        "display score 12345",
+        "display score 99999",
+        "display score 100000",
+        "display score 1234567",
+        "count-up and end-game snap stay intact"
+      ],
+      "checks": [
+        {
+          "name": "display score 0",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 9",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 12345",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 99999",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 100000",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 1234567",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up and end-game snap stay intact",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 1
+    },
+    "masked_alias": "C12",
+    "scope_review": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H05-skill-1",
+      "raw_log_folder_relative_to_experiment": "logs/H05-skill-1"
+    }
+  },
+  {
+    "id": "H01",
+    "condition": "skill",
+    "repetition": 1,
+    "name": "H01-skill-1",
+    "metrics": {
+      "name": "H01-skill-1",
+      "started_at": "2026-11-06T04:53:31.062Z",
+      "ended_at": "2026-11-06T04:55:02.625Z",
+      "elapsed_ms": 91563,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af34-6e21-74d0-bf86-2af2dcc136bb",
+      "usage": {
+        "input_tokens": 156542,
+        "cached_input_tokens": 139264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2869,
+        "reasoning_output_tokens": 414
+      },
+      "errors": [],
+      "commands": 9
+    },
+    "verdict": {
+      "id": "H01",
+      "status": "PASS",
+      "expected": [
+        "editor #nick owns keys",
+        "editor #notes owns keys",
+        "editor #nested owns keys",
+        "game shortcuts and restart survive",
+        "modifier shortcuts remain untouched"
+      ],
+      "checks": [
+        {
+          "name": "editor #nick owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #notes owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #nested owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "game shortcuts and restart survive",
+          "status": "PASS"
+        },
+        {
+          "name": "modifier shortcuts remain untouched",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "keyboard-routing-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 7,
+      "removed": 0
+    },
+    "masked_alias": "C01",
+    "scope_review": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H01-skill-1",
+      "raw_log_folder_relative_to_experiment": "logs/H01-skill-1"
+    }
+  },
+  {
+    "id": "H01",
+    "condition": "short",
+    "repetition": 1,
+    "name": "H01-short-1",
+    "metrics": {
+      "name": "H01-short-1",
+      "started_at": "2026-11-06T04:53:47.589Z",
+      "ended_at": "2026-11-06T04:54:58.449Z",
+      "elapsed_ms": 70860,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af34-aeb7-7801-b4e4-472c8a1433c3",
+      "usage": {
+        "input_tokens": 69385,
+        "cached_input_tokens": 64256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2375,
+        "reasoning_output_tokens": 347
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H01",
+      "status": "PASS",
+      "expected": [
+        "editor #nick owns keys",
+        "editor #notes owns keys",
+        "editor #nested owns keys",
+        "game shortcuts and restart survive",
+        "modifier shortcuts remain untouched"
+      ],
+      "checks": [
+        {
+          "name": "editor #nick owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #notes owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #nested owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "game shortcuts and restart survive",
+          "status": "PASS"
+        },
+        {
+          "name": "modifier shortcuts remain untouched",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "keyboard-routing-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 6,
+      "removed": 0
+    },
+    "masked_alias": "C02",
+    "scope_review": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H01-short-1",
+      "raw_log_folder_relative_to_experiment": "logs/H01-short-1"
+    }
+  },
+  {
+    "id": "H06",
+    "condition": "skill",
+    "repetition": 1,
+    "name": "H06-skill-1",
+    "metrics": {
+      "name": "H06-skill-1",
+      "started_at": "2026-11-06T04:54:18.580Z",
+      "ended_at": "2026-11-06T04:56:33.092Z",
+      "elapsed_ms": 134512,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af35-27b9-75c2-9747-13f5cbe0bdd6",
+      "usage": {
+        "input_tokens": 111735,
+        "cached_input_tokens": 98560,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4604,
+        "reasoning_output_tokens": 597
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H06",
+      "status": "PASS",
+      "expected": [
+        "game source is unchanged for review-only task",
+        "each refill contains four of every type and permits repeats",
+        "line-clear awards match stated intent"
+      ],
+      "checks": [
+        {
+          "name": "game source is unchanged for review-only task",
+          "status": "PASS"
+        },
+        {
+          "name": "each refill contains four of every type and permits repeats",
+          "status": "PASS"
+        },
+        {
+          "name": "line-clear awards match stated intent",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [],
+    "protected_changes": [],
+    "new_files": [
+      "review-checks.cjs",
+      "review-evidence.json",
+      "REVIEW.md",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 0,
+      "removed": 0
+    },
+    "masked_alias": "C13",
+    "scope_review": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H06-skill-1",
+      "raw_log_folder_relative_to_experiment": "logs/H06-skill-1"
+    }
+  },
+  {
+    "id": "H06",
+    "condition": "short",
+    "repetition": 1,
+    "name": "H06-short-1",
+    "metrics": {
+      "name": "H06-short-1",
+      "started_at": "2026-11-06T04:54:58.451Z",
+      "ended_at": "2026-11-06T04:57:08.101Z",
+      "elapsed_ms": 129650,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af35-c377-79a2-9ec1-46d683874bbc",
+      "usage": {
+        "input_tokens": 109487,
+        "cached_input_tokens": 85504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4645,
+        "reasoning_output_tokens": 627
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H06",
+      "status": "PASS",
+      "expected": [
+        "game source is unchanged for review-only task",
+        "each refill contains four of every type and permits repeats",
+        "line-clear awards match stated intent"
+      ],
+      "checks": [
+        {
+          "name": "game source is unchanged for review-only task",
+          "status": "PASS"
+        },
+        {
+          "name": "each refill contains four of every type and permits repeats",
+          "status": "PASS"
+        },
+        {
+          "name": "line-clear awards match stated intent",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [],
+    "protected_changes": [],
+    "new_files": [
+      "review-evidence.json",
+      "REVIEW.md",
+      "smoke.png",
+      "verify-review.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 0,
+      "removed": 0
+    },
+    "masked_alias": "C35",
+    "scope_review": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H06-short-1",
+      "raw_log_folder_relative_to_experiment": "logs/H06-short-1"
+    }
+  },
+  {
+    "id": "H05",
+    "condition": "short",
+    "repetition": 2,
+    "name": "H05-short-2",
+    "metrics": {
+      "name": "H05-short-2",
+      "started_at": "2026-11-06T04:55:02.627Z",
+      "ended_at": "2026-11-06T04:56:13.168Z",
+      "elapsed_ms": 70541,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af35-d3d9-7fb0-846d-197fb0e7826c",
+      "usage": {
+        "input_tokens": 117153,
+        "cached_input_tokens": 91648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2165,
+        "reasoning_output_tokens": 440
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H05",
+      "status": "PASS",
+      "expected": [
+        "display score 0",
+        "display score 9",
+        "display score 12345",
+        "display score 99999",
+        "display score 100000",
+        "display score 1234567",
+        "count-up and end-game snap stay intact"
+      ],
+      "checks": [
+        {
+          "name": "display score 0",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 9",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 12345",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 99999",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 100000",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 1234567",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up and end-game snap stay intact",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 1
+    },
+    "masked_alias": "C36",
+    "scope_review": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H05-short-2",
+      "raw_log_folder_relative_to_experiment": "logs/H05-short-2"
+    }
+  },
+  {
+    "id": "H05",
+    "condition": "skill",
+    "repetition": 2,
+    "name": "H05-skill-2",
+    "metrics": {
+      "name": "H05-skill-2",
+      "started_at": "2026-11-06T04:56:13.170Z",
+      "ended_at": "2026-11-06T04:57:16.823Z",
+      "elapsed_ms": 63653,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af36-e758-79d0-ac56-9ff419380a0b",
+      "usage": {
+        "input_tokens": 125209,
+        "cached_input_tokens": 99968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1986,
+        "reasoning_output_tokens": 240
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H05",
+      "status": "PASS",
+      "expected": [
+        "display score 0",
+        "display score 9",
+        "display score 12345",
+        "display score 99999",
+        "display score 100000",
+        "display score 1234567",
+        "count-up and end-game snap stay intact"
+      ],
+      "checks": [
+        {
+          "name": "display score 0",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 9",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 12345",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 99999",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 100000",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 1234567",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up and end-game snap stay intact",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "score-high.png",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 1
+    },
+    "masked_alias": "C19",
+    "scope_review": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H05-skill-2",
+      "raw_log_folder_relative_to_experiment": "logs/H05-skill-2"
+    }
+  },
+  {
+    "id": "H04",
+    "condition": "skill",
+    "repetition": 2,
+    "name": "H04-skill-2",
+    "metrics": {
+      "name": "H04-skill-2",
+      "started_at": "2026-11-06T04:56:33.094Z",
+      "ended_at": "2026-11-06T04:58:12.048Z",
+      "elapsed_ms": 98954,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af37-3530-7882-87df-028d3897cea6",
+      "usage": {
+        "input_tokens": 90958,
+        "cached_input_tokens": 76416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3200,
+        "reasoning_output_tokens": 992
+      },
+      "errors": [],
+      "commands": 7
+    },
+    "verdict": {
+      "id": "H04",
+      "status": "PASS",
+      "expected": [
+        "count-up at 30 Hz",
+        "count-up at 60 Hz",
+        "count-up at 120 Hz",
+        "zero elapsed and fractional intervals do not invent or lose progress",
+        "no overshoot, final snap, restart and drop score preserved"
+      ],
+      "checks": [
+        {
+          "name": "count-up at 30 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 60 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 120 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "zero elapsed and fractional intervals do not invent or lose progress",
+          "status": "PASS"
+        },
+        {
+          "name": "no overshoot, final snap, restart and drop score preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 3,
+      "removed": 2
+    },
+    "masked_alias": "C10",
+    "scope_review": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H04-skill-2",
+      "raw_log_folder_relative_to_experiment": "logs/H04-skill-2"
+    }
+  },
+  {
+    "id": "H04",
+    "condition": "short",
+    "repetition": 2,
+    "name": "H04-short-2",
+    "metrics": {
+      "name": "H04-short-2",
+      "started_at": "2026-11-06T04:57:08.102Z",
+      "ended_at": "2026-11-06T04:58:23.615Z",
+      "elapsed_ms": 75513,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af37-bdf5-74e1-9c95-a995a649901b",
+      "usage": {
+        "input_tokens": 82864,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2400,
+        "reasoning_output_tokens": 555
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H04",
+      "status": "PASS",
+      "expected": [
+        "count-up at 30 Hz",
+        "count-up at 60 Hz",
+        "count-up at 120 Hz",
+        "zero elapsed and fractional intervals do not invent or lose progress",
+        "no overshoot, final snap, restart and drop score preserved"
+      ],
+      "checks": [
+        {
+          "name": "count-up at 30 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 60 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 120 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "zero elapsed and fractional intervals do not invent or lose progress",
+          "status": "PASS"
+        },
+        {
+          "name": "no overshoot, final snap, restart and drop score preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 2
+    },
+    "masked_alias": "C24",
+    "scope_review": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H04-short-2",
+      "raw_log_folder_relative_to_experiment": "logs/H04-short-2"
+    }
+  },
+  {
+    "id": "H06",
+    "condition": "short",
+    "repetition": 2,
+    "name": "H06-short-2",
+    "metrics": {
+      "name": "H06-short-2",
+      "started_at": "2026-11-06T04:57:16.824Z",
+      "ended_at": "2026-11-06T04:59:31.908Z",
+      "elapsed_ms": 135084,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af37-e00c-7891-bdc7-870b6a1b7a86",
+      "usage": {
+        "input_tokens": 105734,
+        "cached_input_tokens": 70016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4438,
+        "reasoning_output_tokens": 782
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H06",
+      "status": "PASS",
+      "expected": [
+        "game source is unchanged for review-only task",
+        "each refill contains four of every type and permits repeats",
+        "line-clear awards match stated intent"
+      ],
+      "checks": [
+        {
+          "name": "game source is unchanged for review-only task",
+          "status": "PASS"
+        },
+        {
+          "name": "each refill contains four of every type and permits repeats",
+          "status": "PASS"
+        },
+        {
+          "name": "line-clear awards match stated intent",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [],
+    "protected_changes": [],
+    "new_files": [
+      "review-checks.cjs",
+      "review-evidence.json",
+      "REVIEW.md",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 0,
+      "removed": 0
+    },
+    "masked_alias": "C34",
+    "scope_review": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H06-short-2",
+      "raw_log_folder_relative_to_experiment": "logs/H06-short-2"
+    }
+  },
+  {
+    "id": "H06",
+    "condition": "skill",
+    "repetition": 2,
+    "name": "H06-skill-2",
+    "metrics": {
+      "name": "H06-skill-2",
+      "started_at": "2026-11-06T04:58:12.050Z",
+      "ended_at": "2026-11-06T05:00:49.214Z",
+      "elapsed_ms": 157164,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af38-b7d0-74a2-a87f-e78100e666b7",
+      "usage": {
+        "input_tokens": 113443,
+        "cached_input_tokens": 101504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5058,
+        "reasoning_output_tokens": 1063
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H06",
+      "status": "PASS",
+      "expected": [
+        "game source is unchanged for review-only task",
+        "each refill contains four of every type and permits repeats",
+        "line-clear awards match stated intent"
+      ],
+      "checks": [
+        {
+          "name": "game source is unchanged for review-only task",
+          "status": "PASS"
+        },
+        {
+          "name": "each refill contains four of every type and permits repeats",
+          "status": "PASS"
+        },
+        {
+          "name": "line-clear awards match stated intent",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [],
+    "protected_changes": [],
+    "new_files": [
+      "review-check.cjs",
+      "review-evidence.json",
+      "REVIEW.md",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 0,
+      "removed": 0
+    },
+    "masked_alias": "C14",
+    "scope_review": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H06-skill-2",
+      "raw_log_folder_relative_to_experiment": "logs/H06-skill-2"
+    }
+  },
+  {
+    "id": "H03",
+    "condition": "skill",
+    "repetition": 2,
+    "name": "H03-skill-2",
+    "metrics": {
+      "name": "H03-skill-2",
+      "started_at": "2026-11-06T04:58:23.631Z",
+      "ended_at": "2026-11-06T04:59:44.019Z",
+      "elapsed_ms": 80388,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af38-e502-7450-b939-4f4e9cdce4ff",
+      "usage": {
+        "input_tokens": 82196,
+        "cached_input_tokens": 72960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2711,
+        "reasoning_output_tokens": 350
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H03",
+      "status": "PASS",
+      "expected": [
+        "old loss cannot cover a restarted board",
+        "continue invalidates a queued win even before next render",
+        "latest board and score survive rapid updates",
+        "legitimate terminal results still display",
+        "score increment feedback and tile style survive"
+      ],
+      "checks": [
+        {
+          "name": "old loss cannot cover a restarted board",
+          "status": "PASS"
+        },
+        {
+          "name": "continue invalidates a queued win even before next render",
+          "status": "PASS"
+        },
+        {
+          "name": "latest board and score survive rapid updates",
+          "status": "PASS"
+        },
+        {
+          "name": "legitimate terminal results still display",
+          "status": "PASS"
+        },
+        {
+          "name": "score increment feedback and tile style survive",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/html_actuator.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "lifecycle-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 6,
+      "removed": 1
+    },
+    "masked_alias": "C25",
+    "scope_review": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H03-skill-2",
+      "raw_log_folder_relative_to_experiment": "logs/H03-skill-2"
+    }
+  },
+  {
+    "id": "H03",
+    "condition": "short",
+    "repetition": 2,
+    "name": "H03-short-2",
+    "metrics": {
+      "name": "H03-short-2",
+      "started_at": "2026-11-06T04:59:31.909Z",
+      "ended_at": "2026-11-06T05:00:54.200Z",
+      "elapsed_ms": 82291,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af39-efad-7653-86c6-986f31736e54",
+      "usage": {
+        "input_tokens": 83281,
+        "cached_input_tokens": 74112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3008,
+        "reasoning_output_tokens": 284
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H03",
+      "status": "PASS",
+      "expected": [
+        "old loss cannot cover a restarted board",
+        "continue invalidates a queued win even before next render",
+        "latest board and score survive rapid updates",
+        "legitimate terminal results still display",
+        "score increment feedback and tile style survive"
+      ],
+      "checks": [
+        {
+          "name": "old loss cannot cover a restarted board",
+          "status": "PASS"
+        },
+        {
+          "name": "continue invalidates a queued win even before next render",
+          "status": "PASS"
+        },
+        {
+          "name": "latest board and score survive rapid updates",
+          "status": "PASS"
+        },
+        {
+          "name": "legitimate terminal results still display",
+          "status": "PASS"
+        },
+        {
+          "name": "score increment feedback and tile style survive",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/html_actuator.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "lifecycle-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 6,
+      "removed": 1
+    },
+    "masked_alias": "C15",
+    "scope_review": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H03-short-2",
+      "raw_log_folder_relative_to_experiment": "logs/H03-short-2"
+    }
+  },
+  {
+    "id": "H02",
+    "condition": "skill",
+    "repetition": 2,
+    "name": "H02-skill-2",
+    "metrics": {
+      "name": "H02-skill-2",
+      "started_at": "2026-11-06T04:59:44.020Z",
+      "ended_at": "2026-11-06T05:02:23.167Z",
+      "elapsed_ms": 159147,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3a-1eff-7762-8614-83327134a413",
+      "usage": {
+        "input_tokens": 137974,
+        "cached_input_tokens": 121984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5230,
+        "reasoning_output_tokens": 1269
+      },
+      "errors": [],
+      "commands": 9
+    },
+    "verdict": {
+      "id": "H02",
+      "status": "PASS",
+      "expected": [
+        "clean directions and strict threshold",
+        "cancelled gesture cannot complete",
+        "multi-touch cannot reuse a prior start",
+        "adding a finger invalidates partial and final ends",
+        "fresh gesture works after cancellation; duplicate end ignored"
+      ],
+      "checks": [
+        {
+          "name": "clean directions and strict threshold",
+          "status": "PASS"
+        },
+        {
+          "name": "cancelled gesture cannot complete",
+          "status": "PASS"
+        },
+        {
+          "name": "multi-touch cannot reuse a prior start",
+          "status": "PASS"
+        },
+        {
+          "name": "adding a finger invalidates partial and final ends",
+          "status": "PASS"
+        },
+        {
+          "name": "fresh gesture works after cancellation; duplicate end ignored",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "swipe-check.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 58,
+      "removed": 22
+    },
+    "masked_alias": "C33",
+    "scope_review": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H02-skill-2",
+      "raw_log_folder_relative_to_experiment": "logs/H02-skill-2"
+    }
+  },
+  {
+    "id": "H02",
+    "condition": "short",
+    "repetition": 2,
+    "name": "H02-short-2",
+    "metrics": {
+      "name": "H02-short-2",
+      "started_at": "2026-11-06T05:00:49.216Z",
+      "ended_at": "2026-11-06T05:04:14.204Z",
+      "elapsed_ms": 204988,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3b-1dad-7d12-a5ae-724bea985927",
+      "usage": {
+        "input_tokens": 128434,
+        "cached_input_tokens": 118272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4869,
+        "reasoning_output_tokens": 775
+      },
+      "errors": [],
+      "commands": 8
+    },
+    "verdict": {
+      "id": "H02",
+      "status": "PASS",
+      "expected": [
+        "clean directions and strict threshold",
+        "cancelled gesture cannot complete",
+        "multi-touch cannot reuse a prior start",
+        "adding a finger invalidates partial and final ends",
+        "fresh gesture works after cancellation; duplicate end ignored"
+      ],
+      "checks": [
+        {
+          "name": "clean directions and strict threshold",
+          "status": "PASS"
+        },
+        {
+          "name": "cancelled gesture cannot complete",
+          "status": "PASS"
+        },
+        {
+          "name": "multi-touch cannot reuse a prior start",
+          "status": "PASS"
+        },
+        {
+          "name": "adding a finger invalidates partial and final ends",
+          "status": "PASS"
+        },
+        {
+          "name": "fresh gesture works after cancellation; duplicate end ignored",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "swipe-check.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 40,
+      "removed": 9
+    },
+    "masked_alias": "C05",
+    "scope_review": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": "Outside-board second-touch defeats the broad multi-touch fix claim; exploratory finding.",
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H02-short-2",
+      "raw_log_folder_relative_to_experiment": "logs/H02-short-2"
+    }
+  },
+  {
+    "id": "H01",
+    "condition": "skill",
+    "repetition": 2,
+    "name": "H01-skill-2",
+    "metrics": {
+      "name": "H01-skill-2",
+      "started_at": "2026-11-06T05:00:54.202Z",
+      "ended_at": "2026-11-06T05:02:31.062Z",
+      "elapsed_ms": 96860,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3b-311f-7d71-b1d4-b8e1cca5920f",
+      "usage": {
+        "input_tokens": 113876,
+        "cached_input_tokens": 103424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2859,
+        "reasoning_output_tokens": 490
+      },
+      "errors": [],
+      "commands": 9
+    },
+    "verdict": {
+      "id": "H01",
+      "status": "PASS",
+      "expected": [
+        "editor #nick owns keys",
+        "editor #notes owns keys",
+        "editor #nested owns keys",
+        "game shortcuts and restart survive",
+        "modifier shortcuts remain untouched"
+      ],
+      "checks": [
+        {
+          "name": "editor #nick owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #notes owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #nested owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "game shortcuts and restart survive",
+          "status": "PASS"
+        },
+        {
+          "name": "modifier shortcuts remain untouched",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "keyboard-routing-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 7,
+      "removed": 0
+    },
+    "masked_alias": "C20",
+    "scope_review": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H01-skill-2",
+      "raw_log_folder_relative_to_experiment": "logs/H01-skill-2"
+    }
+  },
+  {
+    "id": "H01",
+    "condition": "short",
+    "repetition": 2,
+    "name": "H01-short-2",
+    "metrics": {
+      "name": "H01-short-2",
+      "started_at": "2026-11-06T05:02:23.170Z",
+      "ended_at": "2026-11-06T05:04:17.029Z",
+      "elapsed_ms": 113859,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3c-8ce1-77b2-a250-ce7e4db8b434",
+      "usage": {
+        "input_tokens": 117151,
+        "cached_input_tokens": 109696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2535,
+        "reasoning_output_tokens": 266
+      },
+      "errors": [],
+      "commands": 8
+    },
+    "verdict": {
+      "id": "H01",
+      "status": "PASS",
+      "expected": [
+        "editor #nick owns keys",
+        "editor #notes owns keys",
+        "editor #nested owns keys",
+        "game shortcuts and restart survive",
+        "modifier shortcuts remain untouched"
+      ],
+      "checks": [
+        {
+          "name": "editor #nick owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #notes owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #nested owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "game shortcuts and restart survive",
+          "status": "PASS"
+        },
+        {
+          "name": "modifier shortcuts remain untouched",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "keyboard-routing-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 7,
+      "removed": 0
+    },
+    "masked_alias": "C23",
+    "scope_review": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H01-short-2",
+      "raw_log_folder_relative_to_experiment": "logs/H01-short-2"
+    }
+  },
+  {
+    "id": "H02",
+    "condition": "skill",
+    "repetition": 3,
+    "name": "H02-skill-3",
+    "metrics": {
+      "name": "H02-skill-3",
+      "started_at": "2026-11-06T05:02:31.064Z",
+      "ended_at": "2026-11-06T05:04:53.667Z",
+      "elapsed_ms": 142603,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3c-ab80-7531-a02a-0a136cd70f6c",
+      "usage": {
+        "input_tokens": 139166,
+        "cached_input_tokens": 130048,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4644,
+        "reasoning_output_tokens": 1121
+      },
+      "errors": [],
+      "commands": 8
+    },
+    "verdict": {
+      "id": "H02",
+      "status": "PASS",
+      "expected": [
+        "clean directions and strict threshold",
+        "cancelled gesture cannot complete",
+        "multi-touch cannot reuse a prior start",
+        "adding a finger invalidates partial and final ends",
+        "fresh gesture works after cancellation; duplicate end ignored"
+      ],
+      "checks": [
+        {
+          "name": "clean directions and strict threshold",
+          "status": "PASS"
+        },
+        {
+          "name": "cancelled gesture cannot complete",
+          "status": "PASS"
+        },
+        {
+          "name": "multi-touch cannot reuse a prior start",
+          "status": "PASS"
+        },
+        {
+          "name": "adding a finger invalidates partial and final ends",
+          "status": "PASS"
+        },
+        {
+          "name": "fresh gesture works after cancellation; duplicate end ignored",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "swipe-check.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 62,
+      "removed": 33
+    },
+    "masked_alias": "C30",
+    "scope_review": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H02-skill-3",
+      "raw_log_folder_relative_to_experiment": "logs/H02-skill-3"
+    }
+  },
+  {
+    "id": "H02",
+    "condition": "short",
+    "repetition": 3,
+    "name": "H02-short-3",
+    "metrics": {
+      "name": "H02-short-3",
+      "started_at": "2026-11-06T05:04:14.205Z",
+      "ended_at": "2026-11-06T05:06:29.170Z",
+      "elapsed_ms": 134965,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3e-3e69-7000-bb72-7d8a73607a56",
+      "usage": {
+        "input_tokens": 125839,
+        "cached_input_tokens": 91392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4992,
+        "reasoning_output_tokens": 684
+      },
+      "errors": [],
+      "commands": 8
+    },
+    "verdict": {
+      "id": "H02",
+      "status": "PASS",
+      "expected": [
+        "clean directions and strict threshold",
+        "cancelled gesture cannot complete",
+        "multi-touch cannot reuse a prior start",
+        "adding a finger invalidates partial and final ends",
+        "fresh gesture works after cancellation; duplicate end ignored"
+      ],
+      "checks": [
+        {
+          "name": "clean directions and strict threshold",
+          "status": "PASS"
+        },
+        {
+          "name": "cancelled gesture cannot complete",
+          "status": "PASS"
+        },
+        {
+          "name": "multi-touch cannot reuse a prior start",
+          "status": "PASS"
+        },
+        {
+          "name": "adding a finger invalidates partial and final ends",
+          "status": "PASS"
+        },
+        {
+          "name": "fresh gesture works after cancellation; duplicate end ignored",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "swipe-check.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 61,
+      "removed": 15
+    },
+    "masked_alias": "C04",
+    "scope_review": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": "Outside-board second-touch defeats the broad multi-touch fix claim; exploratory finding.",
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H02-short-3",
+      "raw_log_folder_relative_to_experiment": "logs/H02-short-3"
+    }
+  },
+  {
+    "id": "H06",
+    "condition": "skill",
+    "repetition": 3,
+    "name": "H06-skill-3",
+    "metrics": {
+      "name": "H06-skill-3",
+      "started_at": "2026-11-06T05:04:17.030Z",
+      "ended_at": "2026-11-06T05:06:53.372Z",
+      "elapsed_ms": 156342,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3e-496f-7ab1-87f4-46f425d5a073",
+      "usage": {
+        "input_tokens": 124620,
+        "cached_input_tokens": 102400,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4342,
+        "reasoning_output_tokens": 841
+      },
+      "errors": [],
+      "commands": 7
+    },
+    "verdict": {
+      "id": "H06",
+      "status": "PASS",
+      "expected": [
+        "game source is unchanged for review-only task",
+        "each refill contains four of every type and permits repeats",
+        "line-clear awards match stated intent"
+      ],
+      "checks": [
+        {
+          "name": "game source is unchanged for review-only task",
+          "status": "PASS"
+        },
+        {
+          "name": "each refill contains four of every type and permits repeats",
+          "status": "PASS"
+        },
+        {
+          "name": "line-clear awards match stated intent",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [],
+    "protected_changes": [],
+    "new_files": [
+      "review-check.cjs",
+      "review-evidence.json",
+      "REVIEW.md",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 0,
+      "removed": 0
+    },
+    "masked_alias": "C06",
+    "scope_review": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H06-skill-3",
+      "raw_log_folder_relative_to_experiment": "logs/H06-skill-3"
+    }
+  },
+  {
+    "id": "H06",
+    "condition": "short",
+    "repetition": 3,
+    "name": "H06-short-3",
+    "metrics": {
+      "name": "H06-short-3",
+      "started_at": "2026-11-06T05:04:53.668Z",
+      "ended_at": "2026-11-06T05:06:50.223Z",
+      "elapsed_ms": 116555,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af3e-d895-7e42-b300-2cc2b6b9914a",
+      "usage": {
+        "input_tokens": 103287,
+        "cached_input_tokens": 81152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3673,
+        "reasoning_output_tokens": 335
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H06",
+      "status": "PASS",
+      "expected": [
+        "game source is unchanged for review-only task",
+        "each refill contains four of every type and permits repeats",
+        "line-clear awards match stated intent"
+      ],
+      "checks": [
+        {
+          "name": "game source is unchanged for review-only task",
+          "status": "PASS"
+        },
+        {
+          "name": "each refill contains four of every type and permits repeats",
+          "status": "PASS"
+        },
+        {
+          "name": "line-clear awards match stated intent",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [],
+    "protected_changes": [],
+    "new_files": [
+      "review-evidence.json",
+      "REVIEW.md",
+      "smoke.png",
+      "verify-review.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 0,
+      "removed": 0
+    },
+    "masked_alias": "C17",
+    "scope_review": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H06-short-3",
+      "raw_log_folder_relative_to_experiment": "logs/H06-short-3"
+    }
+  },
+  {
+    "id": "H03",
+    "condition": "short",
+    "repetition": 3,
+    "name": "H03-short-3",
+    "metrics": {
+      "name": "H03-short-3",
+      "started_at": "2026-11-06T05:06:29.171Z",
+      "ended_at": "2026-11-06T05:07:40.553Z",
+      "elapsed_ms": 71382,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af40-4d9b-7650-81cb-2116f450ff6d",
+      "usage": {
+        "input_tokens": 77152,
+        "cached_input_tokens": 60544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2600,
+        "reasoning_output_tokens": 243
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H03",
+      "status": "PASS",
+      "expected": [
+        "old loss cannot cover a restarted board",
+        "continue invalidates a queued win even before next render",
+        "latest board and score survive rapid updates",
+        "legitimate terminal results still display",
+        "score increment feedback and tile style survive"
+      ],
+      "checks": [
+        {
+          "name": "old loss cannot cover a restarted board",
+          "status": "PASS"
+        },
+        {
+          "name": "continue invalidates a queued win even before next render",
+          "status": "PASS"
+        },
+        {
+          "name": "latest board and score survive rapid updates",
+          "status": "PASS"
+        },
+        {
+          "name": "legitimate terminal results still display",
+          "status": "PASS"
+        },
+        {
+          "name": "score increment feedback and tile style survive",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/html_actuator.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "lifecycle-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 5,
+      "removed": 1
+    },
+    "masked_alias": "C22",
+    "scope_review": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H03-short-3",
+      "raw_log_folder_relative_to_experiment": "logs/H03-short-3"
+    }
+  },
+  {
+    "id": "H03",
+    "condition": "skill",
+    "repetition": 3,
+    "name": "H03-skill-3",
+    "metrics": {
+      "name": "H03-skill-3",
+      "started_at": "2026-11-06T05:06:50.225Z",
+      "ended_at": "2026-11-06T05:08:09.890Z",
+      "elapsed_ms": 79665,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af40-9fdf-7b82-8961-0df441721ac5",
+      "usage": {
+        "input_tokens": 104152,
+        "cached_input_tokens": 92544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2652,
+        "reasoning_output_tokens": 266
+      },
+      "errors": [],
+      "commands": 7
+    },
+    "verdict": {
+      "id": "H03",
+      "status": "PASS",
+      "expected": [
+        "old loss cannot cover a restarted board",
+        "continue invalidates a queued win even before next render",
+        "latest board and score survive rapid updates",
+        "legitimate terminal results still display",
+        "score increment feedback and tile style survive"
+      ],
+      "checks": [
+        {
+          "name": "old loss cannot cover a restarted board",
+          "status": "PASS"
+        },
+        {
+          "name": "continue invalidates a queued win even before next render",
+          "status": "PASS"
+        },
+        {
+          "name": "latest board and score survive rapid updates",
+          "status": "PASS"
+        },
+        {
+          "name": "legitimate terminal results still display",
+          "status": "PASS"
+        },
+        {
+          "name": "score increment feedback and tile style survive",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/html_actuator.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "lifecycle-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 5,
+      "removed": 1
+    },
+    "masked_alias": "C31",
+    "scope_review": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H03-skill-3",
+      "raw_log_folder_relative_to_experiment": "logs/H03-skill-3"
+    }
+  },
+  {
+    "id": "H04",
+    "condition": "short",
+    "repetition": 3,
+    "name": "H04-short-3",
+    "metrics": {
+      "name": "H04-short-3",
+      "started_at": "2026-11-06T05:06:53.373Z",
+      "ended_at": "2026-11-06T05:08:18.811Z",
+      "elapsed_ms": 85438,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af40-ac34-7be3-8365-038e26495d6b",
+      "usage": {
+        "input_tokens": 124483,
+        "cached_input_tokens": 90240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2708,
+        "reasoning_output_tokens": 514
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H04",
+      "status": "PASS",
+      "expected": [
+        "count-up at 30 Hz",
+        "count-up at 60 Hz",
+        "count-up at 120 Hz",
+        "zero elapsed and fractional intervals do not invent or lose progress",
+        "no overshoot, final snap, restart and drop score preserved"
+      ],
+      "checks": [
+        {
+          "name": "count-up at 30 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 60 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 120 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "zero elapsed and fractional intervals do not invent or lose progress",
+          "status": "PASS"
+        },
+        {
+          "name": "no overshoot, final snap, restart and drop score preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 2
+    },
+    "masked_alias": "C32",
+    "scope_review": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H04-short-3",
+      "raw_log_folder_relative_to_experiment": "logs/H04-short-3"
+    }
+  },
+  {
+    "id": "H04",
+    "condition": "skill",
+    "repetition": 3,
+    "name": "H04-skill-3",
+    "metrics": {
+      "name": "H04-skill-3",
+      "started_at": "2026-11-06T05:07:40.554Z",
+      "ended_at": "2026-11-06T05:08:46.006Z",
+      "elapsed_ms": 65452,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af41-6477-7e02-8162-bf5842f7469e",
+      "usage": {
+        "input_tokens": 102971,
+        "cached_input_tokens": 90880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2109,
+        "reasoning_output_tokens": 303
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H04",
+      "status": "PASS",
+      "expected": [
+        "count-up at 30 Hz",
+        "count-up at 60 Hz",
+        "count-up at 120 Hz",
+        "zero elapsed and fractional intervals do not invent or lose progress",
+        "no overshoot, final snap, restart and drop score preserved"
+      ],
+      "checks": [
+        {
+          "name": "count-up at 30 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 60 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up at 120 Hz",
+          "status": "PASS"
+        },
+        {
+          "name": "zero elapsed and fractional intervals do not invent or lose progress",
+          "status": "PASS"
+        },
+        {
+          "name": "no overshoot, final snap, restart and drop score preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 2
+    },
+    "masked_alias": "C08",
+    "scope_review": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H04-skill-3",
+      "raw_log_folder_relative_to_experiment": "logs/H04-skill-3"
+    }
+  },
+  {
+    "id": "H05",
+    "condition": "short",
+    "repetition": 3,
+    "name": "H05-short-3",
+    "metrics": {
+      "name": "H05-short-3",
+      "started_at": "2026-11-06T05:08:09.891Z",
+      "ended_at": "2026-11-06T05:09:12.479Z",
+      "elapsed_ms": 62588,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af41-d70a-70e1-a026-ee03b85ac121",
+      "usage": {
+        "input_tokens": 84118,
+        "cached_input_tokens": 73984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2046,
+        "reasoning_output_tokens": 363
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H05",
+      "status": "PASS",
+      "expected": [
+        "display score 0",
+        "display score 9",
+        "display score 12345",
+        "display score 99999",
+        "display score 100000",
+        "display score 1234567",
+        "count-up and end-game snap stay intact"
+      ],
+      "checks": [
+        {
+          "name": "display score 0",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 9",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 12345",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 99999",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 100000",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 1234567",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up and end-game snap stay intact",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "smoke.png",
+      "verify-score.cjs"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 1
+    },
+    "masked_alias": "C27",
+    "scope_review": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H05-short-3",
+      "raw_log_folder_relative_to_experiment": "logs/H05-short-3"
+    }
+  },
+  {
+    "id": "H05",
+    "condition": "skill",
+    "repetition": 3,
+    "name": "H05-skill-3",
+    "metrics": {
+      "name": "H05-skill-3",
+      "started_at": "2026-11-06T05:08:18.812Z",
+      "ended_at": "2026-11-06T05:09:25.900Z",
+      "elapsed_ms": 67088,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af41-f9ec-7da1-a302-1146086361d5",
+      "usage": {
+        "input_tokens": 101748,
+        "cached_input_tokens": 90368,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1966,
+        "reasoning_output_tokens": 336
+      },
+      "errors": [],
+      "commands": 6
+    },
+    "verdict": {
+      "id": "H05",
+      "status": "PASS",
+      "expected": [
+        "display score 0",
+        "display score 9",
+        "display score 12345",
+        "display score 99999",
+        "display score 100000",
+        "display score 1234567",
+        "count-up and end-game snap stay intact"
+      ],
+      "checks": [
+        {
+          "name": "display score 0",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 9",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 12345",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 99999",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 100000",
+          "status": "PASS"
+        },
+        {
+          "name": "display score 1234567",
+          "status": "PASS"
+        },
+        {
+          "name": "count-up and end-game snap stay intact",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "index.html"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "score-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 2,
+      "removed": 1
+    },
+    "masked_alias": "C29",
+    "scope_review": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H05-skill-3",
+      "raw_log_folder_relative_to_experiment": "logs/H05-skill-3"
+    }
+  },
+  {
+    "id": "H01",
+    "condition": "skill",
+    "repetition": 3,
+    "name": "H01-skill-3",
+    "metrics": {
+      "name": "H01-skill-3",
+      "started_at": "2026-11-06T05:08:46.008Z",
+      "ended_at": "2026-11-06T05:10:09.110Z",
+      "elapsed_ms": 83102,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af42-641a-7860-a4e7-2104a9deffdb",
+      "usage": {
+        "input_tokens": 119010,
+        "cached_input_tokens": 108928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2433,
+        "reasoning_output_tokens": 244
+      },
+      "errors": [],
+      "commands": 8
+    },
+    "verdict": {
+      "id": "H01",
+      "status": "PASS",
+      "expected": [
+        "editor #nick owns keys",
+        "editor #notes owns keys",
+        "editor #nested owns keys",
+        "game shortcuts and restart survive",
+        "modifier shortcuts remain untouched"
+      ],
+      "checks": [
+        {
+          "name": "editor #nick owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #notes owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #nested owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "game shortcuts and restart survive",
+          "status": "PASS"
+        },
+        {
+          "name": "modifier shortcuts remain untouched",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "keyboard-routing.test.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 7,
+      "removed": 0
+    },
+    "masked_alias": "C03",
+    "scope_review": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H01-skill-3",
+      "raw_log_folder_relative_to_experiment": "logs/H01-skill-3"
+    }
+  },
+  {
+    "id": "H01",
+    "condition": "short",
+    "repetition": 3,
+    "name": "H01-short-3",
+    "metrics": {
+      "name": "H01-short-3",
+      "started_at": "2026-11-06T05:09:12.480Z",
+      "ended_at": "2026-11-06T05:10:26.482Z",
+      "elapsed_ms": 74002,
+      "timeout": false,
+      "exit_code": 0,
+      "session_id": "01a1af42-cb83-7a31-b53b-709ed7dc4deb",
+      "usage": {
+        "input_tokens": 73634,
+        "cached_input_tokens": 67200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2528,
+        "reasoning_output_tokens": 285
+      },
+      "errors": [],
+      "commands": 5
+    },
+    "verdict": {
+      "id": "H01",
+      "status": "PASS",
+      "expected": [
+        "editor #nick owns keys",
+        "editor #notes owns keys",
+        "editor #nested owns keys",
+        "game shortcuts and restart survive",
+        "modifier shortcuts remain untouched"
+      ],
+      "checks": [
+        {
+          "name": "editor #nick owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #notes owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "editor #nested owns keys",
+          "status": "PASS"
+        },
+        {
+          "name": "game shortcuts and restart survive",
+          "status": "PASS"
+        },
+        {
+          "name": "modifier shortcuts remain untouched",
+          "status": "PASS"
+        }
+      ]
+    },
+    "changed_files": [
+      "js/keyboard_input_manager.js"
+    ],
+    "protected_changes": [],
+    "new_files": [
+      "keyboard-routing-check.cjs",
+      "smoke.png"
+    ],
+    "functional_and_scope_pass": true,
+    "changed_lines": {
+      "added": 6,
+      "removed": 0
+    },
+    "masked_alias": "C09",
+    "scope_review": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "verification_claim_review": {
+      "test_execution_observed": true,
+      "physical_device_or_human_study_claim_found": false,
+      "unresolved_overgeneralization": null,
+      "exact_self_reported_assertion_counts_independently_rescored": false
+    },
+    "artifacts": {
+      "folder_in_zip": "outputs/H01-short-3",
+      "raw_log_folder_relative_to_experiment": "logs/H01-short-3"
+    }
+  }
+]

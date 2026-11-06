@@ -1,0 +1,19 @@
+{
+  "local_markdown_links_checked": 71,
+  "broken_links": [],
+  "archive_integrity": "PASS",
+  "archived_input_runtime_candidate_bytes_match": true,
+  "original_judge_hash_match": true,
+  "source_checkouts_clean": {
+    "2048": true,
+    "tetris": true
+  },
+  "primary_checks_completed": 180,
+  "valid_sessions": 36,
+  "protected_file_changes": 0,
+  "replay_adapter_smoke": {
+    "H02-skill-1": "PASS 5/5",
+    "H06-short-1": "PASS 3/3"
+  },
+  "scope": "Package integrity and two replay samples; primary 36-session grades were collected before packaging."
+}

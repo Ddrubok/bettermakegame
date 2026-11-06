@@ -1,0 +1,91 @@
+{
+  "kind": "EXPLORATORY; not part of the frozen primary judge",
+  "hypothesis": "A second touch that starts and ends outside the board must invalidate the in-progress board gesture",
+  "results": [
+    {
+      "alias": "baseline",
+      "name": "baseline",
+      "status": "FAIL",
+      "observed": {
+        "interrupted": [
+          1
+        ],
+        "cleanNext": [
+          1
+        ]
+      }
+    },
+    {
+      "alias": "C04",
+      "name": "H02-short-3",
+      "status": "FAIL",
+      "observed": {
+        "interrupted": [
+          1
+        ],
+        "cleanNext": [
+          1
+        ]
+      }
+    },
+    {
+      "alias": "C05",
+      "name": "H02-short-2",
+      "status": "FAIL",
+      "observed": {
+        "interrupted": [
+          1
+        ],
+        "cleanNext": [
+          1
+        ]
+      }
+    },
+    {
+      "alias": "C11",
+      "name": "H02-skill-1",
+      "status": "PASS",
+      "observed": {
+        "interrupted": [],
+        "cleanNext": [
+          1
+        ]
+      }
+    },
+    {
+      "alias": "C28",
+      "name": "H02-short-1",
+      "status": "FAIL",
+      "observed": {
+        "interrupted": [
+          1
+        ],
+        "cleanNext": [
+          1
+        ]
+      }
+    },
+    {
+      "alias": "C30",
+      "name": "H02-skill-3",
+      "status": "PASS",
+      "observed": {
+        "interrupted": [],
+        "cleanNext": [
+          1
+        ]
+      }
+    },
+    {
+      "alias": "C33",
+      "name": "H02-skill-2",
+      "status": "PASS",
+      "observed": {
+        "interrupted": [],
+        "cleanNext": [
+          1
+        ]
+      }
+    }
+  ]
+}

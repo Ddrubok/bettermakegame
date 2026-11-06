@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "c4b128bf2842b4a5fa057070f494f5520680282c",
+  "sha256_bytes": {
+    "evals/comparison/candidate-worker.mjs": "2b282ca61276d2ec7a8aba9714ec80bdb6e8f55139d0ea102ee0d1da576b9175",
+    "evals/comparison/holdout-protocol.md": "7857c5f9f6d3d2081d3f00b2b63f36c4f5cc1d08b4c41e8f55ccb497252cfbb4",
+    "evals/comparison/judge/E01.mjs": "91f082e66f0ab38173467859d86b12847bbb9799abb4460aba4d0189553d2eb2",
+    "evals/comparison/judge/J01.mjs": "8125a64b3ff84fec57f51774eb3964e3f36acc2b135b629289b9e438f785da53",
+    "evals/comparison/judge/R01.mjs": "2a7f039b165cb6490239a57470090148f53b77eb8c656fce3ea030193eb7572c",
+    "evals/comparison/prepare.mjs": "12c9fafa8e7855fcf043c9b5380d152b9f128a6a2647eb03cce55c038cf3f880",
+    "evals/comparison/README.md": "8c6e9ac5c56b0380b905baf40e7ce14653a447964169418ce73700e6303269aa",
+    "evals/comparison/sandbox.mjs": "0dcfc27f57eaf2129743e8cfe8212cb04c9e023070c33baea6821333d2430e25",
+    "evals/comparison/score.mjs": "d4d34f05c7dd06d511ef92d097af80e25ee8c0e8072ea795ad57fa6648fdbe1f",
+    "evals/comparison/scorer.test.mjs": "a50a74e308d020bae7f50b03c6a14ae7bf4bcaadb7bec400947b4cf3835348ce",
+    "README.ko.md": "19a9346519df10692a0a10c6730a445bafabd5b04ff0c9609d9a0b471e4a23bd",
+    "README.md": "c39198fdeba4fa0d0c7bfa389d9a9de40b7bdf6659fbc75a2289770b977efd66",
+    "skills/bettermakegame/agents/openai.yaml": "bb57949ab8824a2e08dcb4801095ebdd239f0744d18dcf15a2a8bf909ba1cfb8",
+    "skills/bettermakegame/LICENSE": "371b25f44c1f66b39cf7fdfeca50c7a5dfe92ccfa24f72b9eb5ee634064e86f1",
+    "skills/bettermakegame/references/audio-haptics.md": "924940b168a3d8af95a7406bc5df8001a2ba82c04a04ba8534091cb3f1a4da77",
+    "skills/bettermakegame/references/control-techniques.md": "b62cc7faa331636058295a23386ffac49aee4af3601f5c5fffef8ce18269fb64",
+    "skills/bettermakegame/references/engine-notes.md": "724474bfc29d5b8b95c7732f5dd83fd9f1981c84962504e99491482a0024c7a0",
+    "skills/bettermakegame/references/feedback-flow-techniques.md": "3ffcf0dd0387c5acb04dab81c36edf463338678ed54b63e25976a806a48f4d81",
+    "skills/bettermakegame/references/finding-handoff.md": "65088eb5985a1d9cb6c276d92cc7d287a7657f95a792b5515675436b277081ce",
+    "skills/bettermakegame/references/game-feel-selection.md": "1b05fe44d54d6d5fa252716e703eaf94f8cd331a2ba7cea1f663473952d1c13d",
+    "skills/bettermakegame/references/gameplay-polish.md": "11438d0b2a195c112234d43d012f4fdbc7cf63d144896eed90b1f7c316b0c069",
+    "skills/bettermakegame/references/tuning-evidence.md": "0c50fa83e49d214e37d2a4b89b583f7b5b7e9b0eb9ccdeaae08f8d2d3b870362",
+    "skills/bettermakegame/references/ui-hud-design.md": "cddcd1ec5060897a09d2ac70a24eb732ffba756d3aaf6fdcae71fae7bd0b0fe4",
+    "skills/bettermakegame/references/vfx-handoff.md": "1418950548d58d3af8a3371b8534329580262b4f545aece623fb7c1b0cb8db55",
+    "skills/bettermakegame/SKILL.md": "0ea75c21e65030cab37ddc85fc614fc620b6b7aa03b8da3659e08006a1c6509c"
+  }
+}

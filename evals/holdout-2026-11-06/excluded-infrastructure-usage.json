@@ -1,0 +1,10 @@
+{
+  "started": 17,
+  "completed_before_stop": 14,
+  "interrupted": 3,
+  "known_input_tokens": 701076,
+  "known_uncached_input_tokens": 91540,
+  "known_output_tokens": 5384,
+  "partial_usage": "Unavailable for interrupted sessions; setup and maintainer tokens are not included",
+  "source_changes": 0
+}

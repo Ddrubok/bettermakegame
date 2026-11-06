@@ -1,0 +1,7 @@
+{
+  "archive": "artifacts.zip",
+  "sha256": "fc7bf1bb903975922b8d9acbd87e76cd44b8b087b9bea99104ce9f53bf63259f",
+  "bytes": 6618371,
+  "original_logs_in_archive": false,
+  "note": "Raw logs remain in the local experiment folder. The archive retains exact inputs, outputs, reports, metrics, runtime, original judge/helper/harness, and a dependency-only replay adapter."
+}

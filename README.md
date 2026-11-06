@@ -126,6 +126,10 @@ The skill needs no separate API key, MCP server or runtime installation. Actual 
 
 ## Evaluation and limits
 
+The [2026-11-06 hardening pass](evals/hardening-2026-11-06/README.md) separates candidate execution from scoring, rejects incomplete runs and defaults to constrained Docker execution. All 42 original regressions and 28 Docker scorer checks passed. The runtime entrypoint is 21.4% shorter and gives clear small repairs a direct code-and-check path. External evidence cannot grant approval.
+
+A subsequent [36-session Astra comparison](evals/holdout-2026-11-06/README.md) used six component tasks from two public games and Better Make Game alone. Both conditions passed 90/90 primary checks. Median time was 83.9s for short guidance and 88.6s for the skill; total-input medians were 100,148 and 113,659.5 tokens, with cache effects reported separately. A post-hoc outside-board multi-touch check passed in 0/3 short-guidance outputs and 3/3 skill outputs. This is a narrow exploratory robustness signal, not established general superiority or a human game-feel result. Infrastructure failures, protocol limits and measured artifacts are retained in the report.
+
 On 2026-10-31, a bounded maintainer-run check used separate workers for five synthetic recommendation scenarios and one Node controller fixture. It was not a fully isolated or blinded study. The fixture's four tests passed. See the [game-feel evaluation record](evals/game-feel/README.md) and run its example with `node --test evals/game-feel/racer/controller.test.mjs`. These checks do not form a before/after benchmark or a real-device or human game-feel test. The [UI/HUD U and V cases](evals/ui-hud/README.md) remain **NOT RUN**.
 
 The skill does not play a game by itself, guarantee player preference, or prove retention or commercial results. It directs the agent to report what was observed in the runtime, what was checked in code, and what remains unverified.

@@ -1,0 +1,186 @@
+{
+  "method": "Coordinator model source diff review with condition names masked before opening the map; the same coordinator selected tasks and authored the judge. No human or independent evaluator.",
+  "reviewed": {
+    "C01": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "C02": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "C03": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "C09": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "C20": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "C23": {
+      "case": "H01",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only editor-key ownership guard added; game shortcut logic retained."
+    },
+    "C04": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "C05": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "C11": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "C28": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "C30": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "C33": {
+      "case": "H02",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Changes confined to gesture ownership, cancellation, multi-touch invalidation, consumption and legacy event consistency. Document-wide contact tracking/blur cleanup directly serves gesture lifecycle, so larger diffs are not classified as unrelated expansion."
+    },
+    "C15": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "C18": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "C22": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "C25": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "C26": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "C31": {
+      "case": "H03",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Generation guard suppresses obsolete messages while retaining board/score/tile updates."
+    },
+    "C07": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "C08": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "C10": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "C21": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "C24": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "C32": {
+      "case": "H04",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Elapsed-time count-up and explicit undefined handling preserve zero/fractional progress; gravity and scoring code unchanged."
+    },
+    "C12": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "C16": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "C19": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "C27": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "C29": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "C36": {
+      "case": "H05",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Only score formatting changed; count-up and scoring logic unchanged."
+    },
+    "C06": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "C13": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "C14": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "C17": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "C34": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    },
+    "C35": {
+      "case": "H06",
+      "unnecessary_semantic_source_change": false,
+      "reason": "Review-only source preservation is checked by the executable judge; report correctness reviewed separately."
+    }
+  },
+  "posthoc_note": "C04/C05/C28 miss the outside-board second-touch case; separate exploratory probe, primary judge unchanged."
+}

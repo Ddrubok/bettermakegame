@@ -1,0 +1,426 @@
+[
+  {
+    "kind": "baseline",
+    "id": "H01",
+    "status": "FAIL",
+    "expected": [
+      "editor #nick owns keys",
+      "editor #notes owns keys",
+      "editor #nested owns keys",
+      "game shortcuts and restart survive",
+      "modifier shortcuts remain untouched"
+    ],
+    "checks": [
+      {
+        "name": "editor #nick owns keys",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    cancelled: [\n+     true,\n+     true,\n+     true\n-     false,\n-     false,\n-     false\n    ],\n+   moves: [\n+     3,\n+     3\n+   ],\n+   restarts: 1\n-   moves: [],\n-   restarts: 0\n  }\n"
+      },
+      {
+        "name": "editor #notes owns keys",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    cancelled: [\n+     true,\n+     true,\n+     true\n-     false,\n-     false,\n-     false\n    ],\n+   moves: [\n+     3,\n+     3\n+   ],\n+   restarts: 1\n-   moves: [],\n-   restarts: 0\n  }\n"
+      },
+      {
+        "name": "editor #nested owns keys",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    cancelled: [\n+     true,\n+     true,\n+     true\n-     false,\n-     false,\n-     false\n    ],\n+   moves: [\n+     3,\n+     3\n+   ],\n+   restarts: 1\n-   moves: [],\n-   restarts: 0\n  }\n"
+      },
+      {
+        "name": "game shortcuts and restart survive",
+        "status": "PASS"
+      },
+      {
+        "name": "modifier shortcuts remain untouched",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "control",
+    "id": "H01",
+    "status": "PASS",
+    "expected": [
+      "editor #nick owns keys",
+      "editor #notes owns keys",
+      "editor #nested owns keys",
+      "game shortcuts and restart survive",
+      "modifier shortcuts remain untouched"
+    ],
+    "checks": [
+      {
+        "name": "editor #nick owns keys",
+        "status": "PASS"
+      },
+      {
+        "name": "editor #notes owns keys",
+        "status": "PASS"
+      },
+      {
+        "name": "editor #nested owns keys",
+        "status": "PASS"
+      },
+      {
+        "name": "game shortcuts and restart survive",
+        "status": "PASS"
+      },
+      {
+        "name": "modifier shortcuts remain untouched",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "baseline",
+    "id": "H02",
+    "status": "FAIL",
+    "expected": [
+      "clean directions and strict threshold",
+      "cancelled gesture cannot complete",
+      "multi-touch cannot reuse a prior start",
+      "adding a finger invalidates partial and final ends",
+      "fresh gesture works after cancellation; duplicate end ignored"
+    ],
+    "checks": [
+      {
+        "name": "clean directions and strict threshold",
+        "status": "PASS"
+      },
+      {
+        "name": "cancelled gesture cannot complete",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   1\n+ ]\n- []\n"
+      },
+      {
+        "name": "multi-touch cannot reuse a prior start",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   1\n+ ]\n- []\n"
+      },
+      {
+        "name": "adding a finger invalidates partial and final ends",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   1\n+ ]\n- []\n"
+      },
+      {
+        "name": "fresh gesture works after cancellation; duplicate end ignored",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    1,\n+   1\n  ]\n"
+      }
+    ]
+  },
+  {
+    "kind": "control",
+    "id": "H02",
+    "status": "PASS",
+    "expected": [
+      "clean directions and strict threshold",
+      "cancelled gesture cannot complete",
+      "multi-touch cannot reuse a prior start",
+      "adding a finger invalidates partial and final ends",
+      "fresh gesture works after cancellation; duplicate end ignored"
+    ],
+    "checks": [
+      {
+        "name": "clean directions and strict threshold",
+        "status": "PASS"
+      },
+      {
+        "name": "cancelled gesture cannot complete",
+        "status": "PASS"
+      },
+      {
+        "name": "multi-touch cannot reuse a prior start",
+        "status": "PASS"
+      },
+      {
+        "name": "adding a finger invalidates partial and final ends",
+        "status": "PASS"
+      },
+      {
+        "name": "fresh gesture works after cancellation; duplicate end ignored",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "baseline",
+    "id": "H03",
+    "status": "FAIL",
+    "expected": [
+      "old loss cannot cover a restarted board",
+      "continue invalidates a queued win even before next render",
+      "latest board and score survive rapid updates",
+      "legitimate terminal results still display",
+      "score increment feedback and tile style survive"
+    ],
+    "checks": [
+      {
+        "name": "old loss cannot cover a restarted board",
+        "status": "FAIL",
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'game-message game-over'\n- 'game-message'\n               ^\n"
+      },
+      {
+        "name": "continue invalidates a queued win even before next render",
+        "status": "FAIL",
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'game-message game-won'\n- 'game-message'\n               ^\n"
+      },
+      {
+        "name": "latest board and score survive rapid updates",
+        "status": "PASS"
+      },
+      {
+        "name": "legitimate terminal results still display",
+        "status": "PASS"
+      },
+      {
+        "name": "score increment feedback and tile style survive",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "control",
+    "id": "H03",
+    "status": "PASS",
+    "expected": [
+      "old loss cannot cover a restarted board",
+      "continue invalidates a queued win even before next render",
+      "latest board and score survive rapid updates",
+      "legitimate terminal results still display",
+      "score increment feedback and tile style survive"
+    ],
+    "checks": [
+      {
+        "name": "old loss cannot cover a restarted board",
+        "status": "PASS"
+      },
+      {
+        "name": "continue invalidates a queued win even before next render",
+        "status": "PASS"
+      },
+      {
+        "name": "latest board and score survive rapid updates",
+        "status": "PASS"
+      },
+      {
+        "name": "legitimate terminal results still display",
+        "status": "PASS"
+      },
+      {
+        "name": "score increment feedback and tile style survive",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "baseline",
+    "id": "H04",
+    "status": "FAIL",
+    "expected": [
+      "count-up at 30 Hz",
+      "count-up at 60 Hz",
+      "count-up at 120 Hz",
+      "zero elapsed and fractional intervals do not invent or lose progress",
+      "no overshoot, final snap, restart and drop score preserved"
+    ],
+    "checks": [
+      {
+        "name": "count-up at 30 Hz",
+        "status": "FAIL",
+        "error": "The expression evaluated to a falsy value:\n\n  assert.ok(Math.abs(r.vscore-60)<1e-6)\n"
+      },
+      {
+        "name": "count-up at 60 Hz",
+        "status": "PASS"
+      },
+      {
+        "name": "count-up at 120 Hz",
+        "status": "FAIL",
+        "error": "The expression evaluated to a falsy value:\n\n  assert.ok(Math.abs(r.vscore-60)<1e-6)\n"
+      },
+      {
+        "name": "zero elapsed and fractional intervals do not invent or lose progress",
+        "status": "FAIL",
+        "error": "Expected values to be strictly equal:\n\n1 !== 0\n"
+      },
+      {
+        "name": "no overshoot, final snap, restart and drop score preserved",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   capped: 1,\n-   capped: 5,\n    final: 105,\n    resetScore: 0,\n    rows: 0,\n    score: 10\n  }\n"
+      }
+    ]
+  },
+  {
+    "kind": "control",
+    "id": "H04",
+    "status": "PASS",
+    "expected": [
+      "count-up at 30 Hz",
+      "count-up at 60 Hz",
+      "count-up at 120 Hz",
+      "zero elapsed and fractional intervals do not invent or lose progress",
+      "no overshoot, final snap, restart and drop score preserved"
+    ],
+    "checks": [
+      {
+        "name": "count-up at 30 Hz",
+        "status": "PASS"
+      },
+      {
+        "name": "count-up at 60 Hz",
+        "status": "PASS"
+      },
+      {
+        "name": "count-up at 120 Hz",
+        "status": "PASS"
+      },
+      {
+        "name": "zero elapsed and fractional intervals do not invent or lose progress",
+        "status": "PASS"
+      },
+      {
+        "name": "no overshoot, final snap, restart and drop score preserved",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "baseline",
+    "id": "H05",
+    "status": "FAIL",
+    "expected": [
+      "display score 0",
+      "display score 9",
+      "display score 12345",
+      "display score 99999",
+      "display score 100000",
+      "display score 1234567",
+      "count-up and end-game snap stay intact"
+    ],
+    "checks": [
+      {
+        "name": "display score 0",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 9",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 12345",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 99999",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 100000",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    score: 100000,\n+   text: '00000'\n-   text: '100000'\n  }\n"
+      },
+      {
+        "name": "display score 1234567",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    score: 1234567,\n+   text: '34567'\n-   text: '1234567'\n  }\n"
+      },
+      {
+        "name": "count-up and end-game snap stay intact",
+        "status": "FAIL",
+        "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   after: '00000',\n-   after: '100000',\n    before: '00001',\n    score: 100000\n  }\n"
+      }
+    ]
+  },
+  {
+    "kind": "control",
+    "id": "H05",
+    "status": "PASS",
+    "expected": [
+      "display score 0",
+      "display score 9",
+      "display score 12345",
+      "display score 99999",
+      "display score 100000",
+      "display score 1234567",
+      "count-up and end-game snap stay intact"
+    ],
+    "checks": [
+      {
+        "name": "display score 0",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 9",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 12345",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 99999",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 100000",
+        "status": "PASS"
+      },
+      {
+        "name": "display score 1234567",
+        "status": "PASS"
+      },
+      {
+        "name": "count-up and end-game snap stay intact",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "baseline",
+    "id": "H06",
+    "status": "PASS",
+    "expected": [
+      "game source is unchanged for review-only task",
+      "each refill contains four of every type and permits repeats",
+      "line-clear awards match stated intent"
+    ],
+    "checks": [
+      {
+        "name": "game source is unchanged for review-only task",
+        "status": "PASS"
+      },
+      {
+        "name": "each refill contains four of every type and permits repeats",
+        "status": "PASS"
+      },
+      {
+        "name": "line-clear awards match stated intent",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "control",
+    "id": "H06",
+    "status": "PASS",
+    "expected": [
+      "game source is unchanged for review-only task",
+      "each refill contains four of every type and permits repeats",
+      "line-clear awards match stated intent"
+    ],
+    "checks": [
+      {
+        "name": "game source is unchanged for review-only task",
+        "status": "PASS"
+      },
+      {
+        "name": "each refill contains four of every type and permits repeats",
+        "status": "PASS"
+      },
+      {
+        "name": "line-clear awards match stated intent",
+        "status": "PASS"
+      }
+    ]
+  }
+]

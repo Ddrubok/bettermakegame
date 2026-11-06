@@ -1,0 +1,31 @@
+{
+  "kind": "POSTHOC confirmation of review observations, not primary accuracy scoring",
+  "status": "CONFIRMED",
+  "observed": {
+    "lastColors": [
+      "red",
+      "red",
+      "red",
+      "red",
+      "red"
+    ],
+    "zColor": "red",
+    "topRow": {
+      "score": 0,
+      "rows": 0,
+      "occupied": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "limits": "Controlled browser states; does not establish natural-play reachability or player-perceived frequency."
+}

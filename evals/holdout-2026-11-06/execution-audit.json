@@ -1,0 +1,290 @@
+[
+  {
+    "name": "H02-skill-1",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H02-short-1",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H03-short-1",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H03-skill-1",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H04-short-1",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H04-skill-1",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H05-short-1",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H05-skill-1",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H01-skill-1",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H01-short-1",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H06-skill-1",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H06-short-1",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H05-short-2",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H05-skill-2",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H04-skill-2",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H04-short-2",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H06-short-2",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H06-skill-2",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H03-skill-2",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H03-short-2",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H02-skill-2",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 3,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H02-short-2",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 3,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H01-skill-2",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H01-short-2",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H02-skill-3",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H02-short-3",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H06-skill-3",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 3,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H06-short-3",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H03-short-3",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H03-skill-3",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H04-short-3",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H04-skill-3",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H05-short-3",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H05-skill-3",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H01-skill-3",
+    "skill_entry_read_commands": 1,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  },
+  {
+    "name": "H01-short-3",
+    "skill_entry_read_commands": 0,
+    "reference_read_commands": 0,
+    "successful_self_check_or_smoke_commands": 2,
+    "protected_changes": [],
+    "limitations": "Command-log review; self-test count claims are not independently re-scored. Primary verdicts use coordinator-owned checks."
+  }
+]
