@@ -2,6 +2,8 @@
 
 Prepared on 2026-10-28 from the user's UI/HUD patch guide v1.0. This is maintainer material, not an ordinary skill reference. The companion kill-game-slop repository contains U02, U03, U06, and U08; neither skill requires the other to run.
 
+The fixed task inputs are in Korean: [U originals](cases.md) and [V originals](supplemental-cases.md). English reading translations are available for the [U cases](cases.en.md) and [V cases](supplemental-cases.en.md). These translations were not evaluated and do not replace the original inputs in the protocols below.
+
 ## Comparison protocol
 
 Use [cases.md](cases.md) and the selected skill snapshot only. Run before and after in fresh conversations with the same model, settings, inputs, tools, and scope. Do not send this protocol, [judge-key.md](judge-key.md), patch explanations, or earlier responses to reviewers. Disable unrelated skills where possible and record unavoidable host instructions. Provide only the selected skill's runtime files and linked references, not the whole evaluation directory.

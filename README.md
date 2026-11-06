@@ -2,6 +2,8 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
+Documentation is in English by default; Korean editions use `.ko.md`. Skill instructions and technical references are maintained in English, with Korean task phrases where needed for discovery. Recorded evaluation inputs and responses retain their original language; reading translations of frozen inputs use `.en.md` and are labeled separately.
+
 Better Make Game is an instruction skill for agents working on game controls, game feel, UI/HUD, feedback, and event flow. It helps an agent identify why an action feels awkward or its result is unclear, compare suitable changes, implement within the requested scope, and check what actually changed. It works with the game's existing engine and tools; it is not a runtime library or effect package.
 
 Use it for a specific problem (a missed jump, nervous steering, an unreadable hit, an unclear turn) or a requested scene review. It also covers creating or revising UI/HUD layouts, navigation, and important sequences such as failure, victory, and reward. A narrow request stays narrow.

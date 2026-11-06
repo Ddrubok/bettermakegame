@@ -15,7 +15,7 @@ Two independent `gpt-6-sol` workers received the candidate skill and raw task in
 | D | Plan a larger close-button touch area while keeping appearance/position | Kept the plan scoped to input bounds, neighbors and supported navigation | No touch device test |
 | E | Propose a rhythm-game latency approach without expanding scoring windows | Proposed device measurement and calibrated offsets without invented delay values | No latency measurements or scoring implementation |
 
-The original recommendation outputs are in [responses.ko.txt](responses.ko.txt). Task content and fixture setup are in [cases.md](cases.md). Local machine paths and orchestration logs are not included. The runtime-file SHA-256 hashes in [skill-snapshot.json](skill-snapshot.json) identify the evaluated skill after normalizing text line endings to LF, so Git checkout settings do not change the comparison. Future edits may no longer match that snapshot.
+The original Korean recommendation outputs are in [responses.ko.txt](responses.ko.txt). Task content and fixture setup are available as an [English reading translation](cases.en.md) and the [original Korean requests](cases.md). The translation was not used in the recorded evaluation. Local machine paths and orchestration logs are not included. The runtime-file SHA-256 hashes in [skill-snapshot.json](skill-snapshot.json) identify the evaluated skill after normalizing text line endings to LF, so Git checkout settings do not change the comparison. Future edits may no longer match that snapshot.
 
 ## Reproduce the controller checks
 

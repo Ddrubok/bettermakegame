@@ -1,103 +1,105 @@
-# Better Make Game 단독 효과·비용 비교 — 2026-11-06
+# Better Make Game alone: effectiveness and cost comparison — 2026-11-06
 
-**사전 기능 검사는 동률이었다. 전체 스킬은 시간이 약 6%, 전체 입력 토큰이 약 13% 더 들었고, 별도 사후 터치 경계 검사에서는 더 나은 결과를 보였다.** 일반적인 정확도·속도·게임 체감 우위가 입증된 것은 아니다.
+[English](README.md) | [한국어](README.ko.md)
 
-현재 보완된 스킬과 짧은 지침을 독립 Astra 세션으로 비교했다. 실제 공개 게임 2개의 구성요소 과제 6개를 조건별 3회씩 수행한 **36회 유효 실행**이다. 새 게임 6개 또는 사람의 플레이 평가로 해석하면 안 된다. 원본 게임 사본은 수정하지 않았다.
+**The predefined functional checks tied. The full skill used about 6% more time and 13% more total input tokens, and performed better on a separate post-hoc touch-boundary check.** This does not establish a general advantage in accuracy, speed, or player-perceived game feel.
 
-## 주요 결과
+Independent Astra sessions compared the current hardened skill with short guidance. Six component tasks from two public games were run three times per condition, for **36 valid runs**. These are not six new games or a human playtest. The original game checkouts were not modified.
 
-| 항목 | 짧은 지침 | 전체 스킬 |
+## Main results
+
+| Measure | Short guidance | Full skill |
 | --- | ---: | ---: |
-| 과제 실행 통과 | 18/18 | 18/18 |
-| 사전 기능 검사 | 90/90 | 90/90 |
-| 보호 파일 변경 | 0 | 0 |
-| 코드 검토에서 발견한 무관한 의미 변경 | 0 | 0 |
-| 실행 시간 중앙값 | 83.9초 | 88.6초 |
-| 전체 입력 토큰 중앙값 | 100,148 | 113,659.5 |
-| 캐시 제외 입력 토큰 중앙값 | 12,974 | 12,633 |
-| 출력 토큰 중앙값 | 2,654 | 2,864 |
+| Task runs passed | 18/18 | 18/18 |
+| Predefined functional checks | 90/90 | 90/90 |
+| Protected-file changes | 0 | 0 |
+| Unrelated semantic source changes found in review | 0 | 0 |
+| Median elapsed time | 83.9 seconds | 88.6 seconds |
+| Median total input tokens | 100,148 | 113,659.5 |
+| Median uncached input tokens | 12,974 | 12,633 |
+| Median output tokens | 2,654 | 2,864 |
 
-시간은 세션 프로세스 시작부터 종료까지이며 모델 응답과 도구 실행을 포함한다. 준비·대기열·사후 채점 시간은 제외했다. 전체 입력 토큰은 누적 문맥과 캐시 읽기를 포함하는 CLI 실측치이며, 지침 파일 자체의 토큰 수가 아니다. 캐시를 강제로 초기화하지 않았으므로 전체 입력 증가를 실제 요금 증가로 바꿔 말하지 않는다. 금액은 계산하지 않았다.
+Elapsed time runs from session-process start to completion, including model responses and tool execution. Setup, queueing, and later grading are excluded. Total input tokens are cumulative CLI counters including repeated context and cache reads; they are not the token count of the instruction file. Cache state was not forcibly reset, so increased total input must not be equated with increased monetary cost. No monetary cost was calculated.
 
-같은 과제·반복 번호로 묶은 18쌍의 중앙 차이는 시간 **+6.25초**, 시간 비율 **+6.4%**, 전체 입력 **+8,817**, 캐시 제외 입력 **+219.5**, 출력 **+99** 토큰이다. 이는 위 표의 두 조건 중앙값을 빼는 계산과 다르다. 반복 3회와 소수 과제에서 얻은 기술통계이며 통계적 유의성·동등성 입증을 주장하지 않는다.
+Across 18 matched task/repetition pairs, the median differences were **+6.25 seconds**, a time ratio of **+6.4%**, **+8,817** total input tokens, **+219.5** uncached input tokens, and **+99** output tokens. These differ from subtracting the two condition medians in the table. They are descriptive statistics from three repetitions of a small task set, not claims of statistical significance or equivalence.
 
-유효 실행 합계는 짧은 지침 입력 1,769,428 / 캐시 제외 입력 300,884 / 출력 56,419 토큰, 전체 스킬 입력 2,081,465 / 캐시 제외 입력 248,505 / 출력 59,958 토큰이다. 추론 출력 카운터도 원자료에 보존했고 출력 합계에 다시 더하지 않았다. 아래 인프라 실패 및 준비·검토 사용량은 이 합계에 포함되지 않는다.
+Valid-run totals were 1,769,428 input / 300,884 uncached input / 56,419 output tokens for short guidance, and 2,081,465 input / 248,505 uncached input / 59,958 output tokens for the full skill. Reasoning-output counters are retained in the raw records and were not added to output totals again. Infrastructure failures and setup/review usage described below are excluded from these totals.
 
-## 과제와 결과
+## Tasks and outcomes
 
-인위적인 결함을 주입하지 않고 고정한 원본 코드에서 관찰한 문제를 사용했다. 과제별 설명·수정 가능 파일·보존 조건은 실행 전에 제공했다. 괄호는 3회 실행의 최솟값–최댓값이다.
+Tasks used problems observed in fixed upstream source, without seeded defects. Each task's brief, editable files, and preservation requirements were supplied before execution. Parentheses show the minimum–maximum across three runs.
 
-| 과제 | 요구 | 조건별 사전 통과 | 짧은 지침 시간 중앙값(범위), 초 | 전체 스킬 시간 중앙값(범위), 초 |
+| Task | Requirement | Predefined pass count per condition | Short median time (range), seconds | Full-skill median time (range), seconds |
 | --- | --- | --- | ---: | ---: |
-| H01 / 2048 | 입력창·중첩 contenteditable에서 게임 단축키가 타이핑을 가로채지 않기 | 각각 3/3, 검사 15/15 | 74.0 (70.9–113.9) | 91.6 (83.1–96.9) |
-| H02 / 2048 | 취소·다중 터치·중복 종료가 이전 스와이프를 재사용하지 않기 | 각각 3/3, 검사 15/15 | 135.0 (118.1–205.0) | 154.8 (142.6–159.1) |
-| H03 / 2048 | 재시작·계속하기 뒤 대기 중이던 종료 연출이 되살아나지 않기 | 각각 3/3, 검사 15/15 | 71.4 (66.1–82.3) | 80.4 (79.7–85.6) |
-| H04 / Tetris | 표시 점수를 프레임률과 무관하게 초당 60점 증가시키기 | 각각 3/3, 검사 15/15 | 85.4 (75.5–88.6) | 85.5 (65.5–99.0) |
-| H05 / Tetris | 100,000점 이상에서 앞자리 잘림을 고치고 최소 5자리 유지 | 각각 3/3, 검사 21/21 | 65.9 (62.6–70.5) | 63.7 (61.5–67.1) |
-| H06 / Tetris | 의도된 28개 조각 묶음·점수 규칙을 검토하고 소스 보존 | 각각 3/3, 검사 9/9 | 129.7 (116.6–135.1) | 156.3 (134.5–157.2) |
+| H01 / 2048 | Keep game shortcuts from intercepting typing in inputs and nested contenteditable elements | 3/3 runs, 15/15 checks | 74.0 (70.9–113.9) | 91.6 (83.1–96.9) |
+| H02 / 2048 | Prevent cancellation, multi-touch, and duplicate endings from reusing an earlier swipe | 3/3 runs, 15/15 checks | 135.0 (118.1–205.0) | 154.8 (142.6–159.1) |
+| H03 / 2048 | Prevent queued terminal feedback from returning after restart or continue | 3/3 runs, 15/15 checks | 71.4 (66.1–82.3) | 80.4 (79.7–85.6) |
+| H04 / Tetris | Advance the displayed score at 60 points per second independently of frame rate | 3/3 runs, 15/15 checks | 85.4 (75.5–88.6) | 85.5 (65.5–99.0) |
+| H05 / Tetris | Retain leading digits at 100,000 points and above, with a minimum width of 5 digits | 3/3 runs, 21/21 checks | 65.9 (62.6–70.5) | 63.7 (61.5–67.1) |
+| H06 / Tetris | Review the intentional 28-piece pool and scoring rules while preserving source | 3/3 runs, 9/9 checks | 129.7 (116.6–135.1) | 156.3 (134.5–157.2) |
 
-과제별 토큰 중앙값·범위와 36회 개별 측정은 [summary.json](summary.json), [results.json](results.json)에 있다. 원본의 사전 검사 통과 수는 차례로 2/5, 1/5, 3/5, 1/5, 4/7, 3/3이었다. 알려진 정상 대조 구현은 모두 통과했다. 이 [판정기 자체 점검](self-check.json)은 스킬 효과 측정에 합산하지 않았다.
+Per-task token medians/ranges and all 36 measurements are in [summary.json](summary.json) and [results.json](results.json). The original inputs passed 2/5, 1/5, 3/5, 1/5, 4/7, and 3/3 checks respectively. Known-good controls passed every check. This [judge self-check](self-check.json) was not counted as evidence of skill effectiveness.
 
-H06은 소스 수정을 금지한 검토 과제였다. 따라서 결과를 “수정이 허용됐는데도 좋은 설계를 자율적으로 보존했다”는 증거로 사용하지 않는다. 또한 결함 없는 게임을 보존하는 순수 대조 과제도 아니었다. 양쪽의 여섯 보고서 모두 의도된 규칙을 구분하고, 무작위 선택에서 마지막 인덱스가 제외되는 문제와 행 제거에서 0번 행이 빠지는 문제를 추가로 지적했다. 별도 브라우저 점검에서 이 두 관찰을 [확인](posthoc-review.json)했으나 자연 플레이에서의 빈도·도달 가능성을 측정하지 않았다.
+H06 prohibited source edits. It therefore does not show that an agent autonomously preserved a sound design when editing was allowed. Nor was it a defect-free preservation control. All six reports distinguished the intentional rules and additionally identified an excluded final index in random selection and a skipped row 0 in line removal. A separate browser probe [confirmed those observations](posthoc-review.json), without measuring their frequency or reachability in natural play.
 
-## 사후 탐색: 보드 밖 두 번째 터치
+## Post-hoc exploration: a second touch outside the board
 
-조건명을 가린 코드 검토 중 H02의 사전 검사가 모든 터치를 보드에만 전달한다는 빈틈을 발견했다. 조건표를 열기 전에 별도 검사를 작성했다.
+Condition-masked source review revealed that H02's predefined checks sent every touch to the board. A separate probe was written before opening the condition map.
 
-1. 첫 손가락이 보드에서 스와이프를 시작한다.
-2. 두 번째 손가락이 보드 밖에 닿았다가 떨어진다.
-3. 첫 손가락이 보드에서 스와이프를 끝낸다.
-4. 해당 제스처는 이동하지 않고, 다음 정상 스와이프는 이동해야 한다.
+1. The first finger starts a swipe on the board.
+2. A second finger touches and releases outside the board.
+3. The first finger completes its swipe on the board.
+4. That gesture must not move; the next clean swipe must work.
 
-| 결과 | 원본 | 짧은 지침 | 전체 스킬 |
+| Outcome | Original input | Short guidance | Full skill |
 | --- | ---: | ---: | ---: |
-| 추가 경계 검사 통과 | 0/1 | 0/3 | 3/3 |
+| Additional boundary check passed | 0/1 | 0/3 | 3/3 |
 
-짧은 지침 구현 세 개는 보드 밖에서 발생한 두 번째 터치를 놓쳐 이동했다. 전체 스킬 구현 세 개는 문서 범위의 접촉 변화를 추적해 해당 제스처를 취소했다. 다음 정상 제스처는 양쪽 모두 동작했다. 문서 범위 추적은 과제와 관련된 변경으로 판단했으며, 코드가 길다는 이유만으로 불필요한 변경으로 세지 않았다.
+All three short-guidance implementations missed the outside-board second touch and moved. All three full-skill implementations tracked document-wide contact changes and cancelled the gesture. Both conditions handled the next clean gesture. Document-wide tracking was relevant to the task; a longer diff alone was not classified as an unnecessary change.
 
-**이 검사는 결과 코드를 본 뒤 선정한 사후 탐색이다.** 사전 90/90 점수에 추가하거나 성공률을 다시 계산하지 않았다. 동일 경계 한 개의 3회 반복이며, 독립 과제 3개의 성공도 아니다. 전체 스킬의 경계 처리 이점을 시사하지만, 우위 주장에는 이 조건을 사전 등록한 새 과제의 반복 평가가 필요하다. [개별 결과](posthoc-touch.json)를 보존했다. 짧은 지침 H02 보고서의 포괄적인 “다중 터치 수정” 표현도 이 미검증 경계까지 보장하지 못한다.
+**This was a post-hoc probe selected after inspecting output code.** It was not added to the predefined 90/90 score, and success rates were not recalculated. It repeats one boundary three times rather than testing three independent tasks. It suggests a boundary-handling benefit, but a superiority claim needs fresh tasks with this condition specified in advance. [Individual outcomes](posthoc-touch.json) are retained. The short-guidance H02 reports' broad claim to have fixed multi-touch does not cover this previously untested boundary.
 
-## 실행 조건과 검토 방법
+## Execution and review method
 
-- 모델: `gpt-6-astra`, 추론 `high`, Codex CLI `0.167.0`, Windows, Node `v22.18.0`, 동일 Playwright/Chromium 도구. 모델 별칭은 같지만 정확한 서비스 모델 스냅샷 식별자는 확인할 수 없었다.
-- 새 세션 36개, 대화·진단·정답 공유 없음, 조건별 18회. 과제/조건 순서를 고정 시드 `20261106`으로 섞었고 동시 실행 3개, 각 최대 360초였다. 유효 실행의 중단·시간 초과·인프라 오류는 없었다.
-- 짧은 지침: `Diagnose the actual cause before adding polish. Make the smallest scoped repair, preserve unrelated rules, check boundaries and lifecycle, and report only checks actually run.`
-- 전체 조건: 같은 과제와 공통 지시, 보완 후 Better Make Game 13개 파일. 다른 스킬 자동 검색, 프로젝트 지침, 앱, 훅, 웹 검색, 하위 에이전트를 비활성화했다. 별도 진단에서 스킬 목록이 노출되지 않음을 확인했다.
-- 전체 조건 18회 모두 `SKILL.md`를 한 번 읽었고 참고 문서는 읽지 않았다. 따라서 **전체 패키지가 제공된 상태에서 핵심 지침과 단순 수정 경로가 사용된 비교**이며, 모든 참고 문서의 효과 비교가 아니다. 기존 1,008단어 버전과 현재 792단어 버전의 직접 비교도 아니다.
-- 작업 폴더와 정답 파일을 분리하고 형제·상위 폴더 접근을 금지했다. 모델 작업 세션에는 기존 승인 범위의 전체 도구 권한을 사용했으므로 폴더 분리를 OS 보안 격리로 주장하지 않는다. 별도 채점에서는 Chromium 샌드박스와 로컬 서버 한정 요청 허용을 사용했고, 호스트가 검사 목록·완료 여부·판정을 소유했다. 이전 합성 평가 도구의 Docker 실행과도 구분한다.
-- 기능 점수는 보고서의 “성공” 문구나 프로세스 종료 코드만으로 판단하지 않았다. 고정된 30개 명명 검사를 조건별 세 번 실행하고, 보호 파일 해시와 작업 종료 상태를 함께 확인했다.
-- 코드의 관련성은 [사전 검토 기준](review-rubric.md)에 따라 조건명을 가린 상태로 조정자 모델이 검토했다. 같은 조정자가 과제와 판정기를 만들었으므로 독립 평가자·사람의 블라인드 연구가 아니다. [검토 기록](masked-source-review.json)을 보존했다.
-- [실행 로그 감사](execution-audit.json)에서 36회 모두 실제 성공한 자체 점검·스모크 명령을 확인했다. 물리 장치나 사람의 체감을 검증했다는 주장은 발견하지 못했다. 보고서의 세부 자체 assertion 개수는 하나씩 재채점하지 않았으며, 자체 검사 수를 정확도 점수로 쓰지 않았다.
+- Model: `gpt-6-astra`, reasoning `high`, Codex CLI `0.167.0`, Windows, Node `v22.18.0`, and the same Playwright/Chromium tools. The alias was identical; the exact serving-model snapshot identifier was not independently available.
+- There were 36 fresh sessions, 18 per condition, without shared conversation, diagnoses, or answers. Task/condition order was shuffled with seed `20261106`, concurrency was three, and each session had a 360-second limit. The valid batch had no interrupted sessions, timeouts, or infrastructure errors.
+- Short guidance: `Diagnose the actual cause before adding polish. Make the smallest scoped repair, preserve unrelated rules, check boundaries and lifecycle, and report only checks actually run.`
+- Full condition: the same task and common instructions plus the 13-file hardened Better Make Game package. Automatic discovery of other skills, project instructions, apps, hooks, web search, and subagents were disabled. A separate diagnostic confirmed that no skill catalog was exposed.
+- All 18 full-condition sessions read `SKILL.md` once and no reference documents. This therefore compares **the core instructions and small-repair path with the full package available**, not the effect of reading every reference. It is also not a direct comparison of the previous 1,008-word entrypoint with the current 792-word entrypoint.
+- Workspaces and answers were separated, with instructions prohibiting parent/sibling access. Model sessions used previously authorized full tool permissions; folder separation is not claimed as OS isolation. Separate grading used Chromium's sandbox and requests restricted to a local server, with host-owned check lists, completion accounting, and verdicts. This differs from the earlier synthetic evaluator's Docker execution.
+- Functional scores did not rely solely on report wording or process exit codes. Thirty fixed, named checks were run three times per condition, alongside protected-file hash and completion checks.
+- The coordinator model reviewed source relevance using the [predefined rubric](review-rubric.md), with condition names masked. The same coordinator selected tasks and wrote the judge, so this was neither independent evaluation nor a human blind study. The [review record](masked-source-review.json) is retained.
+- The [command-log audit](execution-audit.json) found actual successful self-check and smoke commands in all 36 sessions. No claims of physical-device or human-feel validation were found. Self-reported assertion counts were not independently rescored one by one, and self-test counts were not used as accuracy scores.
 
-CLI의 JSON 이벤트·사용량 수집은 [공식 비대화형 실행 문서](https://learn.chatgpt.com/docs/non-interactive-mode)를 참고했다. 실제 사용한 인수·공통 프롬프트와 원본 해시는 [frozen-protocol.json](frozen-protocol.json)에 있다.
+CLI JSON events and usage collection followed the [official non-interactive execution documentation](https://learn.chatgpt.com/docs/non-interactive-mode). Exact arguments, the common prompt, and original hashes are in [frozen-protocol.json](frozen-protocol.json).
 
-## 제외한 인프라 실패와 추가 사용량
+## Excluded infrastructure failure and additional usage
 
-첫 실행은 Windows의 `workspace-write` 설정에서 파일 읽기까지 막혔다. 17세션을 시작한 시점에 이를 확인하고 중단했다. 14개는 도구 오류를 보고하고 종료했고 3개는 중단됐으며, 게임 소스 변경은 없었다. 실패 기록은 삭제하지 않고 `infrastructure-attempt-1`에 보존했다.
+The first attempt used a Windows `workspace-write` configuration that blocked even file reads. The batch was stopped after 17 sessions had started: 14 had completed with tool-error reports and three were interrupted. No game source changed. Those records were retained under `infrastructure-attempt-1`.
 
-이미 허용된 로컬 전체 권한 설정으로 파일 읽기·쓰기·브라우저 실행을 사전 확인하고, 모든 과제 폴더를 초기 해시로 복구한 뒤 36세션을 새로 시작했다. 전역 설정은 변경하지 않았다. 기능 결과를 보고 유리한 세션만 골라 재시도한 것은 아니다.
+File reads, writes, and browser execution were then checked using the already authorized local full-permission setting. Every task folder was restored to its initial hashes before starting 36 fresh sessions. Global settings were not changed. Retries were not selected by favorable functional outcomes.
 
-실패 시도에서 확인 가능한 사용량은 입력 **701,076**, 캐시 제외 입력 **91,540**, 출력 **5,384** 토큰이다. 중단 3개의 부분 사용량, 환경·목록 진단 및 조정자 작업은 이 수치에 포함되지 않는다. 따라서 이 작업 전체가 36번의 모델 호출만 사용했다고 표현하면 안 된다. [제외 기록](excluded-infrastructure-usage.json)을 조건 비교와 별도로 제공한다.
+Known usage from the failed attempt was **701,076** input, **91,540** uncached input, and **5,384** output tokens. Partial usage from the three interrupted sessions, environment/catalog diagnostics, and coordinator work are not included. The entire project must therefore not be described as using only 36 model calls. The [excluded-attempt record](excluded-infrastructure-usage.json) is separate from the condition comparison.
 
-## 범위와 다음 판단
+## Scope and next decision
 
-과제는 이 스킬의 이전 평가에 사용하지 않은 두 공개 코드베이스에서 골랐다. 모델 학습 자료에 없었다고 보장할 수 없으므로 “모델이 처음 보는 코드”라고 부르지 않는다. 원래 계획의 다양한 실제 게임·내비게이션·정상 동작 보존 평가를 모두 충족하는 완전한 holdout 연구도 아니다. 입력·표시·콜백 생명주기의 좁고 명시적인 수리 과제가 중심이며, 높은 기본 성공률이 차이를 가렸을 수 있다.
+Tasks came from two public codebases not used in this skill's earlier evaluations. Their absence from model training cannot be guaranteed, so they are not described as code the model had never seen. This is not a complete holdout study covering every original goal for diverse games, navigation, and sound-behavior preservation. Most tasks were narrow, explicit input, display, or callback-lifecycle repairs; high baseline success may have obscured differences.
 
-현재 근거는 **단순 수정에 전체 스킬을 항상 적용해야 한다는 주장을 지지하지 않는다.** 작은 문제는 핵심 지침만 사용한 빠른 경로를 유지할 만하다. 추가 평가의 우선순위는 문서 확장보다 보드 안팎 입력 소유권, 포커스 상실, 취소·재시작 교차처럼 복잡한 경계를 가진 새 과제다. 이번 사후 조건을 사전에 고정하고 다른 게임·입력 방식에서 재현되는지 확인해야 한다. 사람의 조작감, 재미, 실기기, 네트워크 지연, 장기 플레이는 별도로 평가해야 한다.
+Current evidence **does not support always applying the full skill to simple repairs**. Retaining the core-only fast path is reasonable. Further evaluation should prioritize new tasks with complex boundaries—input ownership inside/outside a board, focus loss, and intersecting cancellation/restart paths—over expanding documentation. Specify the present post-hoc condition in advance and test it in other games and input modes. Human game feel, enjoyment, physical devices, network latency, and extended play need separate evaluation.
 
-## 자료와 재현
+## Artifacts and reproduction
 
-원본 프로젝트는 [2048](https://github.com/gabrielecirulli/2048/tree/478b6ec346e3787f589e4af751378d06ded4cbbc), [Javascript Tetris](https://github.com/jakesgordon/javascript-tetris/tree/e5c0c42f7dac0f3514a55eff656c6e22e95d68ed)이며 각각의 MIT 라이선스를 스냅샷에 보존했다. 해당 소스 체크아웃의 변경 없음, 고정 판정기·입력·스킬 해시, 36개의 고유 세션 ID를 확인했다. [snapshot.json](snapshot.json)에 출처·해시·환경 제한을 기록했다.
+Sources are [2048](https://github.com/gabrielecirulli/2048/tree/478b6ec346e3787f589e4af751378d06ded4cbbc) and [Javascript Tetris](https://github.com/jakesgordon/javascript-tetris/tree/e5c0c42f7dac0f3514a55eff656c6e22e95d68ed); their MIT licenses are retained in the snapshots. Clean source checkouts, frozen judge/input/skill hashes, and 36 unique session IDs were verified. [snapshot.json](snapshot.json) records provenance, hashes, and environment limits.
 
-[artifacts.zip](artifacts.zip)에는 과제별 원본 입력, 실제 수정 파일, 추가 자체 검사·스크린샷·최종 보고서, 스킬 13개 파일, 원본 판정기와 실행 도구를 담았다. 원본 실행 도구의 절대 경로는 당시 환경을 기록하기 위해 보존했다. 원본 판정기를 그대로 사용하는 재검사 어댑터는 Playwright 의존성 경로만 환경변수 또는 일반 패키지 해석으로 대체한다. 자체 작성 검사 스크립트는 보관만 하며 재검사 어댑터가 호스트에서 자동 실행하지 않는다.
+[artifacts.zip](artifacts.zip) contains original task inputs, actual changed files, added self-checks/screenshots/final reports, all 13 skill files, and the original judge and execution tools. Original absolute paths are preserved as a record of the execution environment. The replay adapter uses the unchanged judge and replaces only Playwright dependency resolution with an environment variable or normal package lookup. Candidate-written check scripts are archived; the replay adapter does not automatically execute them on the host.
 
-압축을 별도 폴더에 풀고, Playwright와 Chromium이 설치된 환경에서 다음처럼 **저장된 코드 결과만** 다시 검사할 수 있다. 새 모델 비교를 시작하지 않는다.
+Extract into a separate folder and, with Playwright and Chromium installed, recheck **stored code outputs only** as follows. This does not launch new model comparisons.
 
 ```powershell
-# 필요하면 설치된 Playwright 모듈의 절대 경로 지정
+# If needed, specify the absolute path to an installed Playwright module.
 $env:BMG_PLAYWRIGHT_MODULE = 'C:/path/to/node_modules/playwright'
 node replay.mjs H02-skill-1
 node replay.mjs H06-short-1
 ```
 
-원본 JSONL 명령 로그·요청·전체 작업 폴더와 실패 시도는 Default 작업공간의 `.skill-validation/bmg-comparison-2026-11-06/`에 남아 있다. 전체 원본 로그는 저장소 패키지에 중복 복사하지 않았다. [압축 파일 해시](artifact-index.json)와 개별 결과의 세션 ID로 연결할 수 있다. 모델을 다시 호출하면 같은 결과가 나온다는 보장은 없다.
+Original JSONL command logs, requests, complete workspaces, and failed attempts remain under `.skill-validation/bmg-comparison-2026-11-06/` in the Default workspace. Complete raw logs were not duplicated into the repository package. The [archive hash](artifact-index.json) and per-result session IDs link the records. Calling the model again is not guaranteed to reproduce the same outputs.
